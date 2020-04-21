@@ -1,6 +1,7 @@
 <template>
   <v-app>
    <navbar></navbar>
+   <navbartest></navbartest>
     <v-content>
       
       <router-view></router-view>
@@ -9,12 +10,15 @@
 </template>
 
 <script>
-import navbar from '@/components/navbar/navbar.vue'
+// import navbar from '@/components/navbar/navbar.vue'
+import navbartest from '@/components/navbar/navbartest.vue'
+
 export default {
   name: 'App',
 
   components: {
-    navbar
+    // navbar
+    navbartest
   },
 
   data: () => ({
