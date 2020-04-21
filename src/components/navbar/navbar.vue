@@ -5,7 +5,7 @@
   shaped
     
   >
-    <v-toolbar elevation="19" color="rgba(252, 3, 132, 0.2)" dense>
+    <v-toolbar elevation="19" color="pink accent-1" dense>
    
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
@@ -14,7 +14,7 @@
       <v-spacer></v-spacer>
 
       <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
+        <v-icon>mdi-account</v-icon>
       </v-btn>
 
       <v-btn icon color="purple">

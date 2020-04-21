@@ -6,7 +6,7 @@
     <v-card
       flat
       tile
-      class="purple lighten-3 white--text text-center"
+      class="pink accent-1 white--text text-center"
     >
 
     <!-- class="pink accent-1 white--text text-center" -->
