@@ -6,7 +6,7 @@
     <!-- <sellers></sellers> -->
     <slideshow></slideshow>
     <parlx2></parlx2>
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
   </span>
 </template>
 
@@ -16,7 +16,7 @@ import Parlx1 from '@/components/home/Parlx1.vue'
 /* import navbar from '@/components/navbar/navbar.vue' */
 // import sellers from '@/components/cards/sellers.vue'
 import Parlx2 from '@/components/home/Parlx2.vue'
-import Footer from '@/components/footer/Foooter.vue'
+// import Footer from '@/components/footer/Foooter.vue'
 // import navbar1 from '@/components/navbar/navbar1.vue'
 import slideshow from '@/components/slideshow/slideshow.vue'
 
@@ -28,7 +28,7 @@ export default {
     // sellers,
     slideshow,
     Parlx2,
-    Footer,
+    // Footer,
     // navbar1
   }
 }

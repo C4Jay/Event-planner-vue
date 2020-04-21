@@ -34,44 +34,44 @@
               </v-form>
           </v-flex>
          <v-layout row wrap>
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons2">
                   <router-link class="link" to="/hotels"><v-icon size="60" to="/hotels">mdi-home</v-icon></router-link>
                  </div>
              </v-flex>
-            <v-flex class="text-center">
+            <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
                   <v-icon size="60">mdi-camera</v-icon>
                  </div>
              </v-flex>
-            <v-flex class="text-center">
+            <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
                   <v-icon size="60">mdi-home-modern</v-icon>
                  </div>
              </v-flex>
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
                   <v-icon size="60">mdi-car-convertible</v-icon>
                  </div>
              </v-flex>
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
                      <v-icon size="60">mdi-music-clef-treble</v-icon>
                  </div>
              </v-flex>
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons1">
                      <v-icon size="60">mdi-pasta</v-icon>
                  </div>
              </v-flex>
 
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons1">
                      <v-icon size="60">mdi-bike</v-icon>
                  </div>
              </v-flex>
 
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons1">
                      <v-icon size="60">mdi-castle</v-icon>
                  </div>
@@ -80,51 +80,51 @@
          </v-layout>
 
              
-           <v-layout row>
-             <v-flex class="text-center">
+           <v-layout row class="ml-1">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons1">
                      <v-icon size="60">mdi-church</v-icon>
                  </div>
              </v-flex>
 
-                <v-flex class="text-center">
+                <v-flex class="text-center ml-1 mt-1">
                  <div class="icons2">
                   <v-icon size="60">mdi-home</v-icon>
                  </div>
              </v-flex>
-            <v-flex class="text-center">
+            <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
                   <v-icon size="60">mdi-camera</v-icon>
                  </div>
              </v-flex>
-            <v-flex class="text-center">
+            <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
                   <v-icon size="60">mdi-home-modern</v-icon>
                  </div>
              </v-flex>
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
                   <v-icon size="60">mdi-car-convertible</v-icon>
                  </div>
              </v-flex>
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
                      <v-icon size="60">mdi-music-clef-treble</v-icon>
                  </div>
              </v-flex>
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons1">
                      <v-icon size="60">mdi-pasta</v-icon>
                  </div>
              </v-flex>
 
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons1">
                      <v-icon size="60">mdi-bike</v-icon>
                  </div>
              </v-flex>
 
-             <v-flex class="text-center">
+             <v-flex class="text-center ml-1 mt-1 mb-3">
                  <div class="icons1">
                      <v-icon size="60">mdi-castle</v-icon>
                  </div>
@@ -163,34 +163,37 @@ export default {
     height: 15;
     margin: 1;
     cursor: pointer;
-    max-width: 20;
+    max-width: 10;
     border-style: solid;
     border-right-width: 1;
     border-left-width: 1;
     border-color: black;
-    background: rgba(129, 122, 126, 0.6)
+    background: rgba(129, 122, 126, 0.6);
+    margin-left: 10
 }
 
 .icons1 {
     cursor: pointer;
-    max-width: 20;
+    max-width: 10;
     border-style: solid;
     border-width: 0.5;
     border-right-width: 1;
     border-left-width: 1;
     border-color: black;
-    background: rgba(129, 122, 126, 0.6)
+    background: rgba(129, 122, 126, 0.6);
+    margin-left: 10
 }
 
 .icons2 {
     cursor: pointer;
-    max-width: 20;
+    max-width: 10;
     border-style: solid;
     border-width: 0.5;
     border-right-width: 1;
     border-left-width: 1;
     border-color: black;
-    background: rgba(129, 122, 126, 0.6)
+    background: rgba(129, 122, 126, 0.6);
+    margin-left: 10
 }
 
 .textfield {

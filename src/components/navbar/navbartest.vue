@@ -39,10 +39,11 @@
                 </v-btn>
             </v-list>
         </v-navigation-drawer>
+        <v-card shaped>
         <v-toolbar elevation="19" height="50" color="pink accent-1">   
            
             <!-- <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon> -->
-      <v-btn elevation="19" icon @click.stop="drawer = !drawer">
+      <v-btn icon class="mr-8" elevation="19"  @click.stop="drawer = !drawer">
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
             <v-spacer class="hidden-md-and-up"></v-spacer>
@@ -72,15 +73,20 @@
                 </v-btn> -->
                  <v-btn icon>
         <v-icon>mdi-account</v-icon>
-      </v-btn>
-      <v-btn text class="btns" x-small>
+                 </v-btn>
+        <v-btn icon>
+            <v-icon>mdi-cart-outline</v-icon>
+        </v-btn>
+      
+     <!--  <v-btn text class="btns" x-small>
           who are we
       </v-btn>
             <v-btn text class="btns" x-small>
           what we do
-      </v-btn>
+      </v-btn> -->
             </v-toolbar-items>
         </v-toolbar>
+        </v-card>
     </span>
 </template>
 
@@ -101,7 +107,9 @@ export default {
     computed: {
         items () {
             let items = [
-                {title: 'who are we' , to: '/signup'},                
+                {title: 'sign in' , to: '/signup'},                
+                {title: 'sign up' , to: '/sign-in'},                
+                {title: 'what we do' , to: '/sign-in'},
                 {title: 'what we do' , to: '/sign-in'},
             ]
             /* if(this.userIsauthenticated ){

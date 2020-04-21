@@ -5,6 +5,7 @@
     <v-content>
       
       <router-view></router-view>
+      <Footer></Footer>
     </v-content>
   </v-app>
 </template>
@@ -12,13 +13,15 @@
 <script>
 // import navbar from '@/components/navbar/navbar.vue'
 import navbartest from '@/components/navbar/navbartest.vue'
+import Footer from '@/components/footer/Foooter.vue'
 
 export default {
   name: 'App',
 
   components: {
     // navbar
-    navbartest
+    navbartest,
+    Footer
   },
 
   data: () => ({
