@@ -2,7 +2,7 @@
     <v-container grid-list-lg>
         <v-layout row wrap >
             <v-flex xs12 sm12 md3>
-                <v-card>
+                <v-card elevation="19">
                     <v-responsive>
                         <v-img src="https://images.unsplash.com/photo-1573020856672-f6bed7fae16d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" height="200px">
                             <v-container fill-height fluid>
@@ -26,7 +26,7 @@
             </v-flex>
 
              <v-flex xs12 sm12 md3 >
-                <v-card>
+                <v-card elevation="19">
                     <v-responsive>
                         <v-img src="https://images.unsplash.com/photo-1573020856672-f6bed7fae16d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" height="200px">
                             <v-container fill-height fluid>
@@ -50,7 +50,7 @@
             </v-flex>
 
              <v-flex xs12 sm12 md3>
-                <v-card>
+                <v-card elevation="19">
                     <v-responsive>
                         <v-img src="https://images.unsplash.com/photo-1573020856672-f6bed7fae16d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" height="200px">
                             <v-container fill-height fluid>
@@ -74,7 +74,7 @@
             </v-flex>
 
             <v-flex xs12 sm12 md3>
-                <v-card>
+                <v-card elevation="19">
                     <v-responsive>
                         <v-img src="https://images.unsplash.com/photo-1573020856672-f6bed7fae16d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" height="200px">
                             <v-container fill-height fluid>

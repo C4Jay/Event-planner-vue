@@ -40,16 +40,18 @@
             </v-list>
         </v-navigation-drawer>
         <v-card shaped>
-        <v-toolbar elevation="19" height="50" color="pink accent-1">   
+        <v-toolbar elevation="19" height="70" color="pink accent-1">   
            
             <!-- <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon> -->
-      <v-btn icon class="mr-8" elevation="19"  @click.stop="drawer = !drawer">
+      <v-btn icon class="mr-8"  @click.stop="drawer = !drawer">
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
             <v-spacer class="hidden-md-and-up"></v-spacer>
             <router-link to="/">
-                  <v-app-bar-nav-icon>
-        <v-img class="ml-10 img" src="https://www.48hourslogo.com/48hourslogo_data/2019/03/04/82508_1551698623.png" height="60px" width="80px">
+                  <v-app-bar-nav-icon><!-- 
+        <v-img class="ml-10 img" src="https://www.48hourslogo.com/48hourslogo_data/2019/03/04/82508_1551698623.png" height="60px" width="80px"> -->
+        
+        <v-img class="ml-10 mr-10 img" src="https://www.monaco.edu/wp-content/uploads/2016/06/Puma-logo-PNG-Transparent-Background.png" height="60px" width="80px">
         </v-img>
       </v-app-bar-nav-icon>
                 <!-- <v-toolbar-title data-cy="titleBtn" class="blue--text">{{appTitle}}</v-toolbar-title> -->

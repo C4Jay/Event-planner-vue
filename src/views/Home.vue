@@ -4,7 +4,8 @@
     <!-- <navbar1></navbar1> -->
     <parlx1></parlx1>
     <!-- <sellers></sellers> -->
-    <slideshow></slideshow>
+    <!-- <slideshow></slideshow> -->
+    <slideshow1></slideshow1>
     <parlx2></parlx2>
     <!-- <Footer></Footer> -->
   </span>
@@ -18,7 +19,8 @@ import Parlx1 from '@/components/home/Parlx1.vue'
 import Parlx2 from '@/components/home/Parlx2.vue'
 // import Footer from '@/components/footer/Foooter.vue'
 // import navbar1 from '@/components/navbar/navbar1.vue'
-import slideshow from '@/components/slideshow/slideshow.vue'
+// import slideshow from '@/components/slideshow/slideshow.vue'
+import slideshow1 from '@/components/slideshow/slideshow1.vue'
 
 export default {
   name: 'Home',
@@ -26,10 +28,11 @@ export default {
     /* navbar, */
     Parlx1,
     // sellers,
-    slideshow,
+    // slideshow,
     Parlx2,
     // Footer,
-    // navbar1
+    // navbar1,
+    slideshow1
   }
 }
 </script>

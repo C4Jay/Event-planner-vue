@@ -39,9 +39,20 @@ export default {
 <style>
 .slider {
   /* overwrite slider styles */
-  width: 900px;
+  
   height: 30;
   color: blue
+}
+
+.range-slider {
+  width: 200
+}
+
+@media only screen and (max-width: 450) {
+  .slider {
+    width: 200px
+  }
+  
 }
 
 .range-slider {

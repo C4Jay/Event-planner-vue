@@ -41,12 +41,12 @@
              </v-flex>
             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
-                  <v-icon size="60">mdi-camera</v-icon>
+                 <router-link class="link" to="/hotelsform"><v-icon size="60">mdi-camera</v-icon></router-link>
                  </div>
              </v-flex>
             <v-flex class="text-center ml-1 mt-1">
                  <div class="icons">
-                  <v-icon size="60">mdi-home-modern</v-icon>
+                  <router-link class="link" to="/hotelsform1"><v-icon size="60">mdi-home-modern</v-icon></router-link>
                  </div>
              </v-flex>
              <v-flex class="text-center ml-1 mt-1">
@@ -140,7 +140,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .topic {
     font-size: 80px;
@@ -202,6 +202,13 @@ export default {
 
 .link {
     text-decoration: none
+}
+
+@media (max-width: 360px) {
+    .topic {
+        font-size: 60px;
+        /* text-shadow: 2px 2px green; */
+    }
 }
 </style>
 

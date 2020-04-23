@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Hotels from '../views/Hotels.vue'
-
+import Hotelsform from '@/components/forms/hotelform.vue'
+import Hotelsform1 from '@/components/forms/hotelform1.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -15,6 +16,16 @@ Vue.use(VueRouter)
     path: '/hotels',
     name: 'Hotels',
     component: Hotels
+  },
+  {
+    path: '/hotelsform',
+    name: 'Hotelsform',
+    component: Hotelsform
+  },
+  {
+    path: '/hotelsform1',
+    name: 'Hotelsform1',
+    component: Hotelsform1
   },
   {
     path: '/about',

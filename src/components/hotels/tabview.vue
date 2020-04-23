@@ -1,6 +1,6 @@
 <template>
 <v-container>
-<slider></slider>
+<slider1></slider1>
   <v-card>
        <v-tabs
             v-model="tab"
@@ -95,10 +95,10 @@
 </template>
 
 <script>
-import slider from '@/components/slider/slider.vue'
+import slider1 from '@/components/slider/slider1.vue'
   export default {
       components: {
-          slider
+          slider1
       },
     data () {
       return {
