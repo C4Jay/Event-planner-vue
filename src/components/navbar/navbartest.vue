@@ -73,7 +73,7 @@
                 <!-- <v-btn>    
                     Log-Out
                 </v-btn> -->
-                 <v-btn icon>
+                 <v-btn to="/signin" icon>
         <v-icon>mdi-account</v-icon>
                  </v-btn>
         <v-btn icon>

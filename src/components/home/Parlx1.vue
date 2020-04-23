@@ -124,11 +124,11 @@
                  </div>
              </v-flex>
 
-             <v-flex class="text-center ml-1 mt-1 mb-3">
+             <!-- <v-flex class="text-center ml-1 mt-1 mb-3">
                  <div class="icons1">
                      <v-icon size="60">mdi-castle</v-icon>
                  </div>
-             </v-flex>
+             </v-flex> -->
          </v-layout>
       </v-container>
      </v-parallax>

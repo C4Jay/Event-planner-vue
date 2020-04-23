@@ -1,40 +1,67 @@
 <template>
-  <div>
-    <Slider
-    height="600px"
-      animation="fade"
-      v-model="sliderValue"
-      :duration="5000"
-      :speed="1000"
-    >
-      <SliderItem
-        v-for="(i, index) in list"
-        :key="index"
-        @click="changeIndex(1);"
-        :style="i"
-      >
-       <!--  <p style="line-height: 280px; font-size: 5rem; text-align: center;">
-          Page{{ index + 1 }}
-        </p> -->
-      </SliderItem>
-    </Slider>
-  </div>
+<vueper-slides
+
+ :breakpoints="breakpoints"
+ duration="3000"
+ autoplay
+ fade :touchable="false">
+  <vueper-slide
+  class="slides"
+    v-for="(slide, i) in slides"
+    :key="i"
+    :image="slide.image"
+    :title="slide.title"
+    :content="slide.content"
+     />
+</vueper-slides>
 </template>
 
 <script>
-import { Slider, SliderItem } from "vue-easy-slider";
+// import { Slider, SliderItem } from "vue-easy-slider";
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
 
 export default {
+  
   name: "slideshow",
   components: {
+    VueperSlides, 
+    VueperSlide
+  },
+  /* components: {
     Slider,
     SliderItem
-  },
+  }, */
   data() {
     return {
-      list: [],
-      sliderValue: 2
-    };
+      
+      breakpoints: {
+        1200: {
+      slideRatio: 1 / 1
+    },
+    900: {
+      slideRatio: 1 / 3
+    },
+    600: {
+      slideRatio: 1 / 2,
+      arrows: false,
+      bulletsOutside: true
+    },
+    // The order you list breakpoints does not matter, Vueper Slides will sort them for you.
+    1100: {
+      slideRatio: 1 / 4
+    }
+  },
+      
+      slides : [
+        {image: 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'},
+        {image: 'https://images.unsplash.com/photo-1552711566-7e58cb1eeafd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'},
+        {image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80'}
+      ],
+
+   /*    list: [],
+      sliderValue: 2  */
+    }; 
   },
   methods: {
     changeIndex(index) {
@@ -46,19 +73,19 @@ export default {
       () =>
         (this.list = [
           {
-            backgroundImage: 'url("https://www.srilankabusiness.com/emarketplace/media/wysiwyg/edb/homepage_banners/banner_02.jpg")',
+            backgroundImage: 'url("https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")',
             width: "100%",
             height: "100%"
           },
           {
-            backgroundImage: 'url("https://www.srilankabusiness.com/emarketplace/media/wysiwyg/edb/homepage_banners/banner03.jpg")',
+            backgroundImage: 'url("https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80")',
             width: "100%",
             height: "100%"
           },
           {
-            backgroundImage: 'url("https://www.srilankabusiness.com/emarketplace/media/wysiwyg/edb/homepage_banners/banner01.jpg")',
-            width: "100%",
-            height: "100%"
+            backgroundImage: 'url("https://images.unsplash.com/photo-1552711566-7e58cb1eeafd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")',
+         /*    width: "100%",
+            height: "100%" */
           },
         ]),
       1000
@@ -67,10 +94,14 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.slides {
+  height: 600px;
+}
 
-
-p {
-  margin: 0;
+@media only screen and (max-width: 360px) {
+  .slides {
+    height: 300px
+  }
 }
 </style>

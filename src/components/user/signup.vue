@@ -2,7 +2,7 @@
     <v-container>
         <v-layout>
             <v-flex xs12 sm6 offset-sm3 class="main" >
-                <v-card  class="card">
+                <v-card elevation="19" class="card">
                     <v-container>
                         <v-layout row>
                             <v-flex class="text-center font-weight-black display-1">Sign Up</v-flex>
