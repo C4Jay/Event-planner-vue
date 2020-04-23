@@ -2,10 +2,11 @@
     <vueper-slides
     autoplay
     duration="1000"
-  class="no-shadow"
+  class="slider"
   :visible-slides="3"
   :slide-ratio="1 / 4"
-  :dragging-distance="70">
+  :dragging-distance="70"
+  >
   
 
     <!-- <vueper-slide>
@@ -47,4 +48,3 @@ export default {
     components: { VueperSlides, VueperSlide },    
 }
 </script>
-

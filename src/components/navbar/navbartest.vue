@@ -39,7 +39,7 @@
                 </v-btn>
             </v-list>
         </v-navigation-drawer>
-        <v-card shaped>
+        <v-card >
         <v-toolbar elevation="19" height="70" color="pink accent-1">   
            
             <!-- <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon> -->
@@ -109,10 +109,10 @@ export default {
     computed: {
         items () {
             let items = [
-                {title: 'sign in' , to: '/signup'},                
-                {title: 'sign up' , to: '/sign-in'},                
-                {title: 'what we do' , to: '/sign-in'},
-                {title: 'what we do' , to: '/sign-in'},
+                {title: 'sign in' , to: '/signin'},                
+                {title: 'sign up' , to: '/signup'},                
+                {title: 'what we do' , to: '/signin'},
+                {title: 'what we do' , to: '/signin'},
             ]
             /* if(this.userIsauthenticated ){
                 items = [                    

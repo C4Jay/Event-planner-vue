@@ -206,7 +206,7 @@ export default {
 
 @media (max-width: 360px) {
     .topic {
-        font-size: 60px;
+        font-size: 50px;
         /* text-shadow: 2px 2px green; */
     }
 }

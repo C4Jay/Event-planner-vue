@@ -1,6 +1,6 @@
 <template>
 <v-container>
-<v-card elevation="19" class="card" >
+<v-card elevation="19" color="rgba(255, 0, 0, 0.2)" class="card" >
   <v-form v-model="valid" class="mr-3 my-3 ml-3">
     <v-container>
       <v-row>
