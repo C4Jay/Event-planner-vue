@@ -216,7 +216,7 @@
     margin-bottom: 60px
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 450px) {
     .card {
         margin-left: 10px;
         margin-right: 10px;

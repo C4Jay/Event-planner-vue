@@ -3,7 +3,8 @@
     <!-- <navbar></navbar> -->
     <!-- <navbar1></navbar1> -->
     <slideshow></slideshow>
-    <iconbg></iconbg>
+    <!-- <iconbg></iconbg> -->
+    <awesomeicons></awesomeicons>
     <!-- <parlx1></parlx1> -->
     <!-- <sellers></sellers> -->
     <slideshow1></slideshow1>
@@ -22,7 +23,9 @@ import Parlx2 from '@/components/home/Parlx2.vue'
 // import navbar1 from '@/components/navbar/navbar1.vue'
 import slideshow from '@/components/slideshow/slideshow.vue'
 import slideshow1 from '@/components/slideshow/slideshow1.vue'
-import iconbg from '@/components/icons/iconbg.vue';
+// import iconbg from '@/components/icons/iconbg.vue';
+import awesomeicons from '@/components/icons/awesomeicons.vue';
+
 
 export default {
   name: 'Home',
@@ -35,7 +38,8 @@ export default {
     // Footer,
     // navbar1,
     slideshow1,
-    iconbg
+    // iconbg,
+    awesomeicons
   }
 }
 </script>

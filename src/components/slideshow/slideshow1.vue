@@ -6,6 +6,9 @@
   :visible-slides="3"
   :slide-ratio="1 / 4"
   :dragging-distance="70"
+  arrows=false
+  bullets=false
+  arrowsOutside=false
   >
   
 

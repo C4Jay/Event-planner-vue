@@ -43,12 +43,12 @@
 </template>
 
 <script>
-import slider1 from '@/components/slider/slider1.vue'
+// import slider1 from '@/components/slider/slider1.vue'
 
 
   export default {
       components: {
-          slider1
+        //   slider1
       },
     data: () => ({
       valid: false,

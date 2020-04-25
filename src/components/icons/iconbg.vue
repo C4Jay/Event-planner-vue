@@ -11,8 +11,9 @@
                       </v-layout> -->
                       <v-layout row wrap class="text-center ml-8">
                           <v-flex class="text-center row">
-                          <v-flex md4 class="textfield mr-3">
+                          <v-flex md4 class="textfield mr-3 .body-1">
                           <v-text-field
+                          class="body-1"
                           background-color="rgba(223, 230, 225, 0.6)"
                           label="what?"
                           solo
@@ -22,6 +23,7 @@
 
                           <v-flex md4 class="textfield">
                           <v-text-field
+                          class="text"
                           background-color="rgba(223, 230, 225, 0.6)"
                           label="location?"
                           solo
@@ -140,6 +142,10 @@
 <style>
 .row1{
     margin-left: 30px
+}
+
+.text {
+    font-size: 15px
 }
 /* .topic {
     font-size: 80px;

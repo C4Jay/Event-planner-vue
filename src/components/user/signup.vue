@@ -8,11 +8,13 @@
                             <v-flex class="text-center font-weight-black display-1">Sign Up</v-flex>
                         </v-layout>
                         
-                        <v-form>
+                        <v-form @submit.prevent="Onsignup">
                             <v-layout row>
                                
                                 <v-flex class="mr-6 ml-6">
                                     <v-text-field 
+                                    v-model="mail"
+                                    name="mail"
                                     solo 
                                     prepend-icon="mdi-account"
                                     label="mail">
@@ -20,8 +22,12 @@
                                 </v-flex>
                             </v-layout>
 
-                            <v-layout row>                         <v-flex>
+                            <v-layout row>                         
+                                <v-flex>
                                     <v-text-field class="mr-6 ml-6"
+                                    v-model="password"
+                                    name="password"
+                                    type="password"
                                     solo 
                                     prepend-icon="mdi-lock"
                                     label="password">
@@ -30,7 +36,7 @@
                             
                             </v-layout>
                             <v-flex class="text-center mb-6" >
-                                <v-btn color="pink accent-1">Sign Up</v-btn>
+                                <v-btn type="submit" color="pink accent-1">Sign Up</v-btn>
                             </v-flex><!-- 
                             <v-flex class="text-center" >
                             Don`t have an account?<router-link to="signup"> sign up </router-link> here
@@ -42,6 +48,29 @@
         </v-layout>
     </v-container>
 </template>
+
+<script>
+export default {
+    name: 'signup',
+
+    data () {
+        return {
+            mail: '',
+            password: ''
+        }
+    },
+
+    methods: {
+        Onsignup() {
+            this.$store.dispatch('signUserup', {email: this.mail, password: this.password})
+        }
+    }
+    
+}
+
+
+</script>
+
 
 <style scoped>
 .main {
