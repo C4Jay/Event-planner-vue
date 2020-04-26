@@ -8,7 +8,7 @@
                             <v-flex class="text-center font-weight-black display-1">Sign Up</v-flex>
                         </v-layout>
                         
-                        <v-form @submit.prevent="Onsignup">
+                        <v-form @submit.prevent="Onsignin">
                             <v-layout row>
                                
                                 <v-flex class="mr-6 ml-6">
@@ -61,8 +61,8 @@ export default {
     },
 
     methods: {
-        Onsignup() {
-            this.$store.dispatch('signUserup', {email: this.mail, password: this.password})
+        Onsignin() {
+            this.$store.dispatch('signUserin', {email: this.mail, password: this.password})
         }
     }
     

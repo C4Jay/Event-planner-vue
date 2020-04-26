@@ -21,6 +21,7 @@ import Weddingplanners from '@/components/weddingplanners/weddingplanners.vue';
 import Locations from '@/components/locations/locations.vue';
 import Singlehotel from '@/components/hotels/singlehotel.vue';
 import Createhotelform from '@/components/hotels/createhotelform.vue';
+import navbartr from '@/components/navbar/navbartrtest.vue';
 
 Vue.use(VueRouter)
 
@@ -129,6 +130,11 @@ Vue.use(VueRouter)
     path: '/createhotelform',
     name: 'createhotelform',
     component: Createhotelform
+  },
+  {
+    path: '/navbartr',
+    name: 'navbartr',
+    component: navbartr
   },
   {
     path: '/about',

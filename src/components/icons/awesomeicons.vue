@@ -80,7 +80,7 @@
             <router-link to="/weddingplanners"><img height="60" src="@/assets/icons/light/tasks.svg"></router-link>
            </v-layout>
            <v-layout row>
-               <span>Tasks</span>
+               <span>Planners</span>
            </v-layout>
         </v-flex>
 

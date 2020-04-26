@@ -5,14 +5,15 @@
                 <v-card elevation="19" class="card">
                     <v-container>
                         <v-layout row>
-                            <v-flex class="text-center font-weight-black display-1">Post Hotel</v-flex>
+                            <v-flex class="text-center font-weight-black display-1">Hotel basic information</v-flex>
                         </v-layout>
                         
                         <v-form @submit.prevent="createhotel">
                             <v-layout row>
                                
-                                <v-flex class="mr-6 ml-6">
+                                <v-flex class="mr-6 ml-6 text-field">
                                     <v-text-field
+                                   
                                     v-model="hotel_name" 
                                     solo 
                                     prepend-icon="mdi-account"
@@ -35,9 +36,56 @@
                             <v-layout row>                         <v-flex>
                                     <v-text-field class="mr-6 ml-6"
                                     v-model="hotel_capacity"
-                                    solo 
+                                    solo
+                                    type="text" 
                                     prepend-icon="mdi-table-chair"
                                     label="Hotel seating capacity">
+                                    </v-text-field>
+                                </v-flex>
+                            
+                            </v-layout>
+                            
+                            <v-layout row>
+                                <v-flex class="text-center font-weight-bold mb-8">
+                                    contact details
+                                </v-flex>
+                            </v-layout>
+
+                            <v-layout row>                         
+                                <v-flex>
+                                    <v-text-field class="mr-6 ml-6"
+                                    v-model="hotel_contact_person"
+                                    solo
+                                    type="text" 
+                                    prepend-icon="mdi-account"
+                                    label="Contact person">
+                                    </v-text-field>
+                                </v-flex>
+                            
+                            </v-layout>
+
+                            <v-layout row>                         
+                                <v-flex>
+                                    <v-text-field class="mr-6 ml-6"
+                                    v-model="hotel_contact_email"
+                                    solo
+                                    type="text" 
+                                    prepend-icon="mdi-mail"
+                                    label="Contact email">
+                                    </v-text-field>
+                                </v-flex>
+                            
+                            </v-layout>
+
+
+                            <v-layout row>                         
+                                <v-flex>
+                                    <v-text-field class="mr-6 ml-6"
+                                    v-model="hotel_contact_website"
+                                    solo
+                                    type="text" 
+                                    prepend-icon="mdi-earth"
+                                    label="Hotel official site">
                                     </v-text-field>
                                 </v-flex>
                             
@@ -46,7 +94,8 @@
                              <v-layout row>                         <v-flex>
                                     <v-text-field class="mr-6 ml-6"
                                     v-model="hotel_contact"
-                                    solo 
+                                    solo
+                                    type="number" 
                                     prepend-icon="mdi-phone"
                                     label="Contact number">
                                     </v-text-field>
@@ -54,9 +103,22 @@
                             
                             </v-layout>
 
+                            <v-col cols="10" class="ml-8">
+                         <v-textarea
+                          v-model="hotel_description"
+                          
+                         >
+                       <template v-slot:label>
+                         <div>
+                          Description
+                         </div>
+                       </template>
+                        </v-textarea>
+                        </v-col>
+
                              <v-layout row>
                             <v-flex xs12 sm6 class="ml-10 mb-8">
-                                <v-btn @click="onPickFile">Set main photo</v-btn>
+                                <v-btn @click="onPickFile" color="grey">Set product image</v-btn>
                                 <input type="file" 
                                 style="display: none" 
                                 ref="inputFile" 
@@ -70,17 +132,20 @@
                         
                         <v-layout row>
                             <v-flex xs12 sm6 class="ml-10 mb-10">
-                                <v-img :src="imgurl"></v-img>
+                                <v-img width="80%" :src="imgurl"></v-img>
                             </v-flex>
                         </v-layout>
                         </v-container>
+                        
+                        
 
-                            <v-layout row>                         
+                           <!--  <v-layout row>                         
                                 <v-flex class="ml-10">
                                    <star-rating v-model="rate" :rating="rate"></star-rating>
                                 </v-flex>
                             
-                            </v-layout>
+                            </v-layout> -->
+
                             <v-flex class="text-center mb-6" >
                                 <v-btn color="pink accent-1" type="submit">create</v-btn>
                             </v-flex>
@@ -98,12 +163,12 @@
 
 <script>
 export default {
-    
+    name: 'createhotelform',
 
     data () {
         return {
             rate: null,
-            name: 'createhotelform',
+            
             hotel_name: '',
             hotel_location: '',
             hotel_capacity: '',
@@ -121,7 +186,15 @@ export default {
             this.hotel_location,
             this.rate,
             this.imgurl,
-            this.hotel_contact)
+            this.hotel_contact,
+            this.hotel_description)
+
+            this.$store.dispatch('ad_hotel', {name: this.hotel_name, 
+                capacity: this.hotel_capacity,
+                location: this.hotel_location,
+                contact: this.hotel_contact,
+                description: this.hotel_description,
+                imgurl: this.imgurl})
         },
 
          onPickFile() {
@@ -151,6 +224,10 @@ export default {
 .main {
     margin-bottom: 200px;
     margin-top: 100px
+}
+
+.text-field {
+    font-size: 10px
 }
 
 @media only screen and (max-width: 360px) {

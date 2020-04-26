@@ -1,6 +1,6 @@
 <template>
   <v-app>
-   <navbar></navbar>
+   <!-- <navbar></navbar> -->
    <navbartest></navbartest>
     <v-content>
       

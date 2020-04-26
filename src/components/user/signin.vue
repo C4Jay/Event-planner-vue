@@ -8,12 +8,13 @@
                             <v-flex class="text-center font-weight-black display-1">Sign In</v-flex>
                         </v-layout>
                         
-                        <v-form>
+                        <v-form @submit.prevent="Onsignin">
                             <v-layout row>
                                
                                 <v-flex class="mr-6 ml-6">
                                     <v-text-field 
-                                    solo 
+                                    solo
+                                    v-model="mail" 
                                     prepend-icon="mdi-account"
                                     label="mail">
                                     </v-text-field>
@@ -22,7 +23,9 @@
 
                             <v-layout row>                         <v-flex>
                                     <v-text-field class="mr-6 ml-6"
-                                    solo 
+                                    solo
+                                    v-model="password"
+                                    type="password" 
                                     prepend-icon="mdi-lock"
                                     label="password">
                                     </v-text-field>
@@ -30,7 +33,7 @@
                             
                             </v-layout>
                             <v-flex class="text-center mb-6" >
-                                <v-btn color="pink accent-1">Sign In</v-btn>
+                                <v-btn color="pink accent-1" type="submit">Sign In</v-btn>
                             </v-flex>
                             <v-flex class="text-center" >
                             Don`t have an account?<router-link to="signup"> sign up </router-link> here
@@ -44,11 +47,29 @@
 </template>
 
 
+<script>
+export default {
+    data () {
+        return {
+            mail: '',
+            password: ''
+        }
+    },
+
+    methods: {
+        Onsignin() {
+              this.$store.dispatch('signUserup', {email: this.mail, password: this.password})
+        }
+    }
+}
+</script>
+
 <style scoped>
 .main {
     margin-bottom: 200px;
     margin-top: 100px
 }
+
 
 @media only screen and (max-width: 360px) {
     .main {

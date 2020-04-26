@@ -5,6 +5,7 @@
  duration="3000"
  autoplay
  fade :touchable="false">
+ 
   <vueper-slide
   class="slides"
     v-for="(slide, i) in slides"
@@ -12,7 +13,11 @@
     :image="slide.image"
     :title="slide.title"
     :content="slide.content"
-     />
+     ><div slot="slideContent">
+                                    <v-btn>VOTE</v-btn>
+                                </div>
+                                </vueper-slide>
+     
 </vueper-slides>
 </template>
 
