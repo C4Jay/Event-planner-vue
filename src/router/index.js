@@ -20,6 +20,7 @@ import Salons from '@/components/salons/salons.vue';
 import Weddingplanners from '@/components/weddingplanners/weddingplanners.vue';
 import Locations from '@/components/locations/locations.vue';
 import Singlehotel from '@/components/hotels/singlehotel.vue';
+import Createhotelform from '@/components/hotels/createhotelform.vue';
 
 Vue.use(VueRouter)
 
@@ -123,6 +124,11 @@ Vue.use(VueRouter)
     path: '/singlehotel',
     name: 'singlehotel',
     component: Singlehotel
+  },
+  {
+    path: '/createhotelform',
+    name: 'createhotelform',
+    component: Createhotelform
   },
   {
     path: '/about',

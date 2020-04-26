@@ -8,7 +8,7 @@
                 <v-card-title>
                     Hotel name
                 </v-card-title>
-                <v-card-text class="card-text">
+                <v-card-text class="card-text ml-3">
                     <v-layout row>
                         location
                     </v-layout>
@@ -17,7 +17,7 @@
                     </v-layout>
                     <v-layout row>
                        
-                        <star-rating class="rating" :rating="rate"></star-rating>
+                        <star-rating class="rating" read-only :rating="rate"></star-rating>
                     </v-layout>
                 </v-card-text>
             </v-card>
@@ -50,8 +50,8 @@ export default {
     font-weight: bold
 }
 
-.rating {
+/* .rating {
     size: 1px
-}
+} */
 </style>
 

@@ -6,7 +6,7 @@
             <v-flex xs12 sm12 md3>
                 <v-card elevation="19">
                     <v-responsive>
-                        <v-img src="https://images.unsplash.com/photo-1573020856672-f6bed7fae16d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" height="200px">
+                        <v-img src="https://images.unsplash.com/photo-1553653924-39b70295f8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" height="200px">
                             <v-container fill-height fluid>
                                 <v-layout fill-height>
                                     <v-flex xs12 align-end flexbox>
