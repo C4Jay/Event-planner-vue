@@ -11,13 +11,14 @@ import { faBirthdayCake } from '@fortawesome/free-solid-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faSpa } from '@fortawesome/free-solid-svg-icons'
 import firebase from 'firebase'
+import StarRating from 'vue-star-rating'
 
 library.add(faUserSecret)
 library.add(fas)
 library.add(faSpa)
 library.add(faBirthdayCake)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
- 
+Vue.component('star-rating', StarRating);
 Vue.use(EasySlider)
 
 Vue.config.productionTip = false

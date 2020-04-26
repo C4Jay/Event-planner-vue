@@ -23,7 +23,7 @@
                             </div>
                         </div>
                     </v-card-text>
-                    <v-btn outline block color="green" to="/imggallery" >view</v-btn>
+                    <v-btn outline block color="green" to="/singlehotel" >view</v-btn>
                 </v-card>
             </v-flex>
 

@@ -18,7 +18,8 @@ import Jewellery from '@/components/jewellery/jewellery.vue';
 import Photography from '@/components/photography/photography.vue';
 import Salons from '@/components/salons/salons.vue';
 import Weddingplanners from '@/components/weddingplanners/weddingplanners.vue';
-import Locations from '@/components/locations/locations.vue'
+import Locations from '@/components/locations/locations.vue';
+import Singlehotel from '@/components/hotels/singlehotel.vue';
 
 Vue.use(VueRouter)
 
@@ -117,6 +118,11 @@ Vue.use(VueRouter)
     path: '/weddingplanners',
     name: 'weddingplanners',
     component: Weddingplanners
+  },
+  {
+    path: '/singlehotel',
+    name: 'singlehotel',
+    component: Singlehotel
   },
   {
     path: '/about',
