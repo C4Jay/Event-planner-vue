@@ -40,7 +40,7 @@
             </v-list>
         </v-navigation-drawer>
         <v-card >
-        <v-toolbar elevation="19" height="70" color="pink accent-1">   
+        <v-toolbar elevation="19" height="70" color="transparent">   
            
             <!-- <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon> -->
       <v-btn icon class="mr-8"  @click.stop="drawer = !drawer">

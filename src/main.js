@@ -47,5 +47,7 @@ new Vue({
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 
+    this.$store.dispatch('fetchHotels')
+
   }
 }).$mount('#app')

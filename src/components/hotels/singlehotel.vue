@@ -3,21 +3,40 @@
         <v-layout>
             <v-flex xs12 class="ml-1 mr-3">
             <v-card elevation="19">
-                <v-img class="img" src="https://images.unsplash.com/photo-1553653924-39b70295f8da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
-                </v-img>
-                <v-card-title>
-                    Hotel name
+                <v-img class="img" :src="item.img" height="600px"></v-img>
+                <v-card-title class="display-1">
+                    {{item.name}}  |
+                    {{item.hall}}
                 </v-card-title>
                 <v-card-text class="card-text ml-3">
-                    <v-layout row>
-                        location
+                    <v-layout row wrap>
+                    <v-flex xs12 sm5 class="ml-5 mb-8">
+                    <v-layout row class="font-weight-black">
+                        {{item.location}}
+                    </v-layout>
+                    <v-layout row class="font-weight-black">
+                        {{item.capacity}} seating capacity
+                    </v-layout>
+                   
+                    </v-flex>
+                    
+                    <v-flex xs12 sm5 class="ml-5">
+                        <v-layout row>
+                        <span class="headline font-weight-bold">contact info</span>
+                        </v-layout>
+                         <v-layout row class="font-weight-black">
+                        {{item.number}}
+                    </v-layout>
+                    <v-layout row class="font-weight-black">
+                        {{item.website}}
+                    </v-layout>
+                    <v-layout row class="font-weight-black">
+                        {{item.email}}
                     </v-layout>
                     <v-layout row>
-                        capacity
+                    <v-btn height="26" color="grey">request a quotation</v-btn>
                     </v-layout>
-                    <v-layout row>
-                       
-                        <star-rating class="rating" read-only :rating="rate"></star-rating>
+                    </v-flex>
                     </v-layout>
                 </v-card-text>
             </v-card>
@@ -27,31 +46,29 @@
 </template>
 
 
+
 <script>
-import StarRating from 'vue-star-rating'
 export default {
-    components: {
-  StarRating
-},
-    data () {
+    data() {
         return {
-            rate : 4
+        wholeResponse: [],
+        hotel: {}
+        }
+    },
+    
+    props: ['id'],
+    
+    mounted () {
+       
+        this.wholeResponse = this.$store.getters.hotels
+    },
+
+    computed: {
+        item() {
+            return this.$store.getters.hotelsfind(this.id)
         }
     }
+
 }
 </script>
-
-<style scoped>
-.img {
-    height: 400px
-}
-
-.card-text {
-    font-weight: bold
-}
-
-/* .rating {
-    size: 1px
-} */
-</style>
 

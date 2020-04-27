@@ -8,7 +8,9 @@ export default new Vuex.Store({
   state: {
 
     user: null,
-    hotel: null
+    hotel: null,
+
+    hotels: []
   },
 
   mutations: {
@@ -19,6 +21,10 @@ export default new Vuex.Store({
 
     adhotel (state, pay) {
       state.hotel = pay
+    },
+
+    hotelset (state, pay) {
+      state.hotels = pay
     }
   },
 
@@ -78,8 +84,12 @@ export default new Vuex.Store({
         hotellocation: pay.location,
         hotelcontact: pay.contact,
         hotelcapacity: pay.capacity,
+        hotelhall: pay.hall,
         hoteldescription: pay.description,
-        hotelimg: pay.imgurl
+        hotelimg: pay.imgurl,
+        hotelwebsite: pay.website,
+        hotelemail: pay.email
+        
       }
 
       firebase.database().ref('Hotels').push(hotel)
@@ -90,10 +100,59 @@ export default new Vuex.Store({
       .catch(err => {
         console.log(err)
       })
-    }
+    },
+
+
+    fetchHotels ({commit}) {
+      firebase.database().ref('Hotels').once('value')
+      .then((data) => {
+       
+        const hotel = []
+        const obj = data.val()
+        for(let key in obj) {
+          hotel.push({
+              id: key,
+              name: obj[key].hotelname,
+              location: obj[key].hotellocation,
+              capacity: obj[key].hotelcapacity,
+              number: obj[key].hotelcontact,
+              description: obj[key].hoteldescription,
+              img: obj[key].hotelimg,
+              website: obj[key].hotelwebsite,
+              email: obj[key].hotelemail,
+              hall: obj[key].hotelhall
+
+          })
+
+      }
+      console.log(hotel)
+      commit('hotelset',hotel)
+      })
+      .catch(
+          (error) => {
+              console.log(error)
+          }
+      )
+      
+
+    },
   },
 
 
   modules: {
+  },
+
+  getters: {
+    hotels (state) {
+      return state.hotels
+    },
+
+    hotelsfind (state) {
+      return (hotelid) => {
+        return state.hotels.find((hotel) => {
+          return hotel.id == hotelid
+        })
+      }
+    }
   }
 })

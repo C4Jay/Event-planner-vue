@@ -22,6 +22,19 @@
                                 </v-flex>
                             </v-layout>
 
+                            <v-layout row>
+                               
+                                <v-flex class="mr-6 ml-6 text-field">
+                                    <v-text-field
+                                   
+                                    v-model="hotel_hall" 
+                                    solo 
+                                    prepend-icon="mdi-home-floor-1"
+                                    label="Hall">
+                                    </v-text-field>
+                                </v-flex>
+                            </v-layout>
+
                             <v-layout row>                         <v-flex>
                                     <v-text-field class="mr-6 ml-6"
                                     v-model="hotel_location"
@@ -95,7 +108,7 @@
                                     <v-text-field class="mr-6 ml-6"
                                     v-model="hotel_contact"
                                     solo
-                                    type="number" 
+                                    type="text" 
                                     prepend-icon="mdi-phone"
                                     label="Contact number">
                                     </v-text-field>
@@ -172,7 +185,10 @@ export default {
             hotel_name: '',
             hotel_location: '',
             hotel_capacity: '',
+            hotel_hall: '',
             hotel_contact: '',
+            hotel_contact_website: '',
+            hotel_contact_email: '',
             imgfile: '',
             imgurl: ''
         }
@@ -187,14 +203,18 @@ export default {
             this.rate,
             this.imgurl,
             this.hotel_contact,
-            this.hotel_description)
+            this.hotel_description,
+            this.hotel_hall)
 
             this.$store.dispatch('ad_hotel', {name: this.hotel_name, 
                 capacity: this.hotel_capacity,
                 location: this.hotel_location,
                 contact: this.hotel_contact,
                 description: this.hotel_description,
-                imgurl: this.imgurl})
+                website: this.hotel_contact_website,
+                email: this.hotel_contact_email,
+                imgurl: this.imgurl,
+                hall: this.hotel_hall})
         },
 
          onPickFile() {

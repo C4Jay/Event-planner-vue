@@ -37,6 +37,12 @@ Vue.use(VueRouter)
     component: Hotels
   },
   {
+    path: '/hotels/:id',
+    name: 'hotels',
+    props: true,
+    component: Singlehotel
+  },
+  {
     path: '/hotelsform',
     name: 'Hotelsform',
     component: Hotelsform
@@ -122,8 +128,9 @@ Vue.use(VueRouter)
     component: Weddingplanners
   },
   {
-    path: '/singlehotel',
+    path: '/singlehotel/:id',
     name: 'singlehotel',
+    props: true,
     component: Singlehotel
   },
   {

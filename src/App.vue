@@ -1,7 +1,7 @@
 <template>
   <v-app>
    <!-- <navbar></navbar> -->
-   <navbartest></navbartest>
+   <!-- <navbartest class="nav"></navbartest> -->
     <v-content>
       
       <router-view></router-view>
@@ -12,7 +12,7 @@
 
 <script>
 // import navbar from '@/components/navbar/navbar.vue'
-import navbartest from '@/components/navbar/navbartest.vue'
+// import navbartest from '@/components/navbar/navbartest.vue'
 import Footer from '@/components/footer/Foooter.vue'
 
 export default {
@@ -20,7 +20,7 @@ export default {
 
   components: {
     // navbar
-    navbartest,
+    // navbartest,
     Footer
   },
 
@@ -29,3 +29,10 @@ export default {
   }),
 };
 </script>
+
+
+<style scoped>
+.nav {
+  position: absolute
+}
+</style>

@@ -1,0 +1,76 @@
+<template>
+     <v-card color="rgba(255, 0, 0, 0.2)" class="card" elevation="19">
+    <v-container grid-list-lg>
+        <v-layout row wrap >
+            <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
+                <v-card elevation="19">
+                    <v-responsive>
+                        <v-img :src="item.img" height="200px">
+                            <v-container fill-height fluid>
+                                <v-layout fill-height>
+                                    <v-flex xs12 align-end flexbox>
+                                        <span class="headline white--text">{{item.name}}</span>
+                                    </v-flex>
+                                </v-layout>
+                            </v-container>
+                        </v-img>
+                    </v-responsive>
+                    <v-card-text>
+                        <div>
+                            <h3 class="headline mb-0">{{item.location}}</h3>
+                            <h3>{{item.hall}}</h3>
+                            <div>
+                                {{item.description}}
+                            </div>
+                        </div>
+                    </v-card-text>
+                    <v-btn block color="green" :to="'/hotels/' + item.id" >view</v-btn>
+                </v-card>
+            </v-flex>
+           
+        </v-layout>
+    </v-container>
+    </v-card>
+
+</template>
+
+
+<script>
+export default {
+    data () {
+        return {
+           // items: []
+        }
+    },
+
+    /* mounted: {
+        hotels() {
+            console.log(this.$store.getters.hotels)
+        }
+    }, */
+
+    computed: {
+        items () {
+            return this.$store.getters.hotels
+            // console.log(this.$store.getters.hotels)
+        }
+    }
+}
+</script>
+
+
+<style scoped>
+.card {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 10px;
+    margin-bottom: 60px
+}
+
+@media only screen and (max-width: 450px) {
+    .card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+</style>

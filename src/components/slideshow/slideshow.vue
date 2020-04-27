@@ -1,6 +1,6 @@
-<template>
+<template class="slide">
 <vueper-slides
-
+  
  :breakpoints="breakpoints"
  duration="3000"
  autoplay
@@ -103,7 +103,11 @@ export default {
 .slides {
   height: 600px;
 }
-
+/* 
+.slide {
+  position: fixed
+}
+ */
 @media only screen and (max-width: 360px) {
   .slides {
     height: 300px
