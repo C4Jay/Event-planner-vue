@@ -87,6 +87,11 @@ export default new Vuex.Store({
         hotelhall: pay.hall,
         hoteldescription: pay.description,
         hotelimg: pay.imgurl,
+        hotelimg1: pay.imgurl1,
+        hotelimg2: pay.imgurl2,
+        hotelimg3: pay.imgurl3,
+        hotelimg4: pay.imgurl4,
+        hotelimg5: pay.imgurl5,
         hotelwebsite: pay.website,
         hotelemail: pay.email
         
@@ -118,6 +123,11 @@ export default new Vuex.Store({
               number: obj[key].hotelcontact,
               description: obj[key].hoteldescription,
               img: obj[key].hotelimg,
+              img1: obj[key].hotelimg1,
+              img2: obj[key].hotelimg2,
+              img3: obj[key].hotelimg3,
+              img4: obj[key].hotelimg4,
+              img5: obj[key].hotelimg5,
               website: obj[key].hotelwebsite,
               email: obj[key].hotelemail,
               hall: obj[key].hotelhall

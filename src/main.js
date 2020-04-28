@@ -12,6 +12,9 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faSpa } from '@fortawesome/free-solid-svg-icons'
 import firebase from 'firebase'
 import StarRating from 'vue-star-rating'
+import LightGallery from 'vue-light-gallery';
+ 
+Vue.use(LightGallery);
 
 library.add(faUserSecret)
 library.add(fas)

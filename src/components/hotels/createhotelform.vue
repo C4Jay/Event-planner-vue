@@ -150,7 +150,122 @@
                         </v-layout>
                         </v-container>
                         
+                        <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-8">
+                                <v-btn @click="imgHandler">add more photos</v-btn>
+                            </v-flex>
+                        </v-layout>
+
+                        <v-container v-if="show">
+                            
+                            <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-8">
+                                <v-btn @click="onPickFile1" color="grey">Set photo</v-btn>
+                                <input type="file" 
+                                style="display: none" 
+                                ref="inputFile1" 
+                                accept="image/*"
+                                @change="onFilePicked1">
+                            </v-flex>
+                        </v-layout>
+
+                        <v-container v-if="imgurl1">
+
                         
+                        <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-10">
+                                <v-img width="80%" :src="imgurl1"></v-img>
+                            </v-flex>
+                        </v-layout>
+                        </v-container>
+
+                        <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-8">
+                                <v-btn @click="onPickFile2" color="grey">Set photo</v-btn>
+                                <input type="file" 
+                                style="display: none" 
+                                ref="inputFile2" 
+                                accept="image/*"
+                                @change="onFilePicked2">
+                            </v-flex>
+                        </v-layout>
+
+                        <v-container v-if="imgurl2">
+
+                        
+                        <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-10">
+                                <v-img width="80%" :src="imgurl2"></v-img>
+                            </v-flex>
+                        </v-layout>
+                        </v-container>
+
+
+                           <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-8">
+                                <v-btn @click="onPickFile3" color="grey">Set photo</v-btn>
+                                <input type="file" 
+                                style="display: none" 
+                                ref="inputFile3" 
+                                accept="image/*"
+                                @change="onFilePicked3">
+                            </v-flex>
+                        </v-layout>
+
+                        <v-container v-if="imgurl3">
+
+                        
+                        <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-10">
+                                <v-img width="80%" :src="imgurl3"></v-img>
+                            </v-flex>
+                        </v-layout>
+                        </v-container>
+
+
+                           <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-8">
+                                <v-btn @click="onPickFile4" color="grey">Set photo</v-btn>
+                                <input type="file" 
+                                style="display: none" 
+                                ref="inputFile4" 
+                                accept="image/*"
+                                @change="onFilePicked4">
+                            </v-flex>
+                        </v-layout>
+
+                        <v-container v-if="imgurl4">
+
+                        
+                        <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-10">
+                                <v-img width="80%" :src="imgurl4"></v-img>
+                            </v-flex>
+                        </v-layout>
+                        </v-container>
+
+
+                           <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-8">
+                                <v-btn @click="onPickFile5" color="grey">Set photo</v-btn>
+                                <input type="file" 
+                                style="display: none" 
+                                ref="inputFile5" 
+                                accept="image/*"
+                                @change="onFilePicked5">
+                            </v-flex>
+                        </v-layout>
+
+                        <v-container v-if="imgurl5">
+
+                        
+                        <v-layout row>
+                            <v-flex xs12 sm6 class="ml-10 mb-10">
+                                <v-img width="80%" :src="imgurl5"></v-img>
+                            </v-flex>
+                        </v-layout>
+                        </v-container>
+                        </v-container>
 
                            <!--  <v-layout row>                         
                                 <v-flex class="ml-10">
@@ -181,7 +296,7 @@ export default {
     data () {
         return {
             rate: null,
-            
+            show: false,
             hotel_name: '',
             hotel_location: '',
             hotel_capacity: '',
@@ -190,11 +305,22 @@ export default {
             hotel_contact_website: '',
             hotel_contact_email: '',
             imgfile: '',
-            imgurl: ''
+            imgfile1: '',
+            imgfile2: '',
+            imgurl: '',
+            imgurl1: '',
+            imgurl2: '',
+            imgurl3: '',
+            imgurl4: '',
+            imgurl5: ''
         }
     },
 
     methods: {
+        imgHandler () {
+            this.show = true
+        },
+
         createhotel () {
             console.log(
             this.hotel_name,
@@ -214,11 +340,36 @@ export default {
                 website: this.hotel_contact_website,
                 email: this.hotel_contact_email,
                 imgurl: this.imgurl,
+                imgurl1: this.imgurl1,
+                imgurl2: this.imgurl2,
+                imgurl3: this.imgurl3,
+                imgurl4: this.imgurl4,
+                imgurl5: this.imgurl5,
                 hall: this.hotel_hall})
         },
 
-         onPickFile() {
+    onPickFile() {
         this.$refs.inputFile.click()
+    },
+
+    onPickFile1() {
+        this.$refs.inputFile1.click()
+    },
+
+    onPickFile2() {
+        this.$refs.inputFile2.click()
+    },
+
+    onPickFile3() {
+        this.$refs.inputFile3.click()
+    },
+
+    onPickFile4() {
+        this.$refs.inputFile4.click()
+    },
+
+    onPickFile5() {
+        this.$refs.inputFile5.click()
     },
 
     onFilePicked (event) {
@@ -233,6 +384,71 @@ export default {
             })
             fileReader.readAsDataURL(files[0])
             this.imgfile = files[0]
+    },
+    onFilePicked1 (event) {
+        const files = event.target.files
+            let imgname = files[0].name
+            if (imgname.lastIndexOf('.') <= 0) {
+                return alert('No file')
+            }
+            const fileReader = new FileReader()
+            fileReader.addEventListener('load', () => {
+                this.imgurl1 = fileReader.result
+            })
+            fileReader.readAsDataURL(files[0])
+            this.imgfile1 = files[0]
+    },
+    onFilePicked2 (event) {
+        const files = event.target.files
+            let imgname = files[0].name
+            if (imgname.lastIndexOf('.') <= 0) {
+                return alert('No file')
+            }
+            const fileReader = new FileReader()
+            fileReader.addEventListener('load', () => {
+                this.imgurl2 = fileReader.result
+            })
+            fileReader.readAsDataURL(files[0])
+            this.imgfile2 = files[0]
+    },
+    onFilePicked3 (event) {
+        const files = event.target.files
+            let imgname = files[0].name
+            if (imgname.lastIndexOf('.') <= 0) {
+                return alert('No file')
+            }
+            const fileReader = new FileReader()
+            fileReader.addEventListener('load', () => {
+                this.imgurl3 = fileReader.result
+            })
+            fileReader.readAsDataURL(files[0])
+            this.imgfile3 = files[0]
+    },
+    onFilePicked4 (event) {
+        const files = event.target.files
+            let imgname = files[0].name
+            if (imgname.lastIndexOf('.') <= 0) {
+                return alert('No file')
+            }
+            const fileReader = new FileReader()
+            fileReader.addEventListener('load', () => {
+                this.imgurl4 = fileReader.result
+            })
+            fileReader.readAsDataURL(files[0])
+            this.imgfile4 = files[0]
+    },
+    onFilePicked5 (event) {
+        const files = event.target.files
+            let imgname = files[0].name
+            if (imgname.lastIndexOf('.') <= 0) {
+                return alert('No file')
+            }
+            const fileReader = new FileReader()
+            fileReader.addEventListener('load', () => {
+                this.imgurl5 = fileReader.result
+            })
+            fileReader.readAsDataURL(files[0])
+            this.imgfile5 = files[0]
     },
 
     }

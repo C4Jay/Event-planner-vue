@@ -42,6 +42,21 @@
             </v-card>
             </v-flex>
         </v-layout>
+        <v-flex xs12 class="ml-1 mr-3">
+        <v-carousel
+        autoplay
+        cycle
+        interval="3000">
+    <v-carousel-item
+      v-for="(item,i) in imgs"
+      :key="i"
+      :src="item"
+      reverse-transition="slide-Y-transition"
+      transition="slide-y-transition"
+    ></v-carousel-item>
+  </v-carousel>
+  
+        </v-flex>
     </v-container>
 </template>
 
@@ -52,7 +67,8 @@ export default {
     data() {
         return {
         wholeResponse: [],
-        hotel: {}
+        hotel: {},
+        imgs: []
         }
     },
     
@@ -60,7 +76,14 @@ export default {
     
     mounted () {
        
-        this.wholeResponse = this.$store.getters.hotels
+        this.wholeResponse = this.$store.getters.hotelsfind(this.id)
+        console.log(this.wholeResponse.img)
+        this.imgs.push(this.wholeResponse.img)
+        this.imgs.push(this.wholeResponse.img1)
+        this.imgs.push(this.wholeResponse.img2)
+        this.imgs.push(this.wholeResponse.img3)
+        this.imgs.push(this.wholeResponse.img4)
+        this.imgs.push(this.wholeResponse.img5)
     },
 
     computed: {
