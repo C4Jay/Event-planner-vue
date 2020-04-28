@@ -9,9 +9,8 @@
           md="4"
         >
           <v-text-field
-            v-model="firstname"
+            v-model="location"
             :rules="nameRules"
-            
             label="location"
             required
           ></v-text-field>
@@ -22,7 +21,8 @@
           md="4"
         >
           <v-text-field
-            v-model="lastname"
+          disabled
+            v-model="rating"
             :rules="nameRules"
             
             label="ratings"
@@ -34,10 +34,37 @@
           cols="12"
           md="4"
         >
-         <slider1></slider1>
+         <!-- <slider1></slider1> -->
+
+          <v-layout row>
+     <span xs12 class="mt-6 ml-3">capacity </span>
+<v-slider
+            v-model="slider"
+            class="align-center slider mt-7 mr-3"
+            :max="max"
+            :min="min"
+            hide-details
+          >
+            <template v-slot:append>
+              <v-text-field
+                v-model="slider"
+                class="mt-0 pt-0"
+                hide-details
+                single-line
+                type="number"
+                style="width: 60px"
+              ></v-text-field>
+            </template>
+       
+          </v-slider>    
+          <!-- <v-btn color="pink accent-1">apply</v-btn> -->
+     </v-layout>
+<!-- </v-flex> -->
+
+
         </v-col>
         <v-flex class="right">
-        <v-btn color="pink accent-1">find</v-btn>
+        <v-btn color="pink accent-1" @click="filterset">find</v-btn>
         </v-flex>
       </v-row>
     </v-container>
@@ -48,27 +75,28 @@
 </template>
 
 <script>
-import slider1 from '@/components/slider/slider1.vue'
+// import slider1 from '@/components/slider/slider1.vue'
 
 
   export default {
       components: {
-          slider1
+          // slider1
       },
     data: () => ({
       valid: false,
-      firstname: '',
-      lastname: '',
-      nameRules: [
-        v => !!v || 'Name is required',
-        v => v.length <= 10 || 'Name must be less than 10 characters',
-      ],
-      email: '',
-      emailRules: [
-        v => !!v || 'E-mail is required',
-        v => /.+@.+/.test(v) || 'E-mail must be valid',
-      ],
+      location: '',
+      
+      min: 0,
+        max: 1000,
+        slider: 40,
+        range: [-20, 70],
     }),
+
+    methods: {
+      filterset () {
+        this.$store.dispatch('filterhotel', {location: this.location, capacity: this.capacity})
+      }
+    }
   }
 </script>
 
