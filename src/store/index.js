@@ -10,7 +10,9 @@ export default new Vuex.Store({
     user: null,
     hotel: null,
 
-    hotels: []
+    hotels: [],
+
+    hotel_filter: {}
   },
 
   mutations: {
@@ -25,6 +27,10 @@ export default new Vuex.Store({
 
     hotelset (state, pay) {
       state.hotels = pay
+    },
+
+    filter_hotel(state, pay) {
+      state.hotel_filter = pay
     }
   },
 
@@ -77,6 +83,10 @@ export default new Vuex.Store({
         console.log(err)
       })
     },
+
+
+
+//Hotel
 
     ad_hotel({commit},pay) {
       const hotel = {
@@ -146,7 +156,43 @@ export default new Vuex.Store({
       
 
     },
-  },
+
+
+    filterhotel ({commit}, pay) {
+      commit('filter_hotel',pay)
+    },
+  
+
+//Photography
+
+  ad_photography({commit},pay) {
+    const photography = {
+      phototgraphyname: pay.name,
+      phototgraphylocation: pay.location,
+      photographycontact: pay.contact,
+      photographydescription: pay.description,
+      photographyimg: pay.imgurl,
+      photographyimg1: pay.imgurl1,
+      photographyimg2: pay.imgurl2,
+      photographyimg3: pay.imgurl3,
+      photographyimg4: pay.imgurl4,
+      photographyimg5: pay.imgurl5,
+      photographywebsite: pay.website,
+      photographyemail: pay.email,
+      photographycategories: pay.categories
+      
+    }
+
+    firebase.database().ref('Photography').push(photography)
+    .then((response) => {
+      console.log(response),
+      commit('adphotography',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+},
 
 
   modules: {
@@ -163,6 +209,14 @@ export default new Vuex.Store({
           return hotel.id == hotelid
         })
       }
+    },
+
+    hotelfilter (state) {
+      return state.hotel_filter
+    },
+
+    photography (state) {      
+      return state.photography    
     }
   }
 })
