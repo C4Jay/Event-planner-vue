@@ -9,8 +9,10 @@ export default new Vuex.Store({
 
     user: null,
     hotel: null,
+    photography: null,
 
     hotels: [],
+    photographys: [],
 
     hotel_filter: {}
   },
@@ -31,6 +33,14 @@ export default new Vuex.Store({
 
     filter_hotel(state, pay) {
       state.hotel_filter = pay
+    },
+
+    photographyset (state, pay) {
+      state.photographys = pay
+    },
+
+    adphotography (state, pay) {
+      state.photography = pay
     }
   },
 
@@ -191,7 +201,47 @@ export default new Vuex.Store({
     .catch(err => {
       console.log(err)
     })
-  }
+  },
+
+
+  fetchPhotography ({commit}) {
+    firebase.database().ref('Photography').once('value')
+    .then((data) => {
+     
+      const photography = []
+      const obj = data.val()
+      for(let key in obj) {
+        photography.push({
+            id: key,
+            name: obj[key].photographyname,
+            location: obj[key].photographylocation,
+            categories: obj[key].photographycataegories,
+            number: obj[key].photographycontact,
+            description: obj[key].photographydescription,
+            img: obj[key].photographyimg,
+            img1: obj[key].photographyimg1,
+            img2: obj[key].photographyimg2,
+            img3: obj[key].photographyimg3,
+            img4: obj[key].photographyimg4,
+            img5: obj[key].photographyimg5,
+            website: obj[key].photographywebsite,
+            email: obj[key].photographyemail,
+           
+        })
+
+    }
+    console.log(photography)
+    commit('photographyset',photography)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
 },
 
 
@@ -215,8 +265,8 @@ export default new Vuex.Store({
       return state.hotel_filter
     },
 
-    photography (state) {      
-      return state.photography    
+    photographys (state) {      
+      return state.photographys    
     }
   }
 })

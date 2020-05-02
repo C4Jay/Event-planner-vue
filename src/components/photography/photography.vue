@@ -121,7 +121,7 @@ export default {
 
     computed: {
         items () {
-            return this.$store.getters.hotels
+            return this.$store.getters.photographys
             // console.log(this.$store.getters.hotels)
         }
     },

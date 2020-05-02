@@ -51,6 +51,7 @@ new Vue({
     firebase.analytics();
 
     this.$store.dispatch('fetchHotels')
+    this.$store.dispatch('fetchPhotography')
 
   }
 }).$mount('#app')
