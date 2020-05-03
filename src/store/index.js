@@ -213,9 +213,9 @@ export default new Vuex.Store({
       for(let key in obj) {
         photography.push({
             id: key,
-            name: obj[key].photographyname,
-            location: obj[key].photographylocation,
-            categories: obj[key].photographycataegories,
+            name: obj[key].phototgraphyname,
+            location: obj[key].phototgraphylocation,
+            categories: obj[key].photographycategories,
             number: obj[key].photographycontact,
             description: obj[key].photographydescription,
             img: obj[key].photographyimg,
@@ -267,6 +267,14 @@ export default new Vuex.Store({
 
     photographys (state) {      
       return state.photographys    
-    }
+    },
+
+    photographysfind (state) {
+      return (photographyid) => {
+        return state.photographys.find((photography) => {
+          return photography.id == photographyid
+        })
+      }
+    },
   }
 })

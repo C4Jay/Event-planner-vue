@@ -36,12 +36,13 @@
                             </v-layout>
 
                             <v-layout row>                         <v-flex>
-                                    <v-text-field class="mr-6 ml-6"
+                                    <v-select class="mr-6 ml-6"
                                     v-model="hotel_location"
-                                    solo 
-                                    prepend-icon="mdi-lock"
+                                    solo
+                                    :items="districts" 
+                                    prepend-icon="mdi-earth"
                                     label="Hotel location">
-                                    </v-text-field>
+                                    </v-select>
                                 </v-flex>
                             
                             </v-layout>
@@ -312,7 +313,32 @@ export default {
             imgurl2: '',
             imgurl3: '',
             imgurl4: '',
-            imgurl5: ''
+            imgurl5: '',
+            districts: ['Galle',
+                    'Colombo',
+                    'Gampaha',
+                    'Hambantota',
+                    'Jaffna',
+                    'Kalutara',
+                    'Kandy',
+                    'Kegalle',
+                    'Kilinochchi',
+                    'Kurunegala',
+                    'Mannar',
+                    'Matale',
+                    'Matara',
+                    'Monaragala',
+                    'Mullaitivu',
+                    'Nuwara Eliya',
+                    'Polonnaruwa',
+                    'Puttalam',
+                    'Ratnapura',
+                    'Trincomalee',
+                    'Vavuniya',
+                    'Ampara',
+                    'Anuradhapura',
+                    'Badulla',
+                    'Batticalo']
         }
     },
 

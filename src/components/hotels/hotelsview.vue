@@ -10,12 +10,12 @@
           cols="12"
           md="4"
         >
-          <v-text-field
+          <v-select
             v-model="location"
-            :rules="nameRules"
             label="location"
+            :items="districts"
             required
-          ></v-text-field>
+          ></v-select>
         </v-col>
 
         <v-col
@@ -66,7 +66,7 @@
 
         </v-col>
         <v-flex class="right">
-        <v-btn color="pink accent-1" @click="filterset">find</v-btn>
+        <v-btn color="pink accent-1" @click="filterset">reset</v-btn>
         </v-flex>
       </v-row>
     </v-container>
@@ -84,7 +84,7 @@
     <v-container grid-list-lg>
         <v-layout row wrap >
             <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
-                <v-card v-if="slider == 40 || slider <= item.capacity" elevation="19">
+                <v-card v-if="(slider == 40 || slider <= item.capacity) && (location == '' || location == item.location)" elevation="19">
                     <v-responsive>
                         <v-img :src="item.img" height="200px">
                             <v-container fill-height fluid>
@@ -129,6 +129,31 @@ export default {
         max: 1000,
         slider: 40,
         range: [-20, 70],
+        districts: ['Galle',
+                    'Colombo',
+                    'Gampaha',
+                    'Hambantota',
+                    'Jaffna',
+                    'Kalutara',
+                    'Kandy',
+                    'Kegalle',
+                    'Kilinochchi',
+                    'Kurunegala',
+                    'Mannar',
+                    'Matale',
+                    'Matara',
+                    'Monaragala',
+                    'Mullaitivu',
+                    'Nuwara Eliya',
+                    'Polonnaruwa',
+                    'Puttalam',
+                    'Ratnapura',
+                    'Trincomalee',
+                    'Vavuniya',
+                    'Ampara',
+                    'Anuradhapura',
+                    'Badulla',
+                    'Batticalo']
         }
     },
 
@@ -145,9 +170,12 @@ export default {
         }
     },
 
+   
     methods: {
         filterset () {
-            
+            this.location = '',
+            this.category = '',
+            this.slider = 40
         }
     }
 }

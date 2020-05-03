@@ -10,12 +10,12 @@
           cols="12"
           md="4"
         >
-          <v-text-field
+          <v-select
             v-model="location"
-            :rules="nameRules"
+            :items="districts"
             label="location"
             required
-          ></v-text-field>
+          ></v-select>
         </v-col>
 
         <v-col
@@ -34,10 +34,10 @@
 
         <v-col cols="12" md="4">
           <v-select
-            v-model="value"
+            v-model="category"
             :items="categories"
-            chips
-            label="Photo Categories"
+          
+            label="Photo Categories (need location)"
            
             solo
           ></v-select>
@@ -45,7 +45,7 @@
 
        
         <v-flex class="right">
-        <v-btn color="pink accent-1" @click="filterset">find</v-btn>
+        <v-btn color="pink accent-1" @click="filterset">reset</v-btn>
         </v-flex>
       </v-row>
     </v-container>
@@ -63,7 +63,7 @@
     <v-container grid-list-lg>
         <v-layout row wrap >
             <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
-                <v-card v-if="slider == 40 || slider <= item.capacity" elevation="19">
+                <v-card v-if="(location == '' || location == item.location ) && (category == '' || category == item.categories[0] || category == item.categories[1] )" elevation="19">
                     <v-responsive>
                         <v-img :src="item.img" height="200px">
                             <v-container fill-height fluid>
@@ -110,10 +110,36 @@ export default {
         max: 1000,
         slider: 40,
         range: [-20, 70],
+        districts: ['Galle',
+                    'Colombo',
+                    'Gampaha',
+                    'Hambantota',
+                    'Jaffna',
+                    'Kalutara',
+                    'Kandy',
+                    'Kegalle',
+                    'Kilinochchi',
+                    'Kurunegala',
+                    'Mannar',
+                    'Matale',
+                    'Matara',
+                    'Monaragala',
+                    'Mullaitivu',
+                    'Nuwara Eliya',
+                    'Polonnaruwa',
+                    'Puttalam',
+                    'Ratnapura',
+                    'Trincomalee',
+                    'Vavuniya',
+                    'Ampara',
+                    'Anuradhapura',
+                    'Badulla',
+                    'Batticalo'],
+        category: ''
         }
     },
 
-    /* mounted: {
+   /*  mounted: {
         hotels() {
             console.log(this.$store.getters.hotels)
         }
@@ -128,7 +154,8 @@ export default {
 
     methods: {
         filterset () {
-            
+            this.location = '',
+            this.category = ''
         }
     }
 }
