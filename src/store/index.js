@@ -310,6 +310,8 @@ export default new Vuex.Store({
             img5: obj[key].bandsimg5,
             website: obj[key].bandswebsite,
             email: obj[key].bandsemail,
+            pricemin: obj[key].bandspricemin,
+            pricemax: obj[key].bandspricemax,
            
         })
 
@@ -363,6 +365,14 @@ export default new Vuex.Store({
 
     bands (state) {
       return state.bands
-    }
+    },
+
+    bandsfind (state) {
+      return (bandsid) => {
+        return state.bands.find((band) => {
+          return band.id == bandsid
+        })
+      }
+    },
   }
 })

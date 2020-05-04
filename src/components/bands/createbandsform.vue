@@ -71,7 +71,7 @@
                                     solo>
                                     </v-text-field>
                                     </v-flex>
-                                    <v-flex sm3>
+                                    <v-flex class="ml-9" sm3>
                                     <v-text-field
                                     label="Max"
                                     v-model="pricemax"

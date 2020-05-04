@@ -37,7 +37,7 @@
             v-model="category"
             :items="categories"
           
-            label="Type of the band (need location)"
+            label="Type of the band"
            
             solo
           ></v-select>
@@ -90,7 +90,7 @@
                             </div>
                         </div>
                     </v-card-text>
-                    <v-btn block color="green" :to="'/photography/' + item.id" >view</v-btn>
+                    <v-btn block color="green" :to="'/bands/' + item.id" >view</v-btn>
                 </v-card>
             </v-flex>
            

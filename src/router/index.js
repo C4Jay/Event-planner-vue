@@ -25,7 +25,7 @@ import Createphotographyform from '@/components/photography/createphotographyfor
 import Createbandsform from '@/components/bands/createbandsform.vue';
 import navbartr from '@/components/navbar/navbartrtest.vue';
 import Singlephotography from '@/components/photography/singlephotography.vue';
-
+import Singleband from '@/components/bands/singleband.vue';
 Vue.use(VueRouter)
 
   const routes = [
@@ -50,6 +50,12 @@ Vue.use(VueRouter)
     name: 'photography',
     props: true,
     component: Singlephotography
+  },
+  {
+    path: '/bands/:id',
+    name: 'bands',
+    props: true,
+    component: Singleband
   },
   {
     path: '/hotelsform',
