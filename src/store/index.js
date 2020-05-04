@@ -13,8 +13,12 @@ export default new Vuex.Store({
 
     hotels: [],
     photographys: [],
+    bands: [],
 
-    hotel_filter: {}
+    hotel_filter: {},
+
+    band: null,
+  
   },
 
   mutations: {
@@ -41,6 +45,14 @@ export default new Vuex.Store({
 
     adphotography (state, pay) {
       state.photography = pay
+    },
+
+    adband (state, pay) {
+      state.band = pay
+    },
+
+    bandset (state, pay) {
+      state.bands = pay
     }
   },
 
@@ -242,6 +254,78 @@ export default new Vuex.Store({
 
   },
 
+
+  //bands
+
+  ad_bands({commit},pay) {
+    const band = {
+     bandsname: pay.name,
+     bandslocation: pay.location,
+     bandscontact: pay.contact,
+     bandsdescription: pay.description,
+     bandsimg: pay.imgurl,
+     bandsimg1: pay.imgurl1,
+     bandsimg2: pay.imgurl2,
+     bandsimg3: pay.imgurl3,
+     bandsimg4: pay.imgurl4,
+     bandsimg5: pay.imgurl5,
+     bandswebsite: pay.website,
+     bandsemail: pay.email,
+     bandscategory: pay.categories,
+     bandspricemin: pay.pricemin,
+     bandspricemax: pay.pricemax
+      
+    }
+
+    firebase.database().ref('Bands').push(band)
+    .then((response) => {
+      console.log(response),
+      commit('adband',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
+  fetchbands ({commit}) {
+    firebase.database().ref('Bands').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].bandsname,
+            location: obj[key].bandslocation,
+            category: obj[key].bandscategory,
+            number: obj[key].bandscontact,
+            description: obj[key].bandsdescription,
+            img: obj[key].bandsimg,
+            img1: obj[key].bandsimg1,
+            img2: obj[key].bandsimg2,
+            img3: obj[key].bandsimg3,
+            img4: obj[key].bandsimg4,
+            img5: obj[key].bandsimg5,
+            website: obj[key].bandswebsite,
+            email: obj[key].bandsemail,
+           
+        })
+
+    }
+    console.log(band)
+    commit('bandset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
 },
 
 
@@ -276,5 +360,9 @@ export default new Vuex.Store({
         })
       }
     },
+
+    bands (state) {
+      return state.bands
+    }
   }
 })

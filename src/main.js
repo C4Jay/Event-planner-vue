@@ -52,6 +52,7 @@ new Vue({
 
     this.$store.dispatch('fetchHotels')
     this.$store.dispatch('fetchPhotography')
+    this.$store.dispatch('fetchbands')
 
   }
 }).$mount('#app')
