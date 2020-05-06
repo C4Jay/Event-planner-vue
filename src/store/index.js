@@ -18,6 +18,7 @@ export default new Vuex.Store({
     hotel_filter: {},
 
     band: null,
+    car: null
   
   },
 
@@ -53,7 +54,11 @@ export default new Vuex.Store({
 
     bandset (state, pay) {
       state.bands = pay
-    }
+    },
+
+    adcar (state, pay) {
+      state.car = pay
+    },
   },
 
   actions: {
@@ -326,6 +331,40 @@ export default new Vuex.Store({
     )
     
 
+  },
+
+
+  //cars
+
+  ad_cars({commit},pay) {
+    const car = {
+     carsname: pay.name,
+     carslocation: pay.location,
+     carscontact: pay.contact,
+     carsdescription: pay.description,
+     carsimg: pay.imgurl,
+     carsimg1: pay.imgurl1,
+     carsimg2: pay.imgurl2,
+     carsimg3: pay.imgurl3,
+     carsimg4: pay.imgurl4,
+     carsimg5: pay.imgurl5,
+     carswebsite: pay.website,
+     carsemail: pay.email,
+     carscategory: pay.categories,
+     carspricemin: pay.pricemin,
+     carspricemax: pay.pricemax,
+     carslist: pay.list
+      
+    }
+
+    firebase.database().ref('Cars').push(car)
+    .then((response) => {
+      console.log(response),
+      commit('adcar',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
   },
 
 },

@@ -23,6 +23,7 @@ import Singlehotel from '@/components/hotels/singlehotel.vue';
 import Createhotelform from '@/components/hotels/createhotelform.vue';
 import Createphotographyform from '@/components/photography/createphotographyform.vue';
 import Createbandsform from '@/components/bands/createbandsform.vue';
+import Createcarsform from '@/components/cars/createcarsform.vue';
 import navbartr from '@/components/navbar/navbartrtest.vue';
 import Singlephotography from '@/components/photography/singlephotography.vue';
 import Singleband from '@/components/bands/singleband.vue';
@@ -162,6 +163,11 @@ Vue.use(VueRouter)
     path: '/createbandsform',
     name: 'createbandsform',
     component: Createbandsform
+  },
+  {
+    path: '/createcarsform',
+    name: 'createcarsform',
+    component: Createcarsform
   },
   {
     path: '/navbartr',
