@@ -22,8 +22,10 @@ export default new Vuex.Store({
     car: null,
 
     catering: null,
-    caterings: []
-  
+    caterings: [],
+ 
+    cake: null,
+    cakes: []
   },
 
   mutations: {
@@ -74,7 +76,15 @@ export default new Vuex.Store({
 
     cateringset (state, pay) {
       state.caterings = pay
-    }
+    },
+
+    adcake (state, pay) {
+      state.cake = pay
+    },
+
+    cakeset (state, pay) {
+      state.cakes = pay
+    },
   },
 
   actions: {
@@ -502,6 +512,85 @@ export default new Vuex.Store({
   },
 
 
+  //cake
+
+
+  ad_cake({commit},pay) {
+    const cake = {
+     cakename: pay.name,
+     cakelocation: pay.location,
+     cakecontact: pay.contact,
+     cakedescription: pay.description,
+     cakeimg: pay.imgurl,
+     cakeimg1: pay.imgurl1,
+     cakeimg2: pay.imgurl2,
+     cakeimg3: pay.imgurl3,
+     cakeimg4: pay.imgurl4,
+     cakeimg5: pay.imgurl5,
+     cakewebsite: pay.website,
+     cakeemail: pay.email,
+    //  cateringcategory: pay.categories,
+     cakepricemin: pay.pricemin,
+     cakepricemax: pay.pricemax,
+     cakecategory: pay.category
+     
+      
+    }
+
+    firebase.database().ref('Cake').push(cake)
+    .then((response) => {
+      console.log(response),
+      commit('adcake',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
+  fetchcake ({commit}) {
+    firebase.database().ref('Cake').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].cakename,
+            location: obj[key].cakelocation,
+            /* category: obj[key].cateringcategory, */
+            number: obj[key].cakecontact,
+            description: obj[key].cakedescription,
+            img: obj[key].cakeimg,
+            img1: obj[key].cakeimg1,
+            img2: obj[key].cakeimg2,
+            img3: obj[key].cakeimg3,
+            img4: obj[key].cakeimg4,
+            img5: obj[key].cakeimg5,
+            website: obj[key].cakewebsite,
+            email: obj[key].cakeemail,
+            pricemin: obj[key].cakepricemin,
+            pricemax: obj[key].cakepricemax,
+            category: obj[key].cakecategory
+            
+           
+        })
+
+    }
+    console.log(band)
+    commit('cakeset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
+
 
 },
 
@@ -572,6 +661,19 @@ export default new Vuex.Store({
           return catering.id == cateringsid
         })
       }
-    }
+    },
+
+    cakes (state) {
+      return state.cakes
+    },
+
+    cakesfind (state) {
+      return (cakesid) => {
+        return state.cakes.find((cake) => {
+          return cake.id == cakesid
+        })
+      }
+    },
+
   }
 })

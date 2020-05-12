@@ -30,6 +30,8 @@ import Singleband from '@/components/bands/singleband.vue';
 import Singlecar from '@/components/cars/singlecar.vue';
 import Singlecatering from '@/components/catering/singlecatering.vue';
 import Createcateringform from '@/components/catering/createcateringform.vue';
+import Createcakeform from '@/components/cake/createcakeform.vue';
+import Singlecake from '@/components/cake/singlecake.vue';
 
 Vue.use(VueRouter)
 
@@ -73,6 +75,12 @@ Vue.use(VueRouter)
     name: 'catering',
     props: true,
     component: Singlecatering
+  },
+  {
+    path: '/cake/:id',
+    name: 'cake',
+    props: true,
+    component: Singlecake
   },
   {
     path: '/hotelsform',
@@ -189,6 +197,11 @@ Vue.use(VueRouter)
     path: '/createcateringform',
     name: 'createcateringform',
     component: Createcateringform
+  },
+  {
+    path: '/createcakeform',
+    name: 'createcakeform',
+    component: Createcakeform
   },
   {
     path: '/navbartr',

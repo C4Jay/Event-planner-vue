@@ -55,6 +55,7 @@ new Vue({
     this.$store.dispatch('fetchbands')
     this.$store.dispatch('fetchcars')
     this.$store.dispatch('fetchcatering')
+    this.$store.dispatch('fetchcake')
 
   }
 }).$mount('#app')
