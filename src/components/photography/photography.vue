@@ -81,7 +81,7 @@
                             <v-layout row v-for="category in item.categories" :key="category">
                             <h3>{{category}}</h3>
                             </v-layout>
-                            <div>
+                            <div class="text-weight-black">
                                 {{item.description}}
                             </div>
                         </div>

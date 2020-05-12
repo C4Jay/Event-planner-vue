@@ -101,7 +101,7 @@
                             <h3 class="headline mb-0">{{item.location}}</h3>
                             <h3>{{item.hall}}</h3>
                             <h3>seating {{item.capacity}}</h3>
-                            <div>
+                            <div class="text-weight-black">
                                 {{item.description}}
                             </div>
                         </div>

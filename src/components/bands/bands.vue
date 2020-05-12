@@ -85,7 +85,7 @@
                             <div>
                               {{item.pricemin}} - {{item.pricemax}}
                             </div>
-                            <div>
+                            <div class="text-weight-black">
                                 {{item.description}}
                             </div>
                         </div>

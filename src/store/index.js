@@ -14,11 +14,15 @@ export default new Vuex.Store({
     hotels: [],
     photographys: [],
     bands: [],
+    cars: [],
 
     hotel_filter: {},
 
     band: null,
-    car: null
+    car: null,
+
+    catering: null,
+    caterings: []
   
   },
 
@@ -59,6 +63,18 @@ export default new Vuex.Store({
     adcar (state, pay) {
       state.car = pay
     },
+
+    carset (state, pay) {
+      state.cars = pay
+    },
+
+    adcatering (state, pay) {
+      state.catering = pay
+    },
+
+    cateringset (state, pay) {
+      state.caterings = pay
+    }
   },
 
   actions: {
@@ -367,6 +383,126 @@ export default new Vuex.Store({
     })
   },
 
+
+  fetchcars ({commit}) {
+    firebase.database().ref('Cars').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].carsname,
+            location: obj[key].carslocation,
+            category: obj[key].carscategory,
+            number: obj[key].carscontact,
+            description: obj[key].carsdescription,
+            img: obj[key].carsimg,
+            img1: obj[key].carsimg1,
+            img2: obj[key].carsimg2,
+            img3: obj[key].carsimg3,
+            img4: obj[key].carsimg4,
+            img5: obj[key].carsimg5,
+            website: obj[key].carswebsite,
+            email: obj[key].carsemail,
+            pricemin: obj[key].carspricemin,
+            pricemax: obj[key].carspricemax,
+            list: obj[key].carslist,
+           
+        })
+
+    }
+    console.log(band)
+    commit('carset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
+
+  //catering
+
+  ad_catering({commit},pay) {
+    const cater = {
+     cateringname: pay.name,
+     cateringlocation: pay.location,
+     cateringcontact: pay.contact,
+     cateringdescription: pay.description,
+     cateringimg: pay.imgurl,
+     cateringimg1: pay.imgurl1,
+     cateringimg2: pay.imgurl2,
+     cateringimg3: pay.imgurl3,
+     cateringimg4: pay.imgurl4,
+     cateringimg5: pay.imgurl5,
+     cateringwebsite: pay.website,
+     cateringemail: pay.email,
+    //  cateringcategory: pay.categories,
+     cateringpricemin: pay.pricemin,
+     cateringpricemax: pay.pricemax,
+     
+      
+    }
+
+    firebase.database().ref('Catering').push(cater)
+    .then((response) => {
+      console.log(response),
+      commit('adcatering',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
+  fetchcatering ({commit}) {
+    firebase.database().ref('Catering').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].cateringname,
+            location: obj[key].cateringlocation,
+            /* category: obj[key].cateringcategory, */
+            number: obj[key].cateringcontact,
+            description: obj[key].cateringdescription,
+            img: obj[key].cateringimg,
+            img1: obj[key].cateringimg1,
+            img2: obj[key].cateringimg2,
+            img3: obj[key].cateringimg3,
+            img4: obj[key].cateringimg4,
+            img5: obj[key].cateringimg5,
+            website: obj[key].cateringwebsite,
+            email: obj[key].cateringemail,
+            pricemin: obj[key].cateringpricemin,
+            pricemax: obj[key].cateringpricemax,
+            
+           
+        })
+
+    }
+    console.log(band)
+    commit('cateringset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
+
+
 },
 
 
@@ -413,5 +549,29 @@ export default new Vuex.Store({
         })
       }
     },
+
+    cars (state) {
+      return state.cars
+    },
+
+    carsfind (state) {
+      return (carsid) => {
+        return state.cars.find((car) => {
+          return car.id == carsid
+        })
+      }
+    },
+
+    catering (state) {
+      return state.caterings
+    },
+
+    cateringfind (state) {
+      return (cateringsid) => {
+        return state.caterings.find((catering) => {
+          return catering.id == cateringsid
+        })
+      }
+    }
   }
 })

@@ -27,6 +27,10 @@ import Createcarsform from '@/components/cars/createcarsform.vue';
 import navbartr from '@/components/navbar/navbartrtest.vue';
 import Singlephotography from '@/components/photography/singlephotography.vue';
 import Singleband from '@/components/bands/singleband.vue';
+import Singlecar from '@/components/cars/singlecar.vue';
+import Singlecatering from '@/components/catering/singlecatering.vue';
+import Createcateringform from '@/components/catering/createcateringform.vue';
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -57,6 +61,18 @@ Vue.use(VueRouter)
     name: 'bands',
     props: true,
     component: Singleband
+  },
+  {
+    path: '/cars/:id',
+    name: 'cars',
+    props: true,
+    component: Singlecar
+  },
+  {
+    path: '/catering/:id',
+    name: 'catering',
+    props: true,
+    component: Singlecatering
   },
   {
     path: '/hotelsform',
@@ -168,6 +184,11 @@ Vue.use(VueRouter)
     path: '/createcarsform',
     name: 'createcarsform',
     component: Createcarsform
+  },
+  {
+    path: '/createcateringform',
+    name: 'createcateringform',
+    component: Createcateringform
   },
   {
     path: '/navbartr',
