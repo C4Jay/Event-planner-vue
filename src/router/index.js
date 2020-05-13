@@ -31,6 +31,7 @@ import Singlecar from '@/components/cars/singlecar.vue';
 import Singlecatering from '@/components/catering/singlecatering.vue';
 import Createcateringform from '@/components/catering/createcateringform.vue';
 import Createcakeform from '@/components/cake/createcakeform.vue';
+import Createbridalwearform from '@/components/bridalwear/createbridalwearform.vue';
 import Singlecake from '@/components/cake/singlecake.vue';
 
 Vue.use(VueRouter)
@@ -202,6 +203,11 @@ Vue.use(VueRouter)
     path: '/createcakeform',
     name: 'createcakeform',
     component: Createcakeform
+  },
+  {
+    path: '/createbridalwearform',
+    name: 'createbridalwearform',
+    component: Createbridalwearform
   },
   {
     path: '/navbartr',

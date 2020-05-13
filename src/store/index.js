@@ -25,7 +25,10 @@ export default new Vuex.Store({
     caterings: [],
  
     cake: null,
-    cakes: []
+    cakes: [],
+
+    bridalwear: null,
+    bridalwears: []
   },
 
   mutations: {
@@ -85,6 +88,15 @@ export default new Vuex.Store({
     cakeset (state, pay) {
       state.cakes = pay
     },
+
+    adbridalwear (state, pay) {
+      state.bridalwear = pay
+    },
+
+    bridalwearset (state, pay) {
+      state.bridalwears = pay
+    },
+
   },
 
   actions: {
@@ -591,6 +603,89 @@ export default new Vuex.Store({
   },
 
 
+  //bridalwear
+
+  ad_bridalwear({commit},pay) {
+    const cake = {
+     bridalwearname: pay.name,
+     bridalwearlocation: pay.location,
+     bridalwearcontact: pay.contact,
+     bridalweardescription: pay.description,
+     bridalwearimg: pay.imgurl,
+     bridalwearimg1: pay.imgurl1,
+     bridalwearimg2: pay.imgurl2,
+     bridalwearimg3: pay.imgurl3,
+     bridalwearimg4: pay.imgurl4,
+     bridalwearimg5: pay.imgurl5,
+     bridalwearwebsite: pay.website,
+     bridalwearemail: pay.email,
+    //  cateringcategory: pay.categories,
+     bridalwearpricemin: pay.pricemin,
+     bridalwearpricemax: pay.pricemax,
+     bridalwearcategory: pay.category,
+     bridalwearweddinglist: pay.weddinglist,
+     bridalwearhomecominglist: pay.homecominglist
+     
+      
+    }
+
+    firebase.database().ref('Wear').push(cake)
+    .then((response) => {
+      console.log(response),
+      commit('adbridalwear',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+  fetchbridalwear ({commit}) {
+    firebase.database().ref('Wear').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].bridalwearname,
+            location: obj[key].bridalwearlocation,
+            /* category: obj[key].cateringcategory, */
+            number: obj[key].bridalwearcontact,
+            description: obj[key].bridalweardescription,
+            img: obj[key].bridalwearimg,
+            img1: obj[key].bridalwearimg1,
+            img2: obj[key].bridalwearimg2,
+            img3: obj[key].bridalwearimg3,
+            img4: obj[key].bridalwearimg4,
+            img5: obj[key].bridalwearimg5,
+            website: obj[key].bridalwearwebsite,
+            email: obj[key].bridalwearemail,
+            pricemin: obj[key].bridalwearpricemin,
+            pricemax: obj[key].bridalwearpricemax,
+            category: obj[key].bridalwearcategory,
+            weddinglist: obj[key].bridalwearweddinglist,
+            homecominglist: obj[key].bridalwearhomecominglist
+            
+           
+        })
+
+    }
+    console.log(band)
+    commit('bridalwearset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
+
+
+
 
 },
 
@@ -671,6 +766,18 @@ export default new Vuex.Store({
       return (cakesid) => {
         return state.cakes.find((cake) => {
           return cake.id == cakesid
+        })
+      }
+    },
+
+    bridalwears (state) {
+      return state.bridalwears
+    },
+
+    bridalwearsfind (state) {
+      return (bridalwearsid) => {
+        return state.bridalwears.find((bridalwear) => {
+          return bridalwear.id == bridalwearsid
         })
       }
     },
