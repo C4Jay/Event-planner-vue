@@ -31,8 +31,14 @@ import Singlecar from '@/components/cars/singlecar.vue';
 import Singlecatering from '@/components/catering/singlecatering.vue';
 import Createcateringform from '@/components/catering/createcateringform.vue';
 import Createcakeform from '@/components/cake/createcakeform.vue';
+import Createlocationform from '@/components/locations/createlocationsform.vue';
 import Createbridalwearform from '@/components/bridalwear/createbridalwearform.vue';
+import Createinvcardform from '@/components/invcards/createinvcardsform.vue';
 import Singlecake from '@/components/cake/singlecake.vue';
+import Singlebridalwear from '@/components/bridalwear/singlebridalwear.vue';
+import Singlelocation from '@/components/locations/singlelocation.vue';
+import Singleinvcard from '@/components/invcards/singleinvcard.vue';
+
 
 Vue.use(VueRouter)
 
@@ -82,6 +88,24 @@ Vue.use(VueRouter)
     name: 'cake',
     props: true,
     component: Singlecake
+  },
+  {
+    path: '/bridalwear/:id',
+    name: 'bridalwear',
+    props: true,
+    component: Singlebridalwear
+  },
+  {
+    path: '/locations/:id',
+    name: 'location',
+    props: true,
+    component: Singlelocation
+  },
+  {
+    path: '/invcards/:id',
+    name: 'invcard',
+    props: true,
+    component: Singleinvcard
   },
   {
     path: '/hotelsform',
@@ -205,9 +229,19 @@ Vue.use(VueRouter)
     component: Createcakeform
   },
   {
+    path: '/createlocationform',
+    name: 'createlocationform',
+    component: Createlocationform
+  },
+  {
     path: '/createbridalwearform',
     name: 'createbridalwearform',
     component: Createbridalwearform
+  },
+  {
+    path: '/createinvcardform',
+    name: 'createinvcardform',
+    component: Createinvcardform
   },
   {
     path: '/navbartr',

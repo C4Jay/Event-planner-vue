@@ -28,7 +28,13 @@ export default new Vuex.Store({
     cakes: [],
 
     bridalwear: null,
-    bridalwears: []
+    bridalwears: [],
+
+    location: null,
+    locations: [],
+
+    card: null,
+    cards: [],
   },
 
   mutations: {
@@ -96,6 +102,23 @@ export default new Vuex.Store({
     bridalwearset (state, pay) {
       state.bridalwears = pay
     },
+
+    adlocation (state, pay) {
+      state.location = pay
+    },
+
+    locationset (state, pay) {
+      state.locations = pay
+    },
+
+    adcard (state, pay) {
+      state.card = pay
+    },
+
+    cardset (state, pay) {
+      state.cards = pay
+    },
+
 
   },
 
@@ -685,6 +708,165 @@ export default new Vuex.Store({
 
 
 
+  //location
+
+
+  ad_location({commit},pay) {
+    const location = {
+     locationname: pay.name,
+     locationlocation: pay.location,
+     locationcontact: pay.contact,
+     locationdescription: pay.description,
+     locationimg: pay.imgurl,
+     locationimg1: pay.imgurl1,
+     locationimg2: pay.imgurl2,
+     locationimg3: pay.imgurl3,
+     locationimg4: pay.imgurl4,
+     locationimg5: pay.imgurl5,
+     locationwebsite: pay.website,
+     locationemail: pay.email,
+    //  cateringcategory: pay.categories,
+     locationpricemin: pay.pricemin,
+     locationpricemax: pay.pricemax,
+    //  locationcategory: pay.category
+     
+      
+    }
+
+    firebase.database().ref('Location').push(location)
+    .then((response) => {
+      console.log(response),
+      commit('adlocation',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
+  fetchlocation ({commit}) {
+    firebase.database().ref('Location').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].locationname,
+            location: obj[key].locationlocation,
+            /* category: obj[key].cateringcategory, */
+            number: obj[key].locationcontact,
+            description: obj[key].locationdescription,
+            img: obj[key].locationimg,
+            img1: obj[key].locationimg1,
+            img2: obj[key].locationimg2,
+            img3: obj[key].locationimg3,
+            img4: obj[key].locationimg4,
+            img5: obj[key].locationimg5,
+            website: obj[key].locationwebsite,
+            email: obj[key].locationemail,
+            pricemin: obj[key].locationpricemin,
+            pricemax: obj[key].locationpricemax,
+            // category: obj[key].locationcategory
+            
+           
+        })
+
+    }
+    console.log(band)
+    commit('locationset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
+
+  //cards/gifts
+
+  ad_card({commit},pay) {
+    const card = {
+     cardname: pay.name,
+     cardlocation: pay.location,
+     cardcontact: pay.contact,
+     carddescription: pay.description,
+     cardimg: pay.imgurl,
+     cardimg1: pay.imgurl1,
+     cardimg2: pay.imgurl2,
+     cardimg3: pay.imgurl3,
+     cardimg4: pay.imgurl4,
+     cardimg5: pay.imgurl5,
+     cardwebsite: pay.website,
+     cardemail: pay.email,
+    //  cateringcategory: pay.categories,
+     cardpricemin: pay.pricemin,
+     cardpricemax: pay.pricemax,
+     cardcategory: pay.category
+     
+      
+    }
+
+    firebase.database().ref('CardsGifts').push(card)
+    .then((response) => {
+      console.log(response),
+      commit('adcard',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
+  fetchcard ({commit}) {
+    firebase.database().ref('CardsGifts').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].cardname,
+            location: obj[key].cardlocation,
+            /* category: obj[key].cateringcategory, */
+            number: obj[key].cardcontact,
+            description: obj[key].carddescription,
+            img: obj[key].cardimg,
+            img1: obj[key].cardimg1,
+            img2: obj[key].cardimg2,
+            img3: obj[key].cardimg3,
+            img4: obj[key].cardimg4,
+            img5: obj[key].cardimg5,
+            website: obj[key].cardwebsite,
+            email: obj[key].cardemail,
+            pricemin: obj[key].cardpricemin,
+            pricemax: obj[key].cardpricemax,
+            category: obj[key].cardcategory
+            
+           
+        })
+
+    }
+    console.log(band)
+    commit('cardset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
+
+
+
 
 
 },
@@ -781,6 +963,31 @@ export default new Vuex.Store({
         })
       }
     },
+
+    locations (state) {
+      return state.locations
+    },
+
+    locationsfind (state) {
+      return (locationsid) => {
+        return state.locations.find((location) => {
+          return location.id == locationsid
+        })
+      }
+    },
+
+    cards (state) {
+      return state.cards
+    },
+
+    cardsfind (state) {
+      return (cardsid) => {
+        return state.cards.find((card) => {
+          return card.id == cardsid
+        })
+      }
+    },
+
 
   }
 })

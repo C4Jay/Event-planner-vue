@@ -57,6 +57,8 @@ new Vue({
     this.$store.dispatch('fetchcatering')
     this.$store.dispatch('fetchcake')
     this.$store.dispatch('fetchbridalwear')
+    this.$store.dispatch('fetchlocation')
+    this.$store.dispatch('fetchcard')
 
   }
 }).$mount('#app')

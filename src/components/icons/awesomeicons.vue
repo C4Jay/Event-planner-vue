@@ -37,12 +37,12 @@
               </v-form>
           </v-flex>
     
-    <v-container  class="icons">
-    <v-layout row wrap>
+    <v-container  class="icons1">
+    <v-layout row >
 
        
 
-        <v-flex sm4 md2>
+        <v-flex ><!-- sm4 md2 -->
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
             <v-layout row>
             <router-link to="/bands"><img class="icon" height="60" src="@/assets/icons/light/compact-disc.svg"></router-link>
@@ -54,7 +54,7 @@
         
 
                 
-        <v-flex sm4 md2>
+        <v-flex>
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
             <router-link to="/bridalwear"><img height="60" src="@/assets/icons/light/user-tie.svg"></router-link>
@@ -64,7 +64,7 @@
            </v-layout>
         </v-flex>
 
-        <v-flex sm4 md2>
+        <v-flex>
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
             <router-link to="/locations"><img height="60" src="@/assets/icons/light/globe-europe.svg"></router-link>
@@ -73,6 +73,10 @@
                <span>Location</span>
            </v-layout>
         </v-flex>
+
+    </v-layout>
+
+    <v-layout row wrap>
 
        <v-flex>
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
@@ -83,6 +87,18 @@
                <span>Planners</span>
            </v-layout>
         </v-flex>
+
+        <v-flex>
+           <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
+           <v-layout row>
+            <router-link to="/invcards"><img height="60" src="@/assets/icons/light/gifts.svg"></router-link>
+           </v-layout>
+           <v-layout row>
+               <span>Cards / Gifts</span>
+           </v-layout>
+        </v-flex>
+
+        
 
          <v-flex>
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
@@ -95,7 +111,9 @@
         </v-flex>
     </v-layout>
 
-    <v-layout row>
+    
+
+    <v-layout row wrap>
         <!-- <v-flex> -->
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <!-- <i class="fas fa-utensils icon"></i> -->
@@ -130,6 +148,10 @@
                 <span>Flora</span>
             </v-layout>
         </v-flex>
+
+    </v-layout>
+
+    <v-layout row wrap>
 
         <v-flex>
             <v-layout row>
@@ -187,9 +209,18 @@ export default {
     margin-left: 100px
 }
 
+.icons1 {
+    margin-left: 150px
+   
+}
+
 @media only screen and (max-width: 450px) {
     .icons {
         margin-left: 3px
+    }
+
+    .icons1 {
+        margin-left: 38px
     }
 
     span {

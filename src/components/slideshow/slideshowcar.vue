@@ -1,4 +1,5 @@
 <template>
+<v-flex class="sliderflex">
   <v-carousel
   class="slider"
   height="618"
@@ -36,6 +37,7 @@
         <!-- <navbartest></navbartest> -->
         </v-carousel-item>
   </v-carousel>
+</v-flex>
 </template>
 
 <script>
@@ -68,6 +70,10 @@
 </script>
 
 <style scoped>
+.slider {
+  height: 900px
+}
+
 @media only screen and (max-width: 456px){
 .btns {
     font-size: 10px
