@@ -2,7 +2,7 @@
 <v-container  class="icons">
     <v-flex class="text-center">
 
-        <v-flex xs12 class="text-center">
+        <v-flex xs12 class="text-center textfield">
               <v-form>
                   <v-container>
                       <!-- <v-layout row>
@@ -190,7 +190,6 @@
 
 
 <script>
-
 // fontawesome.library.add(brands, faSpinner);
 export default {
     name: 'awesomeicons'
@@ -204,35 +203,43 @@ export default {
     color: 'rgba(212, 207, 184, 0.5)'
     /* color: green */
 }
-
 .icons {
     margin-left: 100px
 }
-
 .icons1 {
     margin-left: 150px
    
 }
-
 @media only screen and (max-width: 450px) {
     .icons {
         margin-left: 3px
     }
-
     .icons1 {
         margin-left: 38px
     }
-
     span {
         font-size: 15px;
         margin-bottom: 3px
     }
 }
 
+@media only screen and (min-width : 768px) and (max-width : 1024px)  { 
+    
+    .icons {
+        margin-left: -19px
+    }
+}
+
+@media only screen and (min-width: 1023px) and (max-width: 1024px) {
+    .textfield {
+        margin-left: 80px
+    }
+    .icons1 {
+        margin-left: 190px
+    }
+}
 span {
     text-align: center;
     margin-bottom: 3px
 }
 </style>
-
-
