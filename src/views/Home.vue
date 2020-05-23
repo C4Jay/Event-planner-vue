@@ -5,12 +5,13 @@
     <!-- <slideshow class="slide"></slideshow> -->
     <slideshowcar class="slide"></slideshowcar>
     <!-- <iconbg></iconbg> -->
-    <awesomeicons></awesomeicons>
+    <awesomeicons1 class="icons1"></awesomeicons1>
+    <awesomeicons class="icons"></awesomeicons>
     <!-- <parlx1></parlx1> -->
     <!-- <sellers></sellers> -->
     
     <!-- <slideshow1></slideshow1> -->
-    
+    <listsearch></listsearch>
     <paidlist></paidlist>
     <parlx2></parlx2>
     <!-- <Footer></Footer> -->
@@ -33,6 +34,9 @@ import Parlx2 from '@/components/home/Parlx2.vue'
 import awesomeicons from '@/components/icons/awesomeicons.vue';
 import slideshowcar from '@/components/slideshow/slideshowcar.vue';
 import paidlist from '@/components/paidsellers/paidlist.vue';
+import listsearch from '@/components/home/listsearch.vue';
+import awesomeicons1 from '@/components/icons/awesomeicons1.vue';
+
 
 export default {
   name: 'Home',
@@ -50,7 +54,9 @@ export default {
     // iconbg,
     awesomeicons,
     slideshowcar,
-    paidlist
+    paidlist,
+    listsearch,
+    awesomeicons1
   }
 }
 </script>
@@ -61,5 +67,36 @@ export default {
   margin-top: 0px
 
 }
+
+.icons {
+  display: block;
+}
+
+.icons1 {
+  display: none
+}
+
+@media only screen and (max-width: 1024px) {
+  .icons {
+    display: none
+  }
+
+  .icons1 {
+    display: block
+  }
+}
+
+/* @media only screen and (min-width: 320px) and (max-width: 450px) {
+  .icons{
+    display: none
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  .icons1 {
+    display: none
+  }
+} */
+
 </style>
 

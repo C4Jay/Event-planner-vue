@@ -2,7 +2,7 @@
 <v-flex class="sliderflex">
   <v-carousel
   class="slider"
-  height="618"
+  height="400"
   interval="6000"
       cycle
       continuous
@@ -26,7 +26,7 @@
             <v-btn color="transparent" depressed class="btns">Home</v-btn>
             <v-spacer></v-spacer> 
             
-            <v-btn color="transparent" depressed class="btns" to="/signin">signin</v-btn>
+            <v-btn color="transparent" depressed class="btns" to="/signin">add your business</v-btn>
             
             <v-btn color="transparent" depressed class="btns">about</v-btn>
             

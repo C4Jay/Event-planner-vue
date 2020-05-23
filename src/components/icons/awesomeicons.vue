@@ -1,5 +1,5 @@
 <template>
-<v-container  class="icons">
+<v-container class="icons">
     <v-flex class="text-center">
 
         <v-flex xs12 class="text-center textfield">
@@ -13,24 +13,38 @@
                       <v-layout row wrap class="text-center ml-8">
                           <v-flex class="text-center row">
                           <v-flex md4 class="textfield mr-3 .body-1">
-                          <v-text-field
+                          <!-- <v-text-field
                           class="body-1"
                           background-color="rgba(223, 230, 225, 0.6)"
                           label="what?"
                           solo
                           append-icon="mdi-file-find">                                                        
-                          </v-text-field>
+                          </v-text-field> -->
+                          <v-select
+                          solo
+                          :items="types"
+                          v-model="type"
+                          label="What?"></v-select>
                           </v-flex>
 
                           <v-flex md4 class="textfield">
-                          <v-text-field
+                          <!-- <v-text-field
                           class="text"
                           background-color="rgba(223, 230, 225, 0.6)"
                           label="location?"
                           solo
                           append-icon="mdi-file-find">                             
                           </v-text-field>
-                          </v-flex>
+                           -->
+                           <v-select
+                           solo
+                           :items="locations"
+                           v-model="location"
+                           label="Where?"></v-select>
+                           </v-flex>
+
+                           <v-flex md3 ><v-btn color="pink">find</v-btn></v-flex>
+
                           </v-flex>
                       </v-layout>
                   </v-container>
@@ -38,7 +52,7 @@
           </v-flex>
     
     <v-container  class="icons1">
-    <v-layout row >
+    <v-layout row wrap>
 
        
 
@@ -74,9 +88,9 @@
            </v-layout>
         </v-flex>
 
-    </v-layout>
+    <!-- </v-layout> -->
 
-    <v-layout row wrap>
+    <!-- <v-layout row wrap> -->
 
        <v-flex>
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
@@ -109,11 +123,11 @@
                <span>Photography</span>
            </v-layout>
         </v-flex>
-    </v-layout>
+    <!-- </v-layout> -->
 
     
 
-    <v-layout row wrap>
+    <!-- <v-layout row wrap> -->
         <!-- <v-flex> -->
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <!-- <i class="fas fa-utensils icon"></i> -->
@@ -145,20 +159,20 @@
             <router-link to="/flora"><img height="60" src="@/assets/icons/light/flower-tulip.svg"></router-link>
             </v-layout>
             <v-layout row>
-                <span>Flora</span>
+                <span>Decorators</span>
             </v-layout>
         </v-flex>
 
-    </v-layout>
+    <!-- </v-layout> -->
 
-    <v-layout row wrap>
-
+    <!-- <v-layout row wrap> -->
+        
         <v-flex>
             <v-layout row>
             <router-link to="/catering"><img height="60" src="@/assets/icons/light/concierge-bell.svg"></router-link>
             </v-layout>
             <v-layout row>
-                <span>Catering</span>
+                <span>Hair & beauty</span>
             </v-layout>
         </v-flex>
 
@@ -180,8 +194,7 @@
         <v-icon size="60" to="/hotels" color="">mdi-cake-layered</v-icon>
         </v-flex> -->
 
-        
-
+      
     </v-layout> 
     </v-container>    
     </v-flex>
@@ -192,7 +205,39 @@
 <script>
 // fontawesome.library.add(brands, faSpinner);
 export default {
-    name: 'awesomeicons'
+    name: 'awesomeicons',
+
+    data () {
+        return {
+            types : ['Hotels','Photography','Cars','Jewellery','Bands','Cake','Catering','Hair & beauty','Decorators','Cards / Gifts'],
+            locations: ['Galle',
+                    'Colombo',
+                    'Gampaha',
+                    'Hambantota',
+                    'Jaffna',
+                    'Kalutara',
+                    'Kandy',
+                    'Kegalle',
+                    'Kilinochchi',
+                    'Kurunegala',
+                    'Mannar',
+                    'Matale',
+                    'Matara',
+                    'Monaragala',
+                    'Mullaitivu',
+                    'Nuwara Eliya',
+                    'Polonnaruwa',
+                    'Puttalam',
+                    'Ratnapura',
+                    'Trincomalee',
+                    'Vavuniya',
+                    'Ampara',
+                    'Anuradhapura',
+                    'Badulla',
+                    'Batticalo']
+        }
+    }
+
 }
 </script>
 
@@ -204,12 +249,14 @@ export default {
     /* color: green */
 }
 .icons {
-    margin-left: 100px
+    margin-top: 30px;
+    margin-left: 60px;
+    /* background-color: 	#f9583c */
 }
 .icons1 {
-    margin-left: 150px
-   
+    margin-left: 60px
 }
+
 @media only screen and (max-width: 450px) {
     .icons {
         margin-left: 3px

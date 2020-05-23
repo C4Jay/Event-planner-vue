@@ -80,11 +80,11 @@
 
 
 
-     <v-card color="rgba(255, 0, 0, 0.2)" class="card" elevation="19">
+     <v-card color="rgba(255, 0, 0, 0.2)" class="card" elevation="0">
     <v-container grid-list-lg>
         <v-layout row wrap >
             <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
-                <v-card v-if="(slider == 40 || slider <= item.capacity) && (location == '' || location == item.location)" elevation="19">
+                <v-card :to="'/hotels/' + item.id" v-if="(slider == 40 || slider <= item.capacity) && (location == '' || location == item.location)" elevation="19">
                     <v-responsive>
                         <v-img :src="item.img" height="200px">
                             <v-container fill-height fluid>
@@ -98,15 +98,15 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
-                            <h3 class="headline mb-0">{{item.location}}</h3>
-                            <h3>{{item.hall}}</h3>
+                            <h3 class="headline mb-0">{{item.hall}}</h3>
+                            <h3><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
                             <h3>seating {{item.capacity}}</h3>
-                            <div class="text-weight-black">
+                           <!--  <div class="text-weight-black">
                                 {{item.description}}
-                            </div>
+                            </div> -->
                         </div>
                     </v-card-text>
-                    <v-btn block color="green" :to="'/hotels/' + item.id" >view</v-btn>
+                    <!-- <v-btn block color="green" :to="'/hotels/' + item.id" >view</v-btn> -->
                 </v-card>
             </v-flex>
            

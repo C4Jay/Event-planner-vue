@@ -3,7 +3,7 @@
         <v-layout>
             <v-flex xs12 class="ml-1 mr-3">
             <v-card elevation="19">
-                <v-img class="img" :src="item.img" height="600px"></v-img>
+                <v-img class="img" :src="item.img" height="400px"></v-img>
                 <v-card-title class="display-1">
                     {{item.name}}  |
                     {{item.hall}}
