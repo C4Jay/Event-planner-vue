@@ -21,6 +21,7 @@
                           append-icon="mdi-file-find">                                                        
                           </v-text-field> -->
                           <v-select
+                          outlined
                           solo
                           :items="types"
                           v-model="type"
@@ -37,6 +38,7 @@
                           </v-text-field>
                            -->
                            <v-select
+                           outlined
                            solo
                            :items="locations"
                            v-model="location"

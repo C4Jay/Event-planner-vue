@@ -13,6 +13,7 @@
     <!-- <slideshow1></slideshow1> -->
     <listsearch></listsearch>
     <vendors></vendors>
+    <offers></offers>
     <!-- <paidlist></paidlist> -->
     <parlx2></parlx2>
     <!-- <Footer></Footer> -->
@@ -38,6 +39,7 @@ import slideshowcar from '@/components/slideshow/slideshowcar.vue';
 import listsearch from '@/components/home/listsearch.vue';
 import awesomeicons1 from '@/components/icons/awesomeicons1.vue';
 import vendors from '@/components/home/vendors.vue';
+import offers from '@/components/home/offers.vue';
 
 export default {
   name: 'Home',
@@ -58,7 +60,8 @@ export default {
     // paidlist,
     listsearch,
     awesomeicons1,
-    vendors
+    vendors,
+    offers
   }
 }
 </script>

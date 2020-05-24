@@ -61,6 +61,6 @@ new Vue({
     this.$store.dispatch('fetchcard')
     
  */
-this.$store.dispatch('fetchcars')
+// this.$store.dispatch('fetchcars')
   }
 }).$mount('#app')

@@ -67,7 +67,8 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
-                            <v-icon>mdi-map-marker</v-icon><h3 class="headline mb-0">{{item.location}}</h3>
+                            <!-- <v-icon>mdi-map-marker</v-icon><h3 class="headline mb-0">{{item.location}}</h3> -->
+                            <h3><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
                             <!-- <v-layout row v-for="category in item.categories" :key="category"> -->
                            
                             <!-- </v-layout> -->
