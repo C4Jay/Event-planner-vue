@@ -50,7 +50,7 @@ new Vue({
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 
-    // this.$store.dispatch('fetchHotels')
+    this.$store.dispatch('fetchHotels')
     /* this.$store.dispatch('fetchPhotography')
     this.$store.dispatch('fetchbands')
     this.$store.dispatch('fetchcars')
@@ -59,6 +59,8 @@ new Vue({
     /* this.$store.dispatch('fetchbridalwear')
     this.$store.dispatch('fetchlocation')
     this.$store.dispatch('fetchcard')
+    
  */
+this.$store.dispatch('fetchcars')
   }
 }).$mount('#app')

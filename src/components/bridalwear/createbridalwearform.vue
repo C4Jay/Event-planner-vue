@@ -43,9 +43,9 @@
             v-model="bridalwear_categories"
             :items="items"
           
-            label="Type of bridalwear"
+            label="Type of wear"
        
-            prepend-icon="mdi-bridalwear"
+            prepend-icon="mdi-account-tie"
           ></v-select>
         </v-col>
                                 </v-flex>
@@ -63,6 +63,12 @@
                                 </v-flex>
                             
                             </v-layout> -->
+
+                            <v-layout row>
+                                <v-flex class="text-center font-weight-bold mb-8">
+                                    Price range (Rs)
+                                </v-flex>
+                            </v-layout>
 
                              <v-layout row>
                                

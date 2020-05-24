@@ -63,7 +63,7 @@
     <v-container grid-list-lg>
         <v-layout row wrap >
             <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
-                <v-card v-if="(location == '' || location == item.location ) && (category == '' || item.category == 'All kinds' || category == item.category )" elevation="19">
+                <v-card :to="'/cake/' + item.id" v-if="(location == '' || location == item.location ) && (category == '' || item.category == 'All kinds' || category == item.category )" elevation="19">
                     <v-responsive>
                         <v-img :src="item.img" height="200px">
                             <v-container fill-height fluid>
@@ -77,7 +77,7 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
-                            <h3 class="headline mb-0">{{item.location}}</h3>
+                            <v-icon>mdi-map-marker</v-icon><h3 class="headline mb-0">{{item.location}}</h3>
                             <!-- <v-layout row v-for="category in item.categories" :key="category"> -->
                             <h3>{{item.category}}</h3>
                             <!-- </v-layout> -->
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                     </v-card-text>
-                    <v-btn block color="green" :to="'/cake/' + item.id" >view</v-btn>
+                    <!-- <v-btn block color="green" :to="'/cake/' + item.id" >view</v-btn> -->
                 </v-card>
             </v-flex>
            

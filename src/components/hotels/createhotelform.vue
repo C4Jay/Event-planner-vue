@@ -5,7 +5,7 @@
                 <v-card elevation="19" class="card">
                     <v-container>
                         <v-layout row>
-                            <v-flex class="text-center font-weight-black display-1">Hotel basic information</v-flex>
+                            <v-flex class="text-center font-weight-black display-1">hotel basic information</v-flex>
                         </v-layout>
                         
                         <v-form @submit.prevent="createhotel">

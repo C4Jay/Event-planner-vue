@@ -12,7 +12,8 @@
     
     <!-- <slideshow1></slideshow1> -->
     <listsearch></listsearch>
-    <paidlist></paidlist>
+    <vendors></vendors>
+    <!-- <paidlist></paidlist> -->
     <parlx2></parlx2>
     <!-- <Footer></Footer> -->
   </span>
@@ -33,10 +34,10 @@ import Parlx2 from '@/components/home/Parlx2.vue'
 // import iconbg from '@/components/icons/iconbg.vue';
 import awesomeicons from '@/components/icons/awesomeicons.vue';
 import slideshowcar from '@/components/slideshow/slideshowcar.vue';
-import paidlist from '@/components/paidsellers/paidlist.vue';
+// import paidlist from '@/components/paidsellers/paidlist.vue';
 import listsearch from '@/components/home/listsearch.vue';
 import awesomeicons1 from '@/components/icons/awesomeicons1.vue';
-
+import vendors from '@/components/home/vendors.vue';
 
 export default {
   name: 'Home',
@@ -54,9 +55,10 @@ export default {
     // iconbg,
     awesomeicons,
     slideshowcar,
-    paidlist,
+    // paidlist,
     listsearch,
-    awesomeicons1
+    awesomeicons1,
+    vendors
   }
 }
 </script>

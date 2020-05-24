@@ -26,7 +26,7 @@
             <v-btn color="transparent" depressed class="btns">Home</v-btn>
             <v-spacer></v-spacer> 
             
-            <v-btn color="transparent" depressed class="btns" to="/signin">add your business</v-btn>
+            <v-btn color="transparent" depressed class="btns" to="/dashboard">add your business</v-btn>
             
             <v-btn color="transparent" depressed class="btns">about</v-btn>
             

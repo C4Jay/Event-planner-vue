@@ -64,6 +64,12 @@
                             
                             </v-layout> -->
 
+                            <v-layout row>
+                                <v-flex class="text-center font-weight-bold mb-8">
+                                    Price range (Rs)
+                                </v-flex>
+                            </v-layout>
+
                              <v-layout row>
                                
                                 <v-flex class="mr-6 ml-6 text-field">

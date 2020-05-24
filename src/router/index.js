@@ -34,11 +34,12 @@ import Createcakeform from '@/components/cake/createcakeform.vue';
 import Createlocationform from '@/components/locations/createlocationsform.vue';
 import Createbridalwearform from '@/components/bridalwear/createbridalwearform.vue';
 import Createinvcardform from '@/components/invcards/createinvcardsform.vue';
+import Createsalonform from '@/components/salons/createsalonsform.vue';
 import Singlecake from '@/components/cake/singlecake.vue';
 import Singlebridalwear from '@/components/bridalwear/singlebridalwear.vue';
 import Singlelocation from '@/components/locations/singlelocation.vue';
 import Singleinvcard from '@/components/invcards/singleinvcard.vue';
-
+import Dashboard from '@/components/sellers/dashboard.vue';
 
 Vue.use(VueRouter)
 
@@ -244,9 +245,19 @@ Vue.use(VueRouter)
     component: Createinvcardform
   },
   {
+    path: '/createsalonform',
+    name: 'createsalonform',
+    component: Createsalonform
+  },
+  {
     path: '/navbartr',
     name: 'navbartr',
     component: navbartr
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard
   },
   {
     path: '/about',
