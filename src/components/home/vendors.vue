@@ -1,10 +1,10 @@
 <template>
-    <v-container grid-list-lg>
+    <v-container grid-list-xs>
         <v-layout row>
             <h1>Featured vendors</h1>
         </v-layout>
         <v-layout row wrap>
-            <v-flex xs12 sm12 md3 class="img mr-0.5" v-for="item in items" :key="item.id">
+            <v-flex xs12 sm12 md2 class="img mr-0.5" v-for="item in items" :key="item.id">
                 <v-img height="300" :src="item.img">
                     <v-flex class="white--text font-weight-light">
                      <h3 class="font-weight-light">{{item.name}}</h3>
