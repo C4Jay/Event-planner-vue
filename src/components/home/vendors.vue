@@ -5,9 +5,13 @@
         </v-layout>
         <v-layout row wrap>
             <v-flex xs12 sm12 md3 class="img mr-0.5" v-for="item in items" :key="item.id">
-                <v-img height="300" :src="item.img"></v-img>
-                <h3>{{item.name}}</h3>
-                <h5><v-icon>mdi-map-marker</v-icon>{{item.location}}</h5>
+                <v-img height="300" :src="item.img">
+                    <v-flex class="white--text font-weight-light">
+                     <h3 class="font-weight-light">{{item.name}}</h3>
+                <h5 class="font-weight-light"><v-icon class="white--text">mdi-map-marker</v-icon>{{item.location}}</h5>
+                    </v-flex>
+                </v-img>
+               
             </v-flex>
             <!-- 
             <v-flex xs12 md3>
