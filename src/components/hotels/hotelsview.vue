@@ -90,7 +90,7 @@
                             <v-container fill-height fluid>
                                 <v-layout fill-height>
                                     <v-flex xs12 align-end flexbox>
-                                        <span class="headline white--text">{{item.name}}</span>
+                                        <span class="headline white--text font-weight-light" >{{item.name}}</span>
                                     </v-flex>
                                 </v-layout>
                             </v-container>
@@ -98,9 +98,9 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
-                            <h3 class="headline mb-0">{{item.hall}}</h3>
-                            <h3><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
-                            <h3>seating {{item.capacity}}</h3>
+                            <h3 class="headline mb-0 font-weight-light">{{item.hall}}</h3>
+                            <h3 class="font-weight-light"><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
+                            <h3 class="font-weight-light">seating {{item.capacity}}</h3>
                            <!--  <div class="text-weight-black">
                                 {{item.description}}
                             </div> -->

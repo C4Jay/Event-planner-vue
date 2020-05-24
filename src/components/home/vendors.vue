@@ -6,7 +6,7 @@
         <v-layout row wrap>
             <v-flex xs12 sm12 md2 class="img mr-0.5" v-for="item in items" :key="item.id">
                 <v-img height="300" :src="item.img">
-                    <v-flex class="white--text font-weight-light">
+                    <v-flex class="texts text-center white--text font-weight-light">
                      <h3 class="font-weight-light">{{item.name}}</h3>
                 <h5 class="font-weight-light"><v-icon class="white--text">mdi-map-marker</v-icon>{{item.location}}</h5>
                     </v-flex>
@@ -28,6 +28,17 @@
                 <v-img height="300" src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></v-img>
                 <h3>Hair & beauty</h3>
             </v-flex> -->
+        </v-layout>
+        <v-layout row>
+            
+            <v-flex class="text-center">
+                <!-- <v-layout row class="text-center"> -->
+                    <!-- <router-link to="/hotels"> -->
+                <v-spacer></v-spacer><h5 class="font-weight-light text-center more">more <router-link to="/hotels"><v-icon>mdi-arrow-right</v-icon></router-link></h5>
+                <!-- </v-layout> -->
+                <!-- </router-link> -->
+            </v-flex>
+            
         </v-layout>
     </v-container>
 </template>
@@ -52,5 +63,11 @@ export default {
 <style scoped>
 .img {
     padding: 1
+}
+.texts {
+    margin-top: 99px
+}
+.more {
+    text-decoration: none
 }
 </style>
