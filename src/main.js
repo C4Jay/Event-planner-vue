@@ -58,6 +58,7 @@ new Vue({
     this.$store.dispatch('fetchcake')
     this.$store.dispatch('fetchsalon')
     this.$store.dispatch('fetchflora')
+    this.$store.dispatch('fetchfvendors')
     /* this.$store.dispatch('fetchbridalwear')
     this.$store.dispatch('fetchlocation')
     this.$store.dispatch('fetchcard')

@@ -9,6 +9,7 @@ export default new Vuex.Store({
 
     user: null,
     hotel: null,
+    fhotel: null,
     photography: null,
 
     hotels: [],
@@ -19,28 +20,39 @@ export default new Vuex.Store({
     hotel_filter: {},
 
     band: null,
+    fband: null,
     car: null,
+    fcar: null,
 
     catering: null,
+    fcatering: null,
     caterings: [],
  
     cake: null,
+    fcake: null,
     cakes: [],
 
     bridalwear: null,
+    fbridalwear: null,
     bridalwears: [],
 
     location: null,
+    flocation: null,
     locations: [],
 
     card: null,
+    fcard: null,
     cards: [],
 
     salon: null,
+    fsalon: null,
     salons: [],
 
     flora: null,
-    floras: []
+    fflora: null,
+    floras: [],
+
+    fvendors: []
   },
 
   mutations: {
@@ -51,6 +63,10 @@ export default new Vuex.Store({
 
     adhotel (state, pay) {
       state.hotel = pay
+    },
+
+    fadhotel (state, pay) {
+      state.fhotel = pay
     },
 
     hotelset (state, pay) {
@@ -69,8 +85,16 @@ export default new Vuex.Store({
       state.photography = pay
     },
 
+    fadphotography (state, pay) {
+      state.fphotography = pay
+    },
+
     adband (state, pay) {
       state.band = pay
+    },
+
+    fadband (state, pay) {
+      state.fband = pay
     },
 
     bandset (state, pay) {
@@ -79,6 +103,10 @@ export default new Vuex.Store({
 
     adcar (state, pay) {
       state.car = pay
+    },
+
+    fadcar (state, pay) {
+      state.fcar = pay
     },
 
     carset (state, pay) {
@@ -97,12 +125,20 @@ export default new Vuex.Store({
       state.cake = pay
     },
 
+    fadcake (state, pay) {
+      state.fcake = pay
+    },
+
     cakeset (state, pay) {
       state.cakes = pay
     },
 
     adbridalwear (state, pay) {
       state.bridalwear = pay
+    },
+
+    fadbridalwear (state, pay) {
+      state.fbridalwear = pay
     },
 
     bridalwearset (state, pay) {
@@ -113,12 +149,20 @@ export default new Vuex.Store({
       state.location = pay
     },
 
+    fadlocation (state, pay) {
+      state.flocation = pay
+    },
+
     locationset (state, pay) {
       state.locations = pay
     },
 
     adcard (state, pay) {
       state.card = pay
+    },
+
+    fadcard (state, pay) {
+      state.fcard = pay
     },
 
     cardset (state, pay) {
@@ -129,6 +173,10 @@ export default new Vuex.Store({
       state.salon = pay
     },
 
+    fadsalon (state, pay) {
+      state.fsalon = pay
+    },
+
     salonset (state, pay) {
       state.salons = pay
     },
@@ -137,9 +185,17 @@ export default new Vuex.Store({
       state.flora = pay
     },
 
+    fadflora (state, pay) {
+      state.fflora = pay
+    },
+
     floraset (state, pay) {
       state.floras = pay
     },
+
+    fvendorsset (state, pay) {
+      state.fvendors = pay
+    }
 
 
   },
@@ -228,6 +284,36 @@ export default new Vuex.Store({
       })
     },
 
+    f_ad_hotel({commit},pay) {
+      const hotel = {
+        type: "hotel",
+        name: pay.name,
+        location: pay.location,
+        contact: pay.contact,
+        capacity: pay.capacity,
+        hall: pay.hall,
+        description: pay.description,
+        img: pay.imgurl,
+        img6: pay.imgurl6,
+        img2: pay.imgurl2,
+        img3: pay.imgurl3,
+        img4: pay.imgurl4,
+        img5: pay.imgurl5, verified: "no",
+        website: pay.website,
+        email: pay.email
+        
+      }
+
+      firebase.database().ref('Featured').push(hotel)
+      .then((response) => {
+        console.log(response),
+        commit('fadhotel',{response})
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    },
+
 
     fetchHotels ({commit}) {
       firebase.database().ref('Hotels').once('value')
@@ -269,6 +355,8 @@ export default new Vuex.Store({
 
     },
 
+    
+
 
     filterhotel ({commit}, pay) {
       commit('filter_hotel',pay)
@@ -300,6 +388,35 @@ export default new Vuex.Store({
     .then((response) => {
       console.log(response),
       commit('adphotography',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+  f_ad_photography({commit},pay) {
+    const photography = {
+      type: "photography",
+      name: pay.name,
+      location: pay.location,
+      contact: pay.contact,
+      description: pay.description,
+      img: pay.imgurl,
+      img1: pay.imgurl1,
+      img2: pay.imgurl2,
+      img3: pay.imgurl3,
+      img4: pay.imgurl4,
+      img5: pay.imgurl5, verified: "no",
+      website: pay.website,
+      email: pay.email,
+      categories: pay.categories
+      
+    }
+
+    firebase.database().ref('Featured').push(photography)
+    .then((response) => {
+      console.log(response),
+      commit('fadphotography',{response})
     })
     .catch(err => {
       console.log(err)
@@ -380,6 +497,38 @@ export default new Vuex.Store({
     })
   },
 
+  f_ad_bands({commit},pay) {
+    const band = {
+     type: "band",
+     name: pay.name,
+     location: pay.location,
+     contact: pay.contact,
+     description: pay.description,
+     img: pay.imgurl,
+     img1: pay.imgurl1,
+     img2: pay.imgurl2,
+     img3: pay.imgurl3,
+     img4: pay.imgurl4,
+     img5: pay.imgurl5, verified: "no",
+     website: pay.website,
+     email: pay.email,
+     category: pay.categories,
+     pricemin: pay.pricemin,
+     pricemax: pay.pricemax
+      
+    }
+
+    firebase.database().ref('Featured').push(band)
+    .then((response) => {
+      console.log(response),
+      commit('fadband',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
 
   fetchbands ({commit}) {
     firebase.database().ref('Bands').once('value')
@@ -451,6 +600,38 @@ export default new Vuex.Store({
     .then((response) => {
       console.log(response),
       commit('adcar',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+  f_ad_cars({commit},pay) {
+    const car = {
+      type: "car",
+     name: pay.name,
+     location: pay.location,
+     contact: pay.contact,
+     description: pay.description,
+     img: pay.imgurl,
+     img1: pay.imgurl1,
+     img2: pay.imgurl2,
+     img3: pay.imgurl3,
+     img4: pay.imgurl4,
+     img5: pay.imgurl5, verified: "no",
+     website: pay.website,
+     email: pay.email,
+     category: pay.categories,
+     pricemin: pay.pricemin,
+     pricemax: pay.pricemax,
+     list: pay.list
+      
+    }
+
+    firebase.database().ref('Featured').push(car)
+    .then((response) => {
+      console.log(response),
+      commit('fadcar',{response})
     })
     .catch(err => {
       console.log(err)
@@ -614,6 +795,39 @@ export default new Vuex.Store({
     })
   },
 
+  f_ad_cake({commit},pay) {
+    const cake = {
+      type: "cake",
+     name: pay.name,
+     location: pay.location,
+     contact: pay.contact,
+     description: pay.description,
+     img: pay.imgurl,
+     img1: pay.imgurl1,
+     img2: pay.imgurl2,
+     img3: pay.imgurl3,
+     img4: pay.imgurl4,
+     img5: pay.imgurl5, verified: "no",
+     website: pay.website,
+     email: pay.email,
+    //  cateringcategory: pay.categories,
+     pricemin: pay.pricemin,
+     pricemax: pay.pricemax,
+     category: pay.category
+     
+      
+    }
+
+    firebase.database().ref('Featured').push(cake)
+    .then((response) => {
+      console.log(response),
+      commit('fadcake',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
 
   fetchcake ({commit}) {
     firebase.database().ref('Cake').once('value')
@@ -690,6 +904,42 @@ export default new Vuex.Store({
     .then((response) => {
       console.log(response),
       commit('adbridalwear',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
+  f_ad_bridalwear({commit},pay) {
+    const cake = {
+      type: "bridalwear",
+     name: pay.name,
+     location: pay.location,
+     contact: pay.contact,
+     description: pay.description,
+     img: pay.imgurl,
+     img1: pay.imgurl1,
+     img2: pay.imgurl2,
+     img3: pay.imgurl3,
+     img4: pay.imgurl4,
+     img5: pay.imgurl5, verified: "no",
+     website: pay.website,
+     email: pay.email,
+    //  cateringcategory: pay.categories,
+     pricemin: pay.pricemin,
+     pricemax: pay.pricemax,
+     category: pay.category,
+     weddinglist: pay.weddinglist,
+     homecominglist: pay.homecominglist
+     
+      
+    }
+
+    firebase.database().ref('Featured').push(cake)
+    .then((response) => {
+      console.log(response),
+      commit('fadbridalwear',{response})
     })
     .catch(err => {
       console.log(err)
@@ -780,6 +1030,40 @@ export default new Vuex.Store({
   },
 
 
+  f_ad_location({commit},pay) {
+    const location = {
+      type: "location",
+     name: pay.name,
+     location: pay.location,
+     contact: pay.contact,
+     description: pay.description,
+     img: pay.imgurl,
+     img1: pay.imgurl1,
+     img2: pay.imgurl2,
+     img3: pay.imgurl3,
+     img4: pay.imgurl4,
+     img5: pay.imgurl5, verified: "no",
+     website: pay.website,
+     email: pay.email,
+    //  cateringcategory: pay.categories,
+     pricemin: pay.pricemin,
+     pricemax: pay.pricemax,
+    //  locationcategory: pay.category
+     
+      
+    }
+
+    firebase.database().ref('Featured').push(location)
+    .then((response) => {
+      console.log(response),
+      commit('fadlocation',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
   fetchlocation ({commit}) {
     firebase.database().ref('Location').once('value')
     .then((data) => {
@@ -853,6 +1137,40 @@ export default new Vuex.Store({
     .then((response) => {
       console.log(response),
       commit('adcard',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
+  f_ad_card({commit},pay) {
+    const card = {
+      type: "card",
+     name: pay.name,
+     location: pay.location,
+     contact: pay.contact,
+     description: pay.description,
+     img: pay.imgurl,
+     img1: pay.imgurl1,
+     img2: pay.imgurl2,
+     img3: pay.imgurl3,
+     img4: pay.imgurl4,
+     img5: pay.imgurl5, verified: "no",
+     website: pay.website,
+     email: pay.email,
+    //  cateringcategory: pay.categories,
+     pricemin: pay.pricemin,
+     pricemax: pay.pricemax,
+     category: pay.category,
+     
+      
+    }
+
+    firebase.database().ref('Featured').push(card)
+    .then((response) => {
+      console.log(response),
+      commit('fadcard',{response})
     })
     .catch(err => {
       console.log(err)
@@ -941,6 +1259,40 @@ export default new Vuex.Store({
   },
 
 
+  f_ad_salon({commit},pay) {
+    const salon = {
+      type: "salon",
+     name: pay.name,
+     location: pay.location,
+     contact: pay.contact,
+     description: pay.description,
+     img: pay.imgurl,
+     img1: pay.imgurl1,
+     img2: pay.imgurl2,
+     img3: pay.imgurl3,
+     img4: pay.imgurl4,
+     img5: pay.imgurl5, verified: "no",
+     website: pay.website,
+     email: pay.email,
+    //  cateringcategory: pay.categories,
+     pricemin: pay.pricemin,
+     pricemax: pay.pricemax,
+    //  saloncategory: pay.category,
+     
+      
+    }
+
+    firebase.database().ref('Featured').push(salon)
+    .then((response) => {
+      console.log(response),
+      commit('fadsalon',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
   fetchsalon ({commit}) {
     firebase.database().ref('Salons').once('value')
     .then((data) => {
@@ -1022,6 +1374,40 @@ export default new Vuex.Store({
   },
 
 
+  f_ad_flora({commit},pay) {
+    const flora = {
+      type: "flora",
+     name: pay.name,
+     location: pay.location,
+     contact: pay.contact,
+     description: pay.description,
+     img: pay.imgurl,
+     img1: pay.imgurl1,
+     img2: pay.imgurl2,
+     img3: pay.imgurl3,
+     img4: pay.imgurl4,
+     img5: pay.imgurl5, verified: "no",
+     website: pay.website,
+     email: pay.email,
+    //  cateringcategory: pay.categories,
+     pricemin: pay.pricemin,
+     pricemax: pay.pricemax,
+    //  saloncategory: pay.category,
+     
+      
+    }
+
+    firebase.database().ref('Featured').push(flora)
+    .then((response) => {
+      console.log(response),
+      commit('fadflora',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
   fetchflora ({commit}) {
     firebase.database().ref('Flora').once('value')
     .then((data) => {
@@ -1064,6 +1450,58 @@ export default new Vuex.Store({
     
 
   },
+
+
+  //Fvendors
+
+
+ 
+
+  fetchfvendors ({commit}) {
+    firebase.database().ref('Featured').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].name,
+            location: obj[key].location,
+            category: obj[key].category,
+            capacity: obj[key].capacity,
+            number: obj[key].contact,
+            description: obj[key].description,
+            img: obj[key].img,
+            img1: obj[key].img1,
+            img2: obj[key].img2,
+            img3: obj[key].img3,
+            img4: obj[key].img4,
+            img5: obj[key].floraimg5,
+            website: obj[key].website,
+            email: obj[key].email,
+            pricemin: obj[key].pricemin,
+            pricemax: obj[key].pricemax,
+            // category: obj[key].saloncategory,
+            verified: obj[key].verified,
+            list: obj[key].list,
+            
+           
+        })
+
+    }
+    console.log(band)
+    commit('fvendorsset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
 
 
 
@@ -1209,6 +1647,19 @@ export default new Vuex.Store({
       return (florasid) => {
         return state.floras.find((flora) => {
           return flora.id == florasid
+        })
+      }
+    },
+
+
+    fvendors (state) {
+      return state.fvendors
+    },
+
+    fvendorsfind (state) {
+      return (fvendorsid) => {
+        return state.fvendors.find((fvendor) => {
+          return fvendor.id == fvendorsid
         })
       }
     },
