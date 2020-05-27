@@ -84,7 +84,7 @@
     <v-container grid-list-lg>
         <v-layout row wrap >
             <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
-                <v-card :to="'/hotels/' + item.id" v-if="(slider == 40 || slider <= item.capacity) && (location == '' || location == item.location)" elevation="19">
+                <v-card :to="'/hotels/' + item.id" v-if="(item.verified == 'yes' && slider == 40 || slider <= item.capacity) && (location == '' || location == item.location)" elevation="10">
                     <v-responsive>
                         <v-img :src="item.img" height="200px">
                             <v-container fill-height fluid>
@@ -100,7 +100,7 @@
                         <div>
                             <h3 class="headline mb-0 font-weight-light">{{item.hall}}</h3>
                             <h3 class="font-weight-light"><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
-                            <h3 class="font-weight-light">seating {{item.capacity}}</h3>
+                            <h3 class="font-weight-light">seating capacity {{item.capacity}}</h3>
                            <!--  <div class="text-weight-black">
                                 {{item.description}}
                             </div> -->

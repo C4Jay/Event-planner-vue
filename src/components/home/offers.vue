@@ -162,7 +162,12 @@
     margin-top: 30px
 }
 .img {
-    margin-right: '600%'
+    margin-right: '600%';
+    border-right-style: solid;
+    border-right-width:thin;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-right-color: white
 }
 
 .h3 {

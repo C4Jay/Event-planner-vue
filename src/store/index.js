@@ -35,6 +35,12 @@ export default new Vuex.Store({
 
     card: null,
     cards: [],
+
+    salon: null,
+    salons: [],
+
+    flora: null,
+    floras: []
   },
 
   mutations: {
@@ -119,6 +125,22 @@ export default new Vuex.Store({
       state.cards = pay
     },
 
+    adsalon (state, pay) {
+      state.salon = pay
+    },
+
+    salonset (state, pay) {
+      state.salons = pay
+    },
+
+    adflora (state, pay) {
+      state.flora = pay
+    },
+
+    floraset (state, pay) {
+      state.floras = pay
+    },
+
 
   },
 
@@ -178,6 +200,7 @@ export default new Vuex.Store({
 
     ad_hotel({commit},pay) {
       const hotel = {
+        type: "hotel",
         hotelname: pay.name,
         hotellocation: pay.location,
         hotelcontact: pay.contact,
@@ -185,11 +208,11 @@ export default new Vuex.Store({
         hotelhall: pay.hall,
         hoteldescription: pay.description,
         hotelimg: pay.imgurl,
-        hotelimg1: pay.imgurl1,
+        hotelimg6: pay.imgurl6,
         hotelimg2: pay.imgurl2,
         hotelimg3: pay.imgurl3,
         hotelimg4: pay.imgurl4,
-        hotelimg5: pay.imgurl5,
+        hotelimg5: pay.imgurl5, verified: "no",
         hotelwebsite: pay.website,
         hotelemail: pay.email
         
@@ -221,14 +244,15 @@ export default new Vuex.Store({
               number: obj[key].hotelcontact,
               description: obj[key].hoteldescription,
               img: obj[key].hotelimg,
-              img1: obj[key].hotelimg1,
+              img1: obj[key].hotelimg6,
               img2: obj[key].hotelimg2,
               img3: obj[key].hotelimg3,
               img4: obj[key].hotelimg4,
               img5: obj[key].hotelimg5,
               website: obj[key].hotelwebsite,
               email: obj[key].hotelemail,
-              hall: obj[key].hotelhall
+              hall: obj[key].hotelhall,
+              verified: obj[key].verified
 
           })
 
@@ -255,6 +279,7 @@ export default new Vuex.Store({
 
   ad_photography({commit},pay) {
     const photography = {
+      type: "photography",
       phototgraphyname: pay.name,
       phototgraphylocation: pay.location,
       photographycontact: pay.contact,
@@ -264,7 +289,7 @@ export default new Vuex.Store({
       photographyimg2: pay.imgurl2,
       photographyimg3: pay.imgurl3,
       photographyimg4: pay.imgurl4,
-      photographyimg5: pay.imgurl5,
+      photographyimg5: pay.imgurl5, verified: "no",
       photographywebsite: pay.website,
       photographyemail: pay.email,
       photographycategories: pay.categories
@@ -304,6 +329,7 @@ export default new Vuex.Store({
             img5: obj[key].photographyimg5,
             website: obj[key].photographywebsite,
             email: obj[key].photographyemail,
+            verified: obj[key].verified
            
         })
 
@@ -325,6 +351,7 @@ export default new Vuex.Store({
 
   ad_bands({commit},pay) {
     const band = {
+     type: "band",
      bandsname: pay.name,
      bandslocation: pay.location,
      bandscontact: pay.contact,
@@ -334,7 +361,7 @@ export default new Vuex.Store({
      bandsimg2: pay.imgurl2,
      bandsimg3: pay.imgurl3,
      bandsimg4: pay.imgurl4,
-     bandsimg5: pay.imgurl5,
+     bandsimg5: pay.imgurl5, verified: "no",
      bandswebsite: pay.website,
      bandsemail: pay.email,
      bandscategory: pay.categories,
@@ -378,6 +405,7 @@ export default new Vuex.Store({
             email: obj[key].bandsemail,
             pricemin: obj[key].bandspricemin,
             pricemax: obj[key].bandspricemax,
+            verified: obj[key].verified
            
         })
 
@@ -399,6 +427,7 @@ export default new Vuex.Store({
 
   ad_cars({commit},pay) {
     const car = {
+      type: "car",
      carsname: pay.name,
      carslocation: pay.location,
      carscontact: pay.contact,
@@ -408,7 +437,7 @@ export default new Vuex.Store({
      carsimg2: pay.imgurl2,
      carsimg3: pay.imgurl3,
      carsimg4: pay.imgurl4,
-     carsimg5: pay.imgurl5,
+     carsimg5: pay.imgurl5, verified: "no",
      carswebsite: pay.website,
      carsemail: pay.email,
      carscategory: pay.categories,
@@ -454,6 +483,7 @@ export default new Vuex.Store({
             pricemin: obj[key].carspricemin,
             pricemax: obj[key].carspricemax,
             list: obj[key].carslist,
+            verified: obj[key].verified
            
         })
 
@@ -484,7 +514,7 @@ export default new Vuex.Store({
      cateringimg2: pay.imgurl2,
      cateringimg3: pay.imgurl3,
      cateringimg4: pay.imgurl4,
-     cateringimg5: pay.imgurl5,
+     cateringimg5: pay.imgurl5, verified: "no",
      cateringwebsite: pay.website,
      cateringemail: pay.email,
     //  cateringcategory: pay.categories,
@@ -529,6 +559,7 @@ export default new Vuex.Store({
             email: obj[key].cateringemail,
             pricemin: obj[key].cateringpricemin,
             pricemax: obj[key].cateringpricemax,
+            verified: obj[key].verified
             
            
         })
@@ -552,6 +583,7 @@ export default new Vuex.Store({
 
   ad_cake({commit},pay) {
     const cake = {
+      type: "cake",
      cakename: pay.name,
      cakelocation: pay.location,
      cakecontact: pay.contact,
@@ -561,7 +593,7 @@ export default new Vuex.Store({
      cakeimg2: pay.imgurl2,
      cakeimg3: pay.imgurl3,
      cakeimg4: pay.imgurl4,
-     cakeimg5: pay.imgurl5,
+     cakeimg5: pay.imgurl5, verified: "no",
      cakewebsite: pay.website,
      cakeemail: pay.email,
     //  cateringcategory: pay.categories,
@@ -607,7 +639,8 @@ export default new Vuex.Store({
             email: obj[key].cakeemail,
             pricemin: obj[key].cakepricemin,
             pricemax: obj[key].cakepricemax,
-            category: obj[key].cakecategory
+            category: obj[key].cakecategory,
+            verified: obj[key].verified
             
            
         })
@@ -630,6 +663,7 @@ export default new Vuex.Store({
 
   ad_bridalwear({commit},pay) {
     const cake = {
+      type: "bridalwear",
      bridalwearname: pay.name,
      bridalwearlocation: pay.location,
      bridalwearcontact: pay.contact,
@@ -639,7 +673,7 @@ export default new Vuex.Store({
      bridalwearimg2: pay.imgurl2,
      bridalwearimg3: pay.imgurl3,
      bridalwearimg4: pay.imgurl4,
-     bridalwearimg5: pay.imgurl5,
+     bridalwearimg5: pay.imgurl5, verified: "no",
      bridalwearwebsite: pay.website,
      bridalwearemail: pay.email,
     //  cateringcategory: pay.categories,
@@ -688,7 +722,8 @@ export default new Vuex.Store({
             pricemax: obj[key].bridalwearpricemax,
             category: obj[key].bridalwearcategory,
             weddinglist: obj[key].bridalwearweddinglist,
-            homecominglist: obj[key].bridalwearhomecominglist
+            homecominglist: obj[key].bridalwearhomecominglist,
+            verified: obj[key].verified
             
            
         })
@@ -713,6 +748,7 @@ export default new Vuex.Store({
 
   ad_location({commit},pay) {
     const location = {
+      type: "location",
      locationname: pay.name,
      locationlocation: pay.location,
      locationcontact: pay.contact,
@@ -722,7 +758,7 @@ export default new Vuex.Store({
      locationimg2: pay.imgurl2,
      locationimg3: pay.imgurl3,
      locationimg4: pay.imgurl4,
-     locationimg5: pay.imgurl5,
+     locationimg5: pay.imgurl5, verified: "no",
      locationwebsite: pay.website,
      locationemail: pay.email,
     //  cateringcategory: pay.categories,
@@ -769,7 +805,8 @@ export default new Vuex.Store({
             pricemin: obj[key].locationpricemin,
             pricemax: obj[key].locationpricemax,
             // category: obj[key].locationcategory
-            
+            verified: obj[key].verified
+          
            
         })
 
@@ -791,6 +828,7 @@ export default new Vuex.Store({
 
   ad_card({commit},pay) {
     const card = {
+      type: "card",
      cardname: pay.name,
      cardlocation: pay.location,
      cardcontact: pay.contact,
@@ -800,13 +838,13 @@ export default new Vuex.Store({
      cardimg2: pay.imgurl2,
      cardimg3: pay.imgurl3,
      cardimg4: pay.imgurl4,
-     cardimg5: pay.imgurl5,
+     cardimg5: pay.imgurl5, verified: "no",
      cardwebsite: pay.website,
      cardemail: pay.email,
     //  cateringcategory: pay.categories,
      cardpricemin: pay.pricemin,
      cardpricemax: pay.pricemax,
-     cardcategory: pay.category
+     cardcategory: pay.category,
      
       
     }
@@ -846,7 +884,8 @@ export default new Vuex.Store({
             email: obj[key].cardemail,
             pricemin: obj[key].cardpricemin,
             pricemax: obj[key].cardpricemax,
-            category: obj[key].cardcategory
+            category: obj[key].cardcategory,
+            verified: obj[key].verified
             
            
         })
@@ -854,6 +893,168 @@ export default new Vuex.Store({
     }
     console.log(band)
     commit('cardset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
+
+  //salons
+
+
+  ad_salon({commit},pay) {
+    const salon = {
+      type: "salon",
+     salonname: pay.name,
+     salonlocation: pay.location,
+     saloncontact: pay.contact,
+     salondescription: pay.description,
+     salonimg: pay.imgurl,
+     salonimg1: pay.imgurl1,
+     salonimg2: pay.imgurl2,
+     salonimg3: pay.imgurl3,
+     salonimg4: pay.imgurl4,
+     salonimg5: pay.imgurl5, verified: "no",
+     salonwebsite: pay.website,
+     salonemail: pay.email,
+    //  cateringcategory: pay.categories,
+     salonpricemin: pay.pricemin,
+     salonpricemax: pay.pricemax,
+    //  saloncategory: pay.category,
+     
+      
+    }
+
+    firebase.database().ref('Salons').push(salon)
+    .then((response) => {
+      console.log(response),
+      commit('adsalon',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
+  fetchsalon ({commit}) {
+    firebase.database().ref('Salons').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].salonname,
+            location: obj[key].salonlocation,
+            /* category: obj[key].cateringcategory, */
+            number: obj[key].saloncontact,
+            description: obj[key].salondescription,
+            img: obj[key].salonimg,
+            img1: obj[key].salonimg1,
+            img2: obj[key].salonimg2,
+            img3: obj[key].salonimg3,
+            img4: obj[key].salonimg4,
+            img5: obj[key].salonimg5,
+            website: obj[key].salonwebsite,
+            email: obj[key].salonemail,
+            pricemin: obj[key].salonpricemin,
+            pricemax: obj[key].salonpricemax,
+            // category: obj[key].saloncategory,
+            verified: obj[key].verified
+            
+           
+        })
+
+    }
+    console.log(band)
+    commit('salonset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
+
+  //flora
+
+
+  ad_flora({commit},pay) {
+    const flora = {
+      type: "flora",
+     floraname: pay.name,
+     floralocation: pay.location,
+     floracontact: pay.contact,
+     floradescription: pay.description,
+     floraimg: pay.imgurl,
+     floraimg1: pay.imgurl1,
+     floraimg2: pay.imgurl2,
+     floraimg3: pay.imgurl3,
+     floraimg4: pay.imgurl4,
+     floraimg5: pay.imgurl5, verified: "no",
+     florawebsite: pay.website,
+     floraemail: pay.email,
+    //  cateringcategory: pay.categories,
+     florapricemin: pay.pricemin,
+     florapricemax: pay.pricemax,
+    //  saloncategory: pay.category,
+     
+      
+    }
+
+    firebase.database().ref('Flora').push(flora)
+    .then((response) => {
+      console.log(response),
+      commit('adflora',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
+  fetchflora ({commit}) {
+    firebase.database().ref('Flora').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].floraname,
+            location: obj[key].floralocation,
+            /* category: obj[key].cateringcategory, */
+            number: obj[key].floracontact,
+            description: obj[key].floradescription,
+            img: obj[key].floraimg,
+            img1: obj[key].floraimg1,
+            img2: obj[key].floraimg2,
+            img3: obj[key].floraimg3,
+            img4: obj[key].floraimg4,
+            img5: obj[key].floraimg5,
+            website: obj[key].florawebsite,
+            email: obj[key].floraemail,
+            pricemin: obj[key].florapricemin,
+            pricemax: obj[key].florapricemax,
+            // category: obj[key].saloncategory,
+            verified: obj[key].verified
+            
+           
+        })
+
+    }
+    console.log(band)
+    commit('floraset',band)
     })
     .catch(
         (error) => {
@@ -984,6 +1185,30 @@ export default new Vuex.Store({
       return (cardsid) => {
         return state.cards.find((card) => {
           return card.id == cardsid
+        })
+      }
+    },
+
+    salons (state) {
+      return state.salons
+    },
+
+    salonsfind (state) {
+      return (salonsid) => {
+        return state.salons.find((salon) => {
+          return salon.id == salonsid
+        })
+      }
+    },
+
+    floras (state) {
+      return state.floras
+    },
+
+    florasfind (state) {
+      return (florasid) => {
+        return state.floras.find((flora) => {
+          return flora.id == florasid
         })
       }
     },

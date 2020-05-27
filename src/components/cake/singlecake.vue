@@ -34,20 +34,30 @@
                         <v-layout row>
                         <span class="headline font-weight-bold">contact info</span>
                         </v-layout>
-                         <v-layout row class="font-weight-black">
-                        {{item.number}}
+                         <v-layout row class="font-weight-light">
+                       <v-icon>mdi-phone</v-icon><pre>   {{item.number}}</pre>
                     </v-layout>
-                    <v-layout row class="font-weight-black">
-                        {{item.website}}
+                    <v-layout row class="font-weight-light">
+                       <v-icon>mdi-earth</v-icon><pre>   {{item.website}}</pre>
                     </v-layout>
-                    <v-layout row class="font-weight-black">
-                        {{item.email}}
+                    <v-layout row class="font-weight-light">
+                   <v-icon>mdi-mail</v-icon>     <pre>   {{item.email}}</pre>
                     </v-layout>
                     <v-layout row>
                     <v-btn height="26" color="grey">request a quotation</v-btn>
                     </v-layout>
                     </v-flex>
                     </v-layout>
+
+
+                    <v-flex xs12 md6>
+                    <v-layout row>
+                        <h3 class="font-weight-bold">About {{item.name}}</h3>
+                    </v-layout>
+                        <v-layout row>
+                        <p class="font-weight-light">{{item.description}}</p>
+                        </v-layout>
+                    </v-flex>
                 </v-card-text>
             </v-card>
             </v-flex>

@@ -35,10 +35,16 @@ import Createlocationform from '@/components/locations/createlocationsform.vue';
 import Createbridalwearform from '@/components/bridalwear/createbridalwearform.vue';
 import Createinvcardform from '@/components/invcards/createinvcardsform.vue';
 import Createsalonform from '@/components/salons/createsalonsform.vue';
+
+import Createfloraform from '@/components/flora/createfloraform.vue';
 import Singlecake from '@/components/cake/singlecake.vue';
 import Singlebridalwear from '@/components/bridalwear/singlebridalwear.vue';
 import Singlelocation from '@/components/locations/singlelocation.vue';
 import Singleinvcard from '@/components/invcards/singleinvcard.vue';
+
+import Singlesalon from '@/components/salons/singlesalon.vue';
+
+import Singleflora from '@/components/flora/singleflora.vue';
 import Dashboard from '@/components/sellers/dashboard.vue';
 
 Vue.use(VueRouter)
@@ -107,6 +113,18 @@ Vue.use(VueRouter)
     name: 'invcard',
     props: true,
     component: Singleinvcard
+  },
+  {
+    path: '/salons/:id',
+    name: 'salon',
+    props: true,
+    component: Singlesalon
+  },
+  {
+    path: '/flora/:id',
+    name: 'flora',
+    props: true,
+    component: Singleflora
   },
   {
     path: '/hotelsform',
@@ -250,6 +268,11 @@ Vue.use(VueRouter)
     component: Createsalonform
   },
   {
+    path: '/createfloraform',
+    name: 'createfloraform',
+    component: Createfloraform
+  },
+  {
     path: '/navbartr',
     name: 'navbartr',
     component: navbartr
@@ -269,10 +292,15 @@ Vue.use(VueRouter)
   }
 ]
 
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  }
+  
 })
 
 export default router

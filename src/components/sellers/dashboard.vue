@@ -51,7 +51,7 @@
             </v-flex>
 
             <v-flex xs12  md3  >
-            <router-link to="/flowers">
+            <router-link to="/createfloraform">
                 <v-img height="200" src="@/assets/imgsset/flower.jpg">
                 </v-img>
             </router-link>

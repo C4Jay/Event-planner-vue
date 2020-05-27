@@ -55,12 +55,15 @@ new Vue({
     this.$store.dispatch('fetchbands')
     this.$store.dispatch('fetchcars')
     this.$store.dispatch('fetchcatering')*/
-    // this.$store.dispatch('fetchcake')
+    this.$store.dispatch('fetchcake')
+    this.$store.dispatch('fetchsalon')
+    this.$store.dispatch('fetchflora')
     /* this.$store.dispatch('fetchbridalwear')
     this.$store.dispatch('fetchlocation')
     this.$store.dispatch('fetchcard')
     
  */
 // this.$store.dispatch('fetchcars')
+
   }
 }).$mount('#app')

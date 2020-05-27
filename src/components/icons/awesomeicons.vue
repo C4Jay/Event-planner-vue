@@ -169,12 +169,12 @@
 
     <!-- <v-layout row wrap> -->
         
-        <v-flex>
+        <v-flex class="text-center">
             <v-layout row>
-            <router-link to="/catering"><img height="60" src="@/assets/icons/light/concierge-bell.svg"></router-link>
+            <router-link to="/salons"><img height="60" src="@/assets/icons/light/female.svg"></router-link>
             </v-layout>
             <v-layout row>
-                <span>Hair & beauty</span>
+               <!--  <span> -->Salons<!-- </span> -->
             </v-layout>
         </v-flex>
 

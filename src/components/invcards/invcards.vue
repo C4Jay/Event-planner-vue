@@ -63,7 +63,7 @@
     <v-container grid-list-lg>
         <v-layout row wrap >
             <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
-                <v-card :to="'/invcards/' + item.id" v-if="(location == '' || location == item.location ) && (category == '' || item.category == 'All kinds' || category == item.category )" elevation="19">
+                <v-card :to="'/invcards/' + item.id" v-if="(item.verified == 'yes' && location == '' || location == item.location ) && (category == '' || item.category == 'All kinds' || category == item.category )" elevation="19">
                     <v-responsive>
                         <v-img :src="item.img" height="200px">
                             <v-container fill-height fluid>
@@ -78,19 +78,19 @@
                     <v-card-text>
                         <div>
                             <!-- <v-icon>mdi-map-marker</v-icon><h3 class="headline mb-0">{{item.location}}</h3> -->
-                            <h3><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
+                            <h3 class="font-weight-light"><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
                             <!-- <v-layout row v-for="category in item.categories" :key="category"> -->
-                            <h3>{{item.category}}</h3>
+                            <h3 class="font-weight-light">{{item.category}}</h3>
                             <!-- </v-layout> -->
                             <h3 class="text-weight-black">Price range(Rs)</h3>
                             <div>
-                              {{item.pricemin}} - {{item.pricemax}}
+                              <p class="font-weight-light">{{item.pricemin}} - {{item.pricemax}}</p>
                             </div>
                            
-                            
+                            <!-- 
                             <div class="text-weight-black">
                                 {{item.description}}
-                            </div>
+                            </div> -->
                         </div>
                     </v-card-text>
                     <!-- <v-btn block color="green" :to="'/invcards/' + item.id" >view</v-btn> -->

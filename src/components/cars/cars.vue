@@ -78,24 +78,24 @@
                     <v-card-text>
                         <div>
                             <!-- <v-icon>mdi-map-marker</v-icon><h3 class="mb-0">{{item.location}}</h3> -->
-                            <h3><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
+                            <h3 class="font-weight-light"><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
                             <v-layout row v-for="category in item.categories" :key="category">
-                            <h3>{{category}}</h3>
+                            <h3 class="font-weight-light">{{category}}</h3>
                             </v-layout>
                             <h3 class="text-weight-black">Price range(Rs)</h3>
                             <div>
-                              {{item.pricemin}} - {{item.pricemax}}
+                              <p class="font-weight-light">{{item.pricemin}} - {{item.pricemax}}</p>
                             </div>
                            <h3 class="text-weight-black">
                              Cars available
                            </h3>
                            <div>
-                            <pre>{{item.list}}</pre>
+                            <pre class="font-weight-light">{{item.list}}</pre>
                            </div>
-                            
+                            <!-- 
                             <div class="text-weight-black">
                                 {{item.description}}
-                            </div>
+                            </div> -->
                         </div>
                     </v-card-text>
                     <!-- <v-btn block color="green" :to="'/cars/' + item.id" >view</v-btn> -->
