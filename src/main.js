@@ -50,7 +50,7 @@ new Vue({
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 
-    this.$store.dispatch('fetchHotels')
+    // this.$store.dispatch('fetchHotels')
     /* this.$store.dispatch('fetchPhotography')
     this.$store.dispatch('fetchbands')
     this.$store.dispatch('fetchcars')

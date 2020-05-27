@@ -173,4 +173,8 @@
 .h3 {
     font-size: 26px
 }
+
+a {
+    text-decoration: none
+}
 </style>

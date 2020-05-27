@@ -5,12 +5,14 @@
         </v-layout>
         <v-layout row wrap>
             <v-flex xs12 sm12 md2 class="img mr-0.5" v-for="item in items" :key="item.id">
+                <router-link :to="'/fvendors/' + item.id">
                 <v-img height="300" :src="item.img">
                     <v-flex class="texts text-center white--text font-weight-light">
                      <h3 class="font-weight-light">{{item.name}}</h3>
                 <h5 class="font-weight-light"><v-icon class="white--text">mdi-map-marker</v-icon>{{item.location}}</h5>
                     </v-flex>
                 </v-img>
+                </router-link>
                
             </v-flex>
             <!-- 
@@ -54,7 +56,7 @@ export default {
 
     computed: {
         items () {
-            return this.$store.getters.hotels
+            return this.$store.getters.fvendors
         }
     }
 }
@@ -68,6 +70,10 @@ export default {
     margin-top: 99px
 }
 .more {
+    text-decoration: none
+}
+
+a {
     text-decoration: none
 }
 </style>

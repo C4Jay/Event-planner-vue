@@ -46,6 +46,19 @@ import Singlesalon from '@/components/salons/singlesalon.vue';
 
 import Singleflora from '@/components/flora/singleflora.vue';
 import Dashboard from '@/components/sellers/dashboard.vue';
+import FCreatebandsform from '@/components/fvendors/createbandsform.vue'
+import FCreatebridalwearform from '@/components/fvendors/createbridalwearform.vue'
+import FCreatecakeform from '@/components/fvendors/createcakeform.vue'
+import FCreatecarsform from '@/components/fvendors/createcarsform.vue'
+import FCreatefloraform from '@/components/fvendors/createfloraform.vue'
+import FCreatehotelform from '@/components/fvendors/createhotelform.vue'
+import FCreateinvcardform from '@/components/fvendors/createinvcardsform.vue'
+import FCreatelocationform from '@/components/fvendors/createlocationsform.vue'
+import FCreatephotographyform from '@/components/fvendors/createphotographyform.vue'
+import FCreatesalonform from '@/components/fvendors/createsalonsform.vue'
+import Fvendorsdashboard from '@/components/fvendors/dashboard.vue'
+import Fvendors from '@/components/fvendors/fvendors.vue'
+import Singlevendor from '@/components/fvendors/singlevendor.vue'
 
 Vue.use(VueRouter)
 
@@ -207,6 +220,16 @@ Vue.use(VueRouter)
     component: Salons
   },
   {
+    path: '/fvendors',
+    name: 'fvendors',
+    component: Fvendors
+  },
+  {
+    path: '/fvendorsdashboard',
+    name: 'fvendorsdashboard',
+    component: Fvendorsdashboard
+  },
+  {
     path: '/weddingplanners',
     name: 'weddingplanners',
     component: Weddingplanners
@@ -218,9 +241,20 @@ Vue.use(VueRouter)
     component: Singlehotel
   },
   {
+    path: '/fvendors/:id',
+    name: 'singlevendor',
+    props: true,
+    component: Singlevendor
+  },
+  {
     path: '/createhotelform',
     name: 'createhotelform',
     component: Createhotelform
+  },
+  {
+    path: '/fcreatehotelform',
+    name: 'createhotelform',
+    component: FCreatehotelform
   },
   {
     path: '/createphotographyform',
@@ -228,14 +262,29 @@ Vue.use(VueRouter)
     component: Createphotographyform
   },
   {
+    path: '/fcreatephotographyform',
+    name: 'createphotographyform',
+    component: FCreatephotographyform
+  },
+  {
     path: '/createbandsform',
     name: 'createbandsform',
     component: Createbandsform
   },
   {
+    path: '/fcreatebandsform',
+    name: 'createbandsform',
+    component: FCreatebandsform
+  },
+  {
     path: '/createcarsform',
     name: 'createcarsform',
     component: Createcarsform
+  },
+  {
+    path: '/fcreatecarsform',
+    name: 'createcarsform',
+    component: FCreatecarsform
   },
   {
     path: '/createcateringform',
@@ -248,9 +297,19 @@ Vue.use(VueRouter)
     component: Createcakeform
   },
   {
+    path: '/fcreatecakeform',
+    name: 'createcakeform',
+    component: FCreatecakeform
+  },
+  {
     path: '/createlocationform',
     name: 'createlocationform',
     component: Createlocationform
+  },
+  {
+    path: '/fcreatelocationform',
+    name: 'createlocationform',
+    component: FCreatelocationform
   },
   {
     path: '/createbridalwearform',
@@ -258,9 +317,19 @@ Vue.use(VueRouter)
     component: Createbridalwearform
   },
   {
+    path: '/fcreatebridalwearform',
+    name: 'createbridalwearform',
+    component: FCreatebridalwearform
+  },
+  {
     path: '/createinvcardform',
     name: 'createinvcardform',
     component: Createinvcardform
+  },
+  {
+    path: '/fcreateinvcardform',
+    name: 'createinvcardform',
+    component: FCreateinvcardform
   },
   {
     path: '/createsalonform',
@@ -268,9 +337,19 @@ Vue.use(VueRouter)
     component: Createsalonform
   },
   {
+    path: '/fcreatesalonform',
+    name: 'createsalonform',
+    component: FCreatesalonform
+  },
+  {
     path: '/createfloraform',
     name: 'createfloraform',
     component: Createfloraform
+  },
+  {
+    path: '/fcreatefloraform',
+    name: 'createfloraform',
+    component: FCreatefloraform
   },
   {
     path: '/navbartr',

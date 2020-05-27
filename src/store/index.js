@@ -1433,7 +1433,8 @@ export default new Vuex.Store({
             pricemin: obj[key].florapricemin,
             pricemax: obj[key].florapricemax,
             // category: obj[key].saloncategory,
-            verified: obj[key].verified
+            verified: obj[key].verified,
+            hall: obj[key].hall
             
            
         })
@@ -1485,7 +1486,8 @@ export default new Vuex.Store({
             // category: obj[key].saloncategory,
             verified: obj[key].verified,
             list: obj[key].list,
-            
+            type: obj[key].type,
+
            
         })
 

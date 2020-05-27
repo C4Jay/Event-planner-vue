@@ -83,6 +83,17 @@
             </v-flex>
 
         </v-layout>
+
+        <v-layout row>
+            <v-flex class="text-center font-weight-bold">
+                <h1>become a featured member</h1>
+                <v-layout row class="text-center">
+                    <v-flex class="text-center">
+                    <v-btn to="/fvendorsdashboard" color="purple">begin</v-btn>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
     </v-container>
 </template>
 
