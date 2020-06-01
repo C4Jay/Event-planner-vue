@@ -52,7 +52,7 @@
           </v-flex>
     
     <v-container  class="icons1">
-    <v-layout row >
+    <v-layout row class="ml-7">
 
        
 
@@ -90,7 +90,7 @@
 
     </v-layout>
 
-    <v-layout row wrap>
+    <v-layout row wrap class="ml-7">
 
        <v-flex>
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
@@ -127,7 +127,7 @@
 
     
 
-    <v-layout row wrap>
+    <v-layout row wrap class="ml-7">
         <!-- <v-flex> -->
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <!-- <i class="fas fa-utensils icon"></i> -->
@@ -165,18 +165,17 @@
 
     </v-layout>
 
-    <v-layout row wrap>
-
+    <v-layout row wrap class="ml-7">
         <v-flex>
             <v-layout row>
-            <router-link to="/catering"><img height="60" src="@/assets/icons/light/concierge-bell.svg"></router-link>
+            <router-link to="/salons"><img height="60" src="@/assets/icons/light/female.svg"></router-link>
             </v-layout>
             <v-layout row>
-                <span>Catering</span>
+                <span>Salons</span>
             </v-layout>
         </v-flex>
 
-        <v-flex>
+        <v-flex class="hotel">
             <v-layout row>
             <router-link to="/hotels"><img height="60" src="@/assets/icons/light/hotel.svg"></router-link>
             </v-layout>
@@ -184,7 +183,6 @@
                 <span>Hotel</span>
             </v-layout>
         </v-flex>
-
        <!--  <v-flex>
              -->
            <!-- <i class="fas fa-spa icon"></i>
@@ -249,11 +247,16 @@ export default {
     /* color: green */
 }
 .icons {
-    margin-left: 100px
+    margin-left: 100px;
+    
 }
 .icons1 {
-    margin-left: 150px
+    margin-left: 200px
    
+}
+
+.hotel {
+    margin-left: -101px
 }
 @media only screen and (max-width: 450px) {
     .icons {

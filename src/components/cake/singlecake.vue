@@ -44,13 +44,13 @@
                    <v-icon>mdi-mail</v-icon>     <pre>   {{item.email}}</pre>
                     </v-layout>
                     <v-layout row>
-                    <v-btn height="26" color="grey">request a quotation</v-btn>
+                    <v-btn height="26" color="grey" @click="showmessagebox">request a quotation</v-btn>
                     </v-layout>
                     </v-flex>
                     </v-layout>
 
 
-                    <v-flex xs12 md6>
+                    <v-flex xs12 md6 class="mt-10">
                     <v-layout row>
                         <h3 class="font-weight-bold">About {{item.name}}</h3>
                     </v-layout>
@@ -58,11 +58,75 @@
                         <p class="font-weight-light">{{item.description}}</p>
                         </v-layout>
                     </v-flex>
+                    
+                   <v-flex class="text-center">
+                    
+                   </v-flex>
+
+
                 </v-card-text>
             </v-card>
             </v-flex>
         </v-layout>
-        <v-flex xs12 class="ml-1 mr-3">
+
+        <v-flex xs12 class="ml-1 ">
+            <v-container xs12 class="orange main " v-if="messagebox">
+                        
+                        <v-layout row>
+                            <v-flex xs12 md3 >
+                                
+                                <v-layout row class="ml-3 mr-6">
+                                    <v-text-field
+                                    solo
+                                    v-model="name"
+                                    label="Name">
+                                    </v-text-field>
+                                </v-layout>
+                                     <v-layout row class="ml-3 mr-6">
+                                    <v-text-field
+                                    solo
+                                    v-model="number"
+                                    label="Phone number">
+                                    </v-text-field>
+                                </v-layout>
+                                 <v-layout row class="ml-3 mr-6">
+                                    <v-text-field
+                                    solo
+                                    v-model="email"
+                                    label="email(optional)">
+                                    </v-text-field>
+                                </v-layout>
+                                <v-layout row class="ml-1 mr-3">
+                                     <v-col cols="20">
+                         <v-textarea
+                          v-model="message"
+                          solo
+                          
+                         >
+                       <template v-slot:label>
+                         <div>
+                          Message
+                         </div>
+                       </template>
+                        </v-textarea>
+                        </v-col>
+                                </v-layout>
+                        <v-layout row class="ml-3">
+                            <v-btn @click="send" color="blue">send</v-btn>
+                        </v-layout>
+                        
+
+                            </v-flex>
+
+                            <v-flex xs10 sm5 offset-sm-6 class="ml-7 mt-3">
+                                <v-layout row>
+                                    <h3>You will recieve a reply withing 24 hours.</h3>
+                                </v-layout>
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+        </v-flex>
+        <v-flex xs12 class="ml-1 ">
         <v-carousel
         height="618"
         autoplay
@@ -91,7 +155,12 @@ export default {
         hotel: {},
         imgs: [],
         category0: '',
-        category1: ''
+        category1: '',
+        messagebox: false,
+        number: '',
+        name: '',
+        email: '',
+        message: ''
         }
     },
     
@@ -115,8 +184,25 @@ export default {
         item() {
             return this.$store.getters.cakesfind(this.id)
         }
+    },
+
+    methods: {
+        showmessagebox(){
+            this.messagebox = !this.messagebox
+        },
+        send() {
+            this.$store.dispatch('messaging', {name: this.name, email: this.email,number: this.number, 
+            message: this.message, vendorname: this.item.name, vendoremail: this.item.email,
+            vendornumber: this.item.number}) 
+          
+        }
     }
 
 }
 </script>
 
+<style scoped>
+.main {
+    width: '100%'
+}
+</style>

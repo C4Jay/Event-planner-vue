@@ -14,9 +14,34 @@
                     <v-layout row class="font-weight-light">
                        <v-icon>mdi-map-marker</v-icon><h3> {{item.location}}</h3>
                     </v-layout>
-                    <v-layout row class="font-weight-light">
+                    <v-layout v-if="item.type == 'hotel'" row class="font-weight-light">
                         {{item.capacity}} seating capacity
                     </v-layout>
+                    <v-container v-if="item.type == 'car'">
+                    <v-layout row class="font-weight-black">
+                        Type of cars
+                    </v-layout>
+                    <v-layout row >
+                        {{item.category}}
+                    </v-layout>
+
+                    <v-layout row class="font-weight-black">
+                        Cars we have
+                    </v-layout>
+                    <v-layout row class="font-weight-light" >
+                        <pre>{{item.list}}</pre>
+                    </v-layout>
+                    </v-container>
+
+                    <v-container v-if="item.type == 'car' || item.type == 'photography' || item.type == 'salon' || item.type == 'flora' || item.type == 'cake' || item.type == 'bridalwear'" >
+                         <v-layout row class="font-weight-black">
+                        Price range(Rs)
+                    </v-layout>
+                    <v-layout row >
+                        {{item.pricemin}} - {{item.pricemax}}
+                    </v-layout>
+                    </v-container>
+
                    
                     </v-flex>
                     
@@ -40,7 +65,7 @@
                     </v-layout>
 
 
-                    <v-flex xs12 md6>
+                    <v-flex xs12 md6 class="ml-7">
                     <v-layout row>
                         <h3 class="font-weight-bold">About {{item.name}}</h3>
                     </v-layout>

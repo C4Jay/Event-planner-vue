@@ -34,13 +34,13 @@
                    <v-icon>mdi-mail</v-icon>     <pre>   {{item.email}}</pre>
                     </v-layout>
                     <v-layout row>
-                    <v-btn height="26" color="grey">request a quotation</v-btn>
+                    <v-btn height="26" color="grey" @click="showmessagebox">request a quotation</v-btn>
                     </v-layout>
                     </v-flex>
                     </v-layout>
 
 
-                    <v-flex xs12 md6>
+                    <v-flex xs12 md6 class="mt-10">
                     <v-layout row>
                         <h3 class="font-weight-bold">About {{item.name}}</h3>
                     </v-layout>
@@ -48,6 +48,45 @@
                         <p class="font-weight-light">{{item.description}}</p>
                         </v-layout>
                     </v-flex>
+
+                    <v-container v-if="messagebox">
+                        <v-layout>
+                            <v-flex>
+                                <v-layout row>
+                                    <v-text-field
+                                    solo
+                                    v-model="name"
+                                    label="Name">
+                                    </v-text-field>
+                                </v-layout>
+                                                                <v-layout row>
+                                    <v-text-field
+                                    solo
+                                    v-model="number"
+                                    label="Phone number">
+                                    </v-text-field>
+                                </v-layout>
+                                     <v-col cols="10" class="ml-8">
+                         <v-textarea
+                          v-model="message"
+                          
+                         >
+                       <template v-slot:label>
+                         <div>
+                          Message
+                         </div>
+                       </template>
+                        </v-textarea>
+                        </v-col>
+                        <v-layout row>
+                            <v-btn @click="send">send</v-btn>
+                        </v-layout>
+
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+
+                    
                 </v-card-text>
             </v-card>
             </v-flex>
@@ -78,7 +117,8 @@ export default {
         return {
         wholeResponse: [],
         hotel: {},
-        imgs: []
+        imgs: [],
+        messagebox: false
         }
     },
     
@@ -99,6 +139,12 @@ export default {
     computed: {
         item() {
             return this.$store.getters.hotelsfind(this.id)
+        }
+    },
+
+    methods: {
+        showmessagebox() {
+            this.messagebox = true
         }
     }
 

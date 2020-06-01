@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import firebase from 'firebase'
+import moment from 'moment'
 
 Vue.use(Vuex)
 
@@ -1503,6 +1504,31 @@ export default new Vuex.Store({
     
 
   },
+
+  messaging({commit},pay) {
+    const message = {
+      
+     name: pay.name,
+     email: pay.email,
+     number: pay.number,
+     vendorname: pay.vendorname,
+     vendornumber: pay.vendornumber,
+     vendoremail: pay.vendoremail,
+     message: pay.message,
+     time: moment().format('MMMM Do YYYY, h:mm:ss a')
+      
+    }
+
+    firebase.database().ref('Messages').push(message)
+    .then((response) => {
+      console.log(response)
+      commit('adcar',response)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
 
 
 

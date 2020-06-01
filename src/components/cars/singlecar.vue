@@ -57,7 +57,7 @@
                     </v-layout>
 
 
-                    <v-flex xs12 md6>
+                    <v-flex xs12 md6 class="mt-10">
                     <v-layout row>
                         <h3 class="font-weight-bold">About {{item.name}}</h3>
                     </v-layout>
