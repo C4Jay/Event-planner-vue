@@ -8,8 +8,8 @@
                 <router-link :to="'/fvendors/' + item.id">
                 <v-img height="300" :src="item.img">
                     <v-flex class="texts text-center white--text font-weight-light">
-                     <h3 class="font-weight-light">{{item.name}}</h3>
-                <h5 class="font-weight-light"><v-icon class="white--text">mdi-map-marker</v-icon>{{item.location}}</h5>
+                     <h3 class="font-weight-light vendor">{{item.name}}</h3>
+                <h5 class="font-weight-light map"><v-icon class="white--text">mdi-map-marker</v-icon>{{item.location}}</h5>
                     </v-flex>
                 </v-img>
                 </router-link>
@@ -75,5 +75,14 @@ export default {
 
 a {
     text-decoration: none
+}
+
+.vendor {
+    background-color: rgba(0,0,0,0.4)
+}
+
+.map {
+    margin-top: 3px;
+    background-color: rgba(0,0,0,0.4)
 }
 </style>

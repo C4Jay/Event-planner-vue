@@ -194,7 +194,7 @@ export default {
             this.$store.dispatch('messaging', {name: this.name, email: this.email,number: this.number, 
             message: this.message, vendorname: this.item.name, vendoremail: this.item.email,
             vendornumber: this.item.number}) 
-          
+           this.messagebox = !this.messagebox
         }
     }
 
