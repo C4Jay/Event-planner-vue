@@ -245,18 +245,23 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .icon {
     font-size: 60px;
-    color: 'rgba(212, 207, 184, 0.5)'
+    color: 'rgba(212, 207, 184, 0.5)';
+    font-family: 'Montserrat', sans-serif;
     /* color: green */
 }
 .icons {
     margin-top: 30px;
     margin-left: 60px;
-    /* background-color: 	#f9583c */
+    /* background-color: 	#f9583c */;
+    font-family: 'Montserrat', sans-serif;
 }
 .icons1 {
-    margin-left: 60px
+    margin-left: 60px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 @media only screen and (max-width: 450px) {
@@ -268,7 +273,8 @@ export default {
     }
     span {
         font-size: 15px;
-        margin-bottom: 3px
+        margin-bottom: 3px;
+        font-family: 'Montserrat', sans-serif;
     }
 }
 

@@ -1,12 +1,12 @@
 <template>
     <v-container>
-        <v-layout>
+        <v-layout class="desc">
             <v-flex xs12 class="ml-1 mr-3">
                
             <v-card elevation="19">
                 <v-img class="img" :src="item.img" height="400px"></v-img>
-                <v-card-title class="display-1">
-                    {{item.name}}
+                <v-card-title>
+                   <h1> {{item.name}}</h1>
                 </v-card-title>
                 <v-card-text class="card-text ml-3">
                     <v-layout row wrap>
@@ -30,9 +30,10 @@
                     
                     </v-flex>
                     
-                    <v-flex xs12 sm5 class="ml-5">
+                    <v-flex xs12 sm5 class="ml-5 desc">
                         <v-layout row>
-                        <span class="headline font-weight-bold">contact info</span>
+                        <!-- <span class="headline font-weight-bold ">contact info</span> -->
+                        <v-layout row class="font-weight-black"><h2>contact info</h2></v-layout>
                         </v-layout>
                          <v-layout row class="font-weight-light">
                        <v-icon>mdi-phone</v-icon><pre>   {{item.number}}</pre>
@@ -69,7 +70,7 @@
             </v-flex>
         </v-layout>
 
-        <v-flex xs12 class="ml-1 ">
+        <v-flex xs12 class="ml-1 desc">
             <v-container xs12 class="orange main " v-if="messagebox">
                         
                         <v-layout row>
@@ -120,7 +121,7 @@
 
                             <v-flex xs10 sm5 offset-sm-6 class="ml-7 mt-3">
                                 <v-layout row>
-                                    <h3>You will recieve a reply withing 24 hours.</h3>
+                                    <h3>You will recieve a reply within 24 hours.</h3>
                                 </v-layout>
                             </v-flex>
                         </v-layout>
@@ -202,7 +203,12 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .main {
     width: '100%'
+}
+.desc {
+    font-family: 'Montserrat', sans-serif;
 }
 </style>
