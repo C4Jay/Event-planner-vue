@@ -1,6 +1,8 @@
 <template>
   <span>
+    <navbartile></navbartile>
     <!-- <navbar></navbar> -->
+    <!-- <navbartest></navbartest> -->
     <!-- <navbar1></navbar1> -->
     <!-- <slideshow class="slide"></slideshow> -->
     <slideshowcar class="slide"></slideshowcar>
@@ -21,9 +23,12 @@
 </template>
 
 <script>
+
+import navbartile from '@/components/navbar/navbartile.vue';
 // @ is an alias to /src
+// import navbartest from '@/components/navbar/navbartest.vue';
 // import Parlx1 from '@/components/home/Parlx1.vue'
-/* import navbar from '@/components/navbar/navbar.vue' */
+// import navbar from '@/components/navbar/navbar.vue'
 // import sellers from '@/components/cards/sellers.vue'
 import Parlx2 from '@/components/home/Parlx2.vue'
 // import Footer from '@/components/footer/Foooter.vue'
@@ -44,7 +49,9 @@ import offers from '@/components/home/offers.vue';
 export default {
   name: 'Home',
   components: {
-    /* navbar, */
+    navbartile,
+    // navbartest,
+    // navbar,
     // Parlx1,
     // sellers,
     // slideshow,

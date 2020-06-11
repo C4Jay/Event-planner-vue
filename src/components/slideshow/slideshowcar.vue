@@ -71,7 +71,9 @@
 
 <style scoped>
 .slider {
-  height: 900px
+  height: 900px;
+          font-family: 'Montserrat', sans-serif;
+
 }
 
 @media only screen and (max-width: 456px){

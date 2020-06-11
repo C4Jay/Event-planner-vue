@@ -146,6 +146,8 @@
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .tile {
     height: 150px;
     background-color: burlywood;
@@ -153,13 +155,18 @@
     border-style: solid;
     border-width: 1;
     border-color: white;
-    border-radius: 3px
+    border-radius: 3px;
+            font-family: 'Montserrat', sans-serif;
+
+    
     
 }
 .text {
     margin-right: '30%';
     justify-content: center;
-    margin-top: 30px
+    margin-top: 30px;
+            font-family: 'Montserrat', sans-serif;
+
 }
 .img {
     margin-right: '600%';
@@ -171,10 +178,17 @@
 }
 
 .h3 {
-    font-size: 26px
+    font-size: 26px;
+            font-family: 'Montserrat', sans-serif;
+
 }
 
 a {
     text-decoration: none
+}
+
+h1 {
+            font-family: 'Montserrat', sans-serif;
+
 }
 </style>

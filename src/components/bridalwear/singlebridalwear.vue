@@ -5,8 +5,10 @@
                
             <v-card elevation="19">
                 <v-img class="img" :src="item.img" height="600px"></v-img>
-                <v-card-title class="display-1">
+                <v-card-title>
+                    <h1>
                     {{item.name}}
+                    </h1>
                 </v-card-title>
                 <v-card-text class="card-text ml-3">
                     <v-layout row wrap>

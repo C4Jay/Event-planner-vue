@@ -243,15 +243,21 @@ export default {
 <style scoped>
 .icon {
     font-size: 60px;
-    color: 'rgba(212, 207, 184, 0.5)'
+    color: 'rgba(212, 207, 184, 0.5)';
+            font-family: 'Montserrat', sans-serif;
+
     /* color: green */
 }
 .icons {
     margin-left: 100px;
+            font-family: 'Montserrat', sans-serif;
+
     
 }
 .icons1 {
-    margin-left: 200px
+    margin-left: 200px;
+            font-family: 'Montserrat', sans-serif;
+
    
 }
 
@@ -267,13 +273,18 @@ export default {
     }
     span {
         font-size: 15px;
-        margin-bottom: 3px
+        margin-bottom: 3px;
+                font-family: 'Montserrat', sans-serif;
+
     }
 }
 @media only screen and (min-width : 768px) and (max-width : 1024px)  { 
     
     .icons {
-        margin-left: -19px
+        margin-left: -130px
+    }
+    .textfield {
+        margin-left: 100px
     }
 }
 @media only screen and (min-width: 1023px) and (max-width: 1024px) {
@@ -281,7 +292,13 @@ export default {
         margin-left: 80px
     }
     .icons1 {
-        margin-left: 100px
+        /* margin-left: 100px */
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .icons1 {
+        margin-left: 0px
     }
 }
 span {

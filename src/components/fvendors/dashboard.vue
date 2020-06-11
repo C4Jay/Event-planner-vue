@@ -1,5 +1,5 @@
 <template>
-    <v-container grid-list-lg>
+    <v-container grid-list-lg class="main">
         <h1 class="font-weight-black text-center">Become a featured member</h1>
         <v-layout class="imgs" row wrap>
             <v-flex xs12  md3  >
@@ -87,3 +87,9 @@
 </template>
 
 
+<style scoped>
+.main {
+            font-family: 'Montserrat', sans-serif;
+
+}
+</style>

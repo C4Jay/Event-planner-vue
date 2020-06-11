@@ -1,11 +1,11 @@
 <template>
-    <v-container>
+    <v-container class="main">
         <v-layout>
             <v-flex xs12 sm6 offset-sm3 class="main" >
                 <v-card elevation="19" class="card">
                     <v-container>
                         <v-layout row>
-                            <v-flex class="text-center font-weight-black display-1">band / DJ (featured) basic information</v-flex>
+                            <v-flex class="text-center"><h1 class="font-weight-black text-center">band / DJ (featured) basic information</h1></v-flex>
                         </v-layout>
                         
                         <v-form @submit.prevent="createhotel">
@@ -832,9 +832,16 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.desc {
+    font-family: 'Montserrat', sans-serif;
+}
 .main {
     margin-bottom: 200px;
-    margin-top: 100px
+    margin-top: 100px;
+                    font-family: 'Montserrat', sans-serif;
+
 }
 
 .text-field {

@@ -67,7 +67,9 @@ export default {
     padding: 1
 }
 .texts {
-    margin-top: 99px
+    margin-top: 99px;
+            font-family: 'Montserrat', sans-serif;
+
 }
 .more {
     text-decoration: none
@@ -84,5 +86,9 @@ a {
 .map {
     margin-top: 3px;
     background-color: rgba(0,0,0,0.4)
+}
+h1 {
+            font-family: 'Montserrat', sans-serif;
+
 }
 </style>

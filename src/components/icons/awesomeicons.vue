@@ -10,9 +10,9 @@
                               Ayubowan
                           </v-flex>
                       </v-layout> -->
-                      <v-layout row wrap class="text-center ml-8">
+                      <v-layout row class="text-center">
                           <v-flex class="text-center row">
-                          <v-flex md4 class="textfield mr-3 .body-1">
+                          <v-flex md4 class="textfield mr-1 .body-1">
                           <!-- <v-text-field
                           class="body-1"
                           background-color="rgba(223, 230, 225, 0.6)"
@@ -45,7 +45,7 @@
                            label="Where?"></v-select>
                            </v-flex>
 
-                           <v-flex md3 ><v-btn color="pink">find</v-btn></v-flex>
+                           <v-flex md2 ><v-btn height="56" color="pink">find</v-btn></v-flex>
 
                           </v-flex>
                       </v-layout>
@@ -58,35 +58,41 @@
 
        
 
-        <v-flex ><!-- sm4 md2 -->
+        <v-flex class="single" ><!-- sm4 md2 -->
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
             <v-layout row>
-            <router-link to="/bands"><img class="icon" height="60" src="@/assets/icons/light/compact-disc.svg"></router-link>
+            <router-link to="/bands"> <v-flex class="single"><img class="icon" height="60" src="@/assets/icons/light/compact-disc.svg"></v-flex></router-link>
             </v-layout>
-            <v-layout row>
+            <v-layout row class="text-center">
+                 <!-- <v-flex class="single"> -->
                 <span>Music</span>
+                 <!-- </v-flex> -->
             </v-layout>
         </v-flex>
         
 
                 
-        <v-flex>
+        <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
-           <v-layout row>
-            <router-link to="/bridalwear"><img height="60" src="@/assets/icons/light/user-tie.svg"></router-link>
+           <v-layout row class="text-center">
+            <router-link to="/bridalwear"> <v-flex class="single"><img height="60" src="@/assets/icons/light/user-tie.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
+                <!-- <v-flex class="single"> -->
                <span>Attire</span>
+                <!-- </v-flex> -->
            </v-layout>
         </v-flex>
 
-        <v-flex>
+        <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
-            <router-link to="/locations"><img height="60" src="@/assets/icons/light/globe-europe.svg"></router-link>
+            <router-link to="/locations"> <v-flex class="single"><img height="60" src="@/assets/icons/light/globe-europe.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
+                <!-- <v-flex class="single"> -->
                <span>Location</span>
+                <!-- </v-flex> -->
            </v-layout>
         </v-flex>
 
@@ -94,20 +100,22 @@
 
     <!-- <v-layout row wrap> -->
 
-       <v-flex>
+       <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
-            <router-link to="/weddingplanners"><img height="60" src="@/assets/icons/light/tasks.svg"></router-link>
+            <router-link to="/weddingplanners"> <v-flex class="single"><img height="60" src="@/assets/icons/light/tasks.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
+                <!-- <v-flex class="single"> -->
                <span>Planners</span>
+                <!-- </v-flex> -->
            </v-layout>
         </v-flex>
 
-        <v-flex>
+        <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
-           <v-layout row>
-            <router-link to="/invcards"><img height="60" src="@/assets/icons/light/gifts.svg"></router-link>
+           <v-layout row class="ml-1">
+            <router-link to="/invcards"><v-flex class="single"><img height="60" src="@/assets/icons/light/gifts.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
                <span>Cards / Gifts</span>
@@ -116,10 +124,10 @@
 
         
 
-         <v-flex>
+         <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
-           <v-layout row>
-            <router-link to="/photography"><img height="60" src="@/assets/icons/light/camera.svg"></router-link>
+           <v-layout row class="ml-3">
+            <router-link to="/photography"><v-flex class="single"><img height="60" src="@/assets/icons/light/camera.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
                <span>Photography</span>
@@ -136,28 +144,28 @@
         <!-- </v-flex> -->
 
         <!-- flower -->
-        <v-flex>
+        <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
             <router-link to="/cars"><img height="60" src="@/assets/icons/light/car.svg"></router-link>
            </v-layout>
-           <v-layout row>
+           <v-layout row class="ml-1">
                <span>Car</span>
            </v-layout>
         </v-flex>
 
-        <v-flex>
+        <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
             <router-link to="/cake"><img height="60" src="@/assets/icons/light/birthday-cake.svg"></router-link>
            </v-layout>
-           <v-layout row>
+           <v-layout row class="cake">
                <span>Cake</span>
            </v-layout>
         </v-flex>
 
-        <v-flex>
-            <v-layout row>
+        <v-flex class="single">
+            <v-layout row class="ml-1">
             <router-link to="/flora"><img height="60" src="@/assets/icons/light/flower-tulip.svg"></router-link>
             </v-layout>
             <v-layout row>
@@ -173,13 +181,13 @@
             <v-layout row>
             <router-link to="/salons"><img height="60" src="@/assets/icons/light/female.svg"></router-link>
             </v-layout>
-            <v-layout row>
+            <v-layout row class="cake1">
                <!--  <span> -->Salons<!-- </span> -->
             </v-layout>
         </v-flex>
 
-        <v-flex>
-            <v-layout row>
+        <v-flex class="single">
+            <v-layout row class="hotel">
             <router-link to="/hotels"><img height="60" src="@/assets/icons/light/hotel.svg"></router-link>
             </v-layout>
             <v-layout row>
@@ -246,7 +254,24 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+.hotel {
+    margin-left: -24px
+}
+.cake1 {
+    /* margin-left: 0.5px */
+    margin-left: -20px
+}
+img {
+    align-items: center
+}
+.single {
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    /* border-color: black; */
+    /* border-width: 1; */
+    /* border-style: solid */
+}
 .icon {
     font-size: 60px;
     color: 'rgba(212, 207, 184, 0.5)';
@@ -262,6 +287,10 @@ export default {
 .icons1 {
     margin-left: 60px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.textfield {
+    margin-left: 60px
 }
 
 @media only screen and (max-width: 450px) {
@@ -281,7 +310,9 @@ export default {
 @media only screen and (min-width : 768px) and (max-width : 1024px)  { 
     
     .icons {
-        margin-left: -19px
+        /* margin-left: -400px; */
+        
+        /* margin-left: -100px */
     }
 }
 

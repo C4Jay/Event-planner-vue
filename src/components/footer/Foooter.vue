@@ -2,6 +2,7 @@
   <v-footer
     dark
     padless
+    class="foot"
   >
     <v-card
       flat
@@ -48,3 +49,12 @@
     }),
   }
 </script>
+
+
+
+<style scoped>
+.foot {
+          font-family: 'Montserrat', sans-serif;
+
+}
+</style>

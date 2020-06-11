@@ -40,20 +40,22 @@
             </v-list>
         </v-navigation-drawer>
         <v-card >
-        <v-toolbar elevation="19" height="70" color="transparent">   
+        <v-toolbar elevation="19" height="70" color="white">   
            
             <!-- <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon> -->
       <v-btn icon class="mr-8"  @click.stop="drawer = !drawer">
-        <v-icon>mdi-dots-vertical</v-icon>
+        <!-- <v-icon>mdi-dots-vertical</v-icon> -->
       </v-btn>
-            <v-spacer class="hidden-md-and-up"></v-spacer>
+            <!-- <v-spacer class="hidden-md-and-up"></v-spacer> -->
             <router-link to="/">
-                  <v-app-bar-nav-icon><!-- 
-        <v-img class="ml-10 img" src="https://www.48hourslogo.com/48hourslogo_data/2019/03/04/82508_1551698623.png" height="60px" width="80px"> -->
-        
-        <v-img class="ml-10 mr-10 img" src="https://www.monaco.edu/wp-content/uploads/2016/06/Puma-logo-PNG-Transparent-Background.png" height="60px" width="80px">
+                  <!-- <v-app-bar-nav-icon>       -->
+                      <v-flex class="img">
+        <!-- <v-img class="ml-10 mr-10 img" src="https://www.monaco.edu/wp-content/uploads/2016/06/Puma-logo-PNG-Transparent-Background.png" height="60px" width="80px"> -->
+        <!-- </v-img> -->
+         <v-img class="ml-10 mr-10 img" src="@/assets/imgs/arcade.png" height="70px" width="165px">
         </v-img>
-      </v-app-bar-nav-icon>
+        </v-flex>
+      <!-- </v-app-bar-nav-icon> -->
                 <!-- <v-toolbar-title data-cy="titleBtn" class="blue--text">{{appTitle}}</v-toolbar-title> -->
             </router-link>
        <!--     <v-btn flat class="hidden-sm-and-down nav-menu" to="/menu" data-cy="menuBtn">Menu</v-btn>  -->
@@ -74,10 +76,10 @@
                     Log-Out
                 </v-btn> -->
                  <v-btn to="/signin" icon>
-        <v-icon>mdi-account</v-icon>
+        <!-- <v-icon>mdi-account</v-icon> -->
                  </v-btn>
         <v-btn icon>
-            <v-icon>mdi-cart-outline</v-icon>
+            <!-- <v-icon>mdi-cart-outline</v-icon> -->
         </v-btn>
       
      <!--  <v-btn text class="btns" x-small>
@@ -186,5 +188,11 @@ a {
 
  .btns {
      font-size: 10
+ }
+
+ .img {
+     margin-left: 500px
+     /* text-align: center */
+     /* align-content: center */
  }
 </style>

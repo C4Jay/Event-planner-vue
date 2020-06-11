@@ -5,7 +5,7 @@
                 <v-card elevation="19" class="card">
                     <v-container>
                         <v-layout row>
-                            <v-flex class="text-center font-weight-black display-1">flora & deco basic information</v-flex>
+                            <v-flex class="text-center font-weight-black"><h1>flora & deco basic information</h1></v-flex>
                         </v-layout>
                         
                         <v-form @submit.prevent="createflora">
@@ -838,9 +838,15 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.desc {
+   
+}
 .main {
     margin-bottom: 200px;
-    margin-top: 100px
+    margin-top: 100px;
+     font-family: 'Montserrat', sans-serif;
 }
 
 .text-field {

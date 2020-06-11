@@ -1,12 +1,14 @@
 <template>
-    <v-container>
+    <v-container class="desc">
         <v-layout>
             <v-flex xs12 class="ml-1 mr-3">
             <v-card elevation="19">
                 <v-img class="img" :src="item.img" height="400px"></v-img>
-                <v-card-title class="display-1">
+                <v-card-title>
+                    <h1>
                     {{item.name}}  |
                     {{item.hall}}
+                    </h1>
                 </v-card-title>
                 <v-card-text class="card-text ml-3">
                     <v-layout row wrap>
@@ -40,7 +42,7 @@
                     </v-layout>
 
 
-                    <v-flex xs12 md6 class="mt-10">
+                    <v-flex xs12 md6 class="mt-10 desc">
                     <v-layout row>
                         <h3 class="font-weight-bold">About {{item.name}}</h3>
                     </v-layout>
@@ -151,3 +153,10 @@ export default {
 }
 </script>
 
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.desc {
+    font-family: 'Montserrat', sans-serif;
+}
+</style>

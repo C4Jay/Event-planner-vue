@@ -51,19 +51,19 @@ new Vue({
     firebase.analytics();
 
     // this.$store.dispatch('fetchHotels')
-    /* this.$store.dispatch('fetchPhotography')
-    this.$store.dispatch('fetchbands')
+    // /* this.$store.dispatch('fetchPhotography')
+    // this.$store.dispatch('fetchbands')
     this.$store.dispatch('fetchcars')
-    this.$store.dispatch('fetchcatering')*/
+    // this.$store.dispatch('fetchcatering')*/
     this.$store.dispatch('fetchcake')
     this.$store.dispatch('fetchsalon')
     this.$store.dispatch('fetchflora')
     this.$store.dispatch('fetchfvendors')
-    /* this.$store.dispatch('fetchbridalwear')
+    // /* this.$store.dispatch('fetchbridalwear')
     this.$store.dispatch('fetchlocation')
     this.$store.dispatch('fetchcard')
     
- */
+ 
 // this.$store.dispatch('fetchcars')
 
   }

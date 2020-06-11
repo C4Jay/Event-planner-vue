@@ -205,10 +205,10 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.main {
-    width: '100%'
-}
 .desc {
     font-family: 'Montserrat', sans-serif;
+}
+.main {
+    width: '100%'
 }
 </style>

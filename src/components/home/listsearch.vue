@@ -43,16 +43,22 @@
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 .tile {
     border-style: solid;
     border-width: 1;
     border-color: white;
-    text-decoration: none
+    text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+
 }
 .topic {
     text-decoration: none;
     margin-top: 190px;
-    background-color: rgb(180, 174, 174, 0.3)
+    background-color: rgb(180, 174, 174, 0.3);
+        font-family: 'Montserrat', sans-serif;
+
 }
 .router-link {
     text-decoration: none
@@ -62,6 +68,10 @@
 }
 a{
     text-decoration: none
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+
 }
 </style>
 

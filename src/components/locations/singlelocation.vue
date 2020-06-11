@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-layout>
+        <v-layout class="desc">
             <v-flex xs12 class="ml-1 mr-3">
                
             <v-card elevation="19">
@@ -50,7 +50,7 @@
                     </v-layout>
 
 
-                    <v-flex xs12 md6 class="mt-10">
+                    <v-flex xs12 md6 class="mt-10 desc">
                     <v-layout row>
                         <h3 class="font-weight-bold">About {{item.name}}</h3>
                     </v-layout>
@@ -119,3 +119,10 @@ export default {
 }
 </script>
 
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.desc {
+    font-family: 'Montserrat', sans-serif;
+}
+</style>

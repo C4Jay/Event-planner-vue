@@ -832,7 +832,13 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.desc {
+    
+}
 .main {
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 200px;
     margin-top: 100px
 }

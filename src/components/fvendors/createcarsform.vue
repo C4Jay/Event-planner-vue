@@ -5,7 +5,7 @@
                 <v-card elevation="19" class="card">
                     <v-container>
                         <v-layout row>
-                            <v-flex class="text-center font-weight-black display-1">cars (featured) basic information</v-flex>
+                            <v-flex class="text-center font-weight-black"><h1 class="font-weight-black text-center">cars (featured) basic information</h1></v-flex>
                         </v-layout>
                         
                         <v-form @submit.prevent="createhotel">
@@ -843,7 +843,13 @@ export default {
 
 
 <style scoped>
-.main {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.desc {
+   
+}
+.main { 
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 200px;
     margin-top: 100px
 }

@@ -1,7 +1,7 @@
 <template>
 
 <div>
-<v-container>
+<v-container class="main">
 <v-card elevation="19" color="rgba(255, 0, 0, 0.2)" class="card" >
   <v-form v-model="valid" class="mr-3 my-3 ml-3">
     <v-container>
@@ -61,7 +61,7 @@
 
      <v-card color="rgba(255, 0, 0, 0.2)" class="card" elevation="19">
     <v-container grid-list-lg>
-        <v-layout row wrap >
+        <v-layout row wrap class="main">
             <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
                 <v-card :to="'/cars/' + item.id" v-if="(location == '' || location == item.location ) && (category == '' || item.category == 'Both' || category == item.category )" elevation="19">
                     <v-responsive>
@@ -175,6 +175,12 @@ export default {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.main {
+   font-family: 'Montserrat', sans-serif;
+
+}
 .card {
     margin-left: 100px;
     margin-right: 100px;
