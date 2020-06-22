@@ -24,7 +24,7 @@
                           outlined
                           solo
                           :items="types"
-                          v-model="type"
+                          v-model="vendor"
                           label="What?"></v-select>
                           </v-flex>
 
@@ -45,7 +45,8 @@
                            label="Where?"></v-select>
                            </v-flex>
 
-                           <v-flex md2 ><v-btn height="56" color="pink">find</v-btn></v-flex>
+                           <v-flex md2 ><v-btn height="56" color="pink" :to="{name: this.vendor, params :{location : this.location}}">find</v-btn></v-flex>
+                           <!-- <router-link :to="{name: 'cake'}">find</router-link> -->
 
                           </v-flex>
                       </v-layout>
@@ -219,7 +220,9 @@ export default {
 
     data () {
         return {
-            types : ['Hotels','Photography','Cars','Jewellery','Bands','Cake','Catering','Hair & beauty','Decorators','Cards / Gifts'],
+            location : '',
+            vendor: '',
+            types : ['Hotels','Photography','Cars','Jewellery','Bands','cake','Catering','Hair & beauty','Decorators','Cards / Gifts'],
             locations: ['Galle',
                     'Colombo',
                     'Gampaha',

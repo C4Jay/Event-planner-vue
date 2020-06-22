@@ -271,7 +271,8 @@ export default new Vuex.Store({
         hotelimg4: pay.imgurl4,
         hotelimg5: pay.imgurl5, verified: "no",
         hotelwebsite: pay.website,
-        hotelemail: pay.email
+        hotelemail: pay.email,
+        time:  moment().format('MMMM Do YYYY, h:mm:ss a')
         
       }
 

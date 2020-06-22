@@ -23,12 +23,13 @@
            
             <v-layout row class="ml-8 mr-8">
           
-            <v-btn color="transparent" depressed class="btns">Home</v-btn>
+            <!-- <v-btn color="transparent" depressed class="btns">Home</v-btn> -->
+            <v-btn dark color="#eb3458" depressed class="btns" to="/dashboard">add your business</v-btn>
             <v-spacer></v-spacer> 
             
-            <v-btn dark color="#eb3458" depressed class="btns" to="/dashboard">add your business</v-btn>
             
-            <v-btn color="transparent" depressed class="btns">about</v-btn>
+            <v-btn color="transparent" depressed class="btns">about us</v-btn>
+            <v-btn color="transparent" depressed class="btns">contact</v-btn>
             
             </v-layout>
            

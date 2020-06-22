@@ -105,7 +105,7 @@ Vue.use(VueRouter)
   },
   {
     path: '/cake/:id',
-    name: 'cake',
+    name: 'singlecake',
     props: true,
     component: Singlecake
   },
@@ -174,6 +174,12 @@ Vue.use(VueRouter)
     name: 'cake',
     component: Cake
   },
+ /*  {
+    path: '/cake/:location',
+    name: 'cake',
+    component: Cake,
+    props: true
+  }, */
   {
     path: '/cars',
     name: 'cars',
