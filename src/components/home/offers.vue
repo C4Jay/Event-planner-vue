@@ -5,7 +5,9 @@
         </v-layout>
         <v-layout row wrap class="tiles mr-1">
 
-            <v-flex v-for="item in items" :key="item.id" xs12 md6 class="tile" >
+           
+            <v-flex  v-for="item in items" :key="item.id" xs12 md6 class="tile" >
+                 <router-link :to="'/' + item.id">
                 <v-layout row>
                     <v-img class="img" height="143" width="150" :src="item.img">
                     </v-img>
@@ -22,7 +24,9 @@
                     </v-layout>
                     </v-flex>
                 </v-layout>
+                    </router-link>
             </v-flex>
+        
 
 
 

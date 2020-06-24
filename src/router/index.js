@@ -60,6 +60,7 @@ import Fvendorsdashboard from '@/components/fvendors/dashboard.vue'
 import Fvendors from '@/components/fvendors/fvendors.vue'
 import Singlevendor from '@/components/fvendors/singlevendor.vue'
 import Offersform from '@/components/offers/offersform.vue';
+import Singleoffer from '@/components/offers/singleoffer.vue'
 
 Vue.use(VueRouter)
 
@@ -372,6 +373,12 @@ Vue.use(VueRouter)
     path: '/offersform',
     name: 'offersform',
     component: Offersform
+  },
+  {
+    path: '/:id',
+    name: 'singleoffer',
+    props: true,
+    component: Singleoffer
   },
   {
     path: '/about',
