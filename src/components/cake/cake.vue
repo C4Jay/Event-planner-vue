@@ -105,6 +105,8 @@
 
 
 <script>
+// import router from '../router';
+
 export default {
     data () {
         return {
@@ -151,6 +153,12 @@ export default {
             console.log(this.$store.getters.hotels)
         }
     }, */
+
+    created() {
+      // if(this.$route.params){
+      this.location = this.$route.params.location
+      // }
+    },
 
     computed: {
         items () {

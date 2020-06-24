@@ -62,7 +62,7 @@
         <v-flex class="single" ><!-- sm4 md2 -->
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
             <v-layout row>
-            <router-link to="/bands"> <v-flex class="single"><img class="icon" height="60" src="@/assets/icons/light/compact-disc.svg"></v-flex></router-link>
+            <router-link :to="{name: 'Bands', params: {location: ''}}"> <v-flex class="single"><img class="icon" height="60" src="@/assets/icons/light/compact-disc.svg"></v-flex></router-link>
             </v-layout>
             <v-layout row class="text-center">
                  <!-- <v-flex class="single"> -->
@@ -76,7 +76,7 @@
         <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row class="text-center">
-            <router-link to="/bridalwear"> <v-flex class="single"><img height="60" src="@/assets/icons/light/user-tie.svg"></v-flex></router-link>
+            <router-link :to="{name: 'Bride/Groom wear', params: {location: ''}}"> <v-flex class="single"><img height="60" src="@/assets/icons/light/user-tie.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
                 <!-- <v-flex class="single"> -->
@@ -88,7 +88,7 @@
         <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
-            <router-link to="/locations"> <v-flex class="single"><img height="60" src="@/assets/icons/light/globe-europe.svg"></v-flex></router-link>
+            <router-link :to="{name: 'Location', params: {location: ''}}"> <v-flex class="single"><img height="60" src="@/assets/icons/light/globe-europe.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
                 <!-- <v-flex class="single"> -->
@@ -104,7 +104,7 @@
        <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
-            <router-link to="/weddingplanners"> <v-flex class="single"><img height="60" src="@/assets/icons/light/tasks.svg"></v-flex></router-link>
+            <router-link :to="{name: 'Planners', params: {location: ''}}"> <v-flex class="single"><img height="60" src="@/assets/icons/light/tasks.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
                 <!-- <v-flex class="single"> -->
@@ -116,7 +116,7 @@
         <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row class="ml-1">
-            <router-link to="/invcards"><v-flex class="single"><img height="60" src="@/assets/icons/light/gifts.svg"></v-flex></router-link>
+            <router-link :to="{name: 'Gifts/ Cards', params: {location: ''}}"><v-flex class="single"><img height="60" src="@/assets/icons/light/gifts.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
                <span>Cards / Gifts</span>
@@ -128,7 +128,7 @@
          <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row class="ml-3">
-            <router-link to="/photography"><v-flex class="single"><img height="60" src="@/assets/icons/light/camera.svg"></v-flex></router-link>
+            <router-link :to="{name: 'Photography', params: {location: ''}}"><v-flex class="single"><img height="60" src="@/assets/icons/light/camera.svg"></v-flex></router-link>
            </v-layout>
            <v-layout row>
                <span>Photography</span>
@@ -148,7 +148,7 @@
         <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
-            <router-link to="/cars"><img height="60" src="@/assets/icons/light/car.svg"></router-link>
+            <router-link :to="{name: 'Cars', params: {location: ''}}"><img height="60" src="@/assets/icons/light/car.svg"></router-link>
            </v-layout>
            <v-layout row class="ml-1">
                <span>Car</span>
@@ -158,7 +158,7 @@
         <v-flex class="single">
            <!-- <font-awesome-icon class="icon" icon="user-tie" />  -->
            <v-layout row>
-            <router-link to="/cake"><img height="60" src="@/assets/icons/light/birthday-cake.svg"></router-link>
+            <router-link :to="{name: 'Cake', params: {location: ''}}"><img height="60" src="@/assets/icons/light/birthday-cake.svg"></router-link>
            </v-layout>
            <v-layout row class="cake">
                <span>Cake</span>
@@ -167,7 +167,7 @@
 
         <v-flex class="single">
             <v-layout row class="ml-1">
-            <router-link to="/flora"><img height="60" src="@/assets/icons/light/flower-tulip.svg"></router-link>
+            <router-link :to="{name: 'Flora', params: {location: ''}}"><img height="60" src="@/assets/icons/light/flower-tulip.svg"></router-link>
             </v-layout>
             <v-layout row>
                 <span>Decorators</span>
@@ -180,7 +180,7 @@
         
         <v-flex class="text-center">
             <v-layout row>
-            <router-link to="/salons"><img height="60" src="@/assets/icons/light/female.svg"></router-link>
+            <router-link :to="{name: 'Hair & Beauty', params: {location: ''}}"><img height="60" src="@/assets/icons/light/female.svg"></router-link>
             </v-layout>
             <v-layout row class="cake1">
                <!--  <span> -->Salons<!-- </span> -->
@@ -189,7 +189,7 @@
 
         <v-flex class="single">
             <v-layout row class="hotel">
-            <router-link to="/hotels"><img height="60" src="@/assets/icons/light/hotel.svg"></router-link>
+            <router-link :to="{name: 'Hotels', params: {location: ''}}"><img height="60" src="@/assets/icons/light/hotel.svg"></router-link>
             </v-layout>
             <v-layout row>
                 <span>Hotel</span>
@@ -222,7 +222,22 @@ export default {
         return {
             location : '',
             vendor: '',
-            types : ['Hotels','Photography','Cars','Jewellery','Bands','cake','Catering','Hair & beauty','Decorators','Cards / Gifts'],
+            types : ['Hotels',
+            'Photography',
+            'Cars',
+            'Jewellery',
+            'Bands',
+            'Cake',
+            // 'Catering',
+            'Hair & Beauty',
+            'Decorators',
+            'Gifts/ Cards',
+            'Ashtaka',
+            'Location',
+            'Bride/Groom wear',
+            'Flora',
+            ],
+
             locations: ['Galle',
                     'Colombo',
                     'Gampaha',

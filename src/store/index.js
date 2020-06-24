@@ -53,7 +53,9 @@ export default new Vuex.Store({
     fflora: null,
     floras: [],
 
-    fvendors: []
+    fvendors: [],
+
+    offer: null
   },
 
   mutations: {
@@ -196,7 +198,11 @@ export default new Vuex.Store({
 
     fvendorsset (state, pay) {
       state.fvendors = pay
-    }
+    },
+
+    adoffer (state, pay) {
+      state.offer = pay
+    },
 
 
   },
@@ -1529,6 +1535,38 @@ export default new Vuex.Store({
       console.log(err)
     })
   },
+
+
+  ad_offer({commit},pay) {
+    const offer = {
+      // type: "flora",
+     offername: pay.name,
+     offerlocation: pay.location,
+     offercontact: pay.contact,
+     offerdescription: pay.description,
+     offerimg: pay.imgurl,
+     offerimg1: pay.imgurl1,
+     verified: "no",
+     offertitle: pay.offertitle
+   
+    //  cateringcategory: pay.categories,
+     
+    //  saloncategory: pay.category,
+     
+      
+    }
+
+    firebase.database().ref('Offers').push(offer)
+    .then((response) => {
+      console.log(response),
+      commit('adoffer',{response})
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
+
 
 
 

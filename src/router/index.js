@@ -59,6 +59,7 @@ import FCreatesalonform from '@/components/fvendors/createsalonsform.vue'
 import Fvendorsdashboard from '@/components/fvendors/dashboard.vue'
 import Fvendors from '@/components/fvendors/fvendors.vue'
 import Singlevendor from '@/components/fvendors/singlevendor.vue'
+import Offersform from '@/components/offers/offersform.vue';
 
 Vue.use(VueRouter)
 
@@ -161,17 +162,17 @@ Vue.use(VueRouter)
   },
   {
     path: '/bands',
-    name: 'bands',
+    name: 'Bands',
     component: Bands
   },
   {
     path: '/bridalwear',
-    name: 'bridalwear',
+    name: 'Bride/Groom wear',
     component: Bridalwear
   },
   {
     path: '/cake',
-    name: 'cake',
+    name: 'Cake',
     component: Cake
   },
  /*  {
@@ -182,7 +183,7 @@ Vue.use(VueRouter)
   }, */
   {
     path: '/cars',
-    name: 'cars',
+    name: 'Cars',
     component: Cars
   },
   {
@@ -192,7 +193,7 @@ Vue.use(VueRouter)
   },
   {
     path: '/flora',
-    name: 'flora',
+    name: 'Flora',
     component: Flora
   },
   {
@@ -202,27 +203,27 @@ Vue.use(VueRouter)
   },
   {
     path: '/invcards',
-    name: 'invcards',
+    name: 'Gifts/ Cards',
     component: Invcards
   },
   {
     path: '/jewellery',
-    name: 'jewellery',
+    name: 'Jewellery',
     component: Jewellery
   },
   {
     path: '/locations',
-    name: 'locations',
+    name: 'Location',
     component: Locations
   },
   {
     path: '/photography',
-    name: 'photography',
+    name: 'Photography',
     component: Photography
   },
   {
     path: '/salons',
-    name: 'salons',
+    name: 'Hair & Beauty',
     component: Salons
   },
   {
@@ -366,6 +367,11 @@ Vue.use(VueRouter)
     path: '/dashboard',
     name: 'dashboard',
     component: Dashboard
+  },
+  {
+    path: '/offersform',
+    name: 'offersform',
+    component: Offersform
   },
   {
     path: '/about',

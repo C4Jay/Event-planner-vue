@@ -162,6 +162,10 @@ export default {
         }
     }, */
 
+    created() {
+      this.location = this.$route.params.location
+    },
+
     computed: {
         items () {
             return this.$store.getters.bridalwears
