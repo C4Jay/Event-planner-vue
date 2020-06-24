@@ -4,7 +4,48 @@
             <h1>Offers</h1>
         </v-layout>
         <v-layout row wrap class="tiles mr-1">
-            <v-flex xs12 md6 class="tile" >
+
+            <v-flex v-for="item in items" :key="item.id" xs12 md6 class="tile" >
+                <v-layout row>
+                    <v-img class="img" height="143" width="150" :src="item.img">
+                    </v-img>
+                    <v-spacer></v-spacer>
+                    <v-flex class="text-center text">
+                    <v-layout row>
+                    <h3 class="font-weight-light">{{item.name}}</h3>
+                    </v-layout>
+                    <v-layout row>
+                    <h5 class="font-weight-light">{{item.location}}</h5>
+                    </v-layout>
+                    <v-layout row>
+                    <h3 class="pink--text font-weight-black">{{item.offertitle}}</h3>
+                    </v-layout>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+
+
+
+            <!-- <v-flex xs12 md6 class="tile" >
+                <v-layout row>
+                    <v-img class="img" height="143" width="150" src="@/assets/imgsset/band.jpg">
+                    </v-img>
+                    <v-spacer></v-spacer>
+                    <v-flex class="text-center text">
+                    <v-layout row>
+                    <h3 class="font-weight-light">Hotel name</h3>
+                    </v-layout>
+                    <v-layout row>
+                    <h5 class="font-weight-light">new york</h5>
+                    </v-layout>
+                    <v-layout row>
+                    <h3 class="pink--text font-weight-black">Offer 25% off</h3>
+                    </v-layout>
+                    </v-flex>
+                </v-layout>
+            </v-flex> -->
+
+            <!-- <v-flex xs12 md6 class="tile" >
                 <v-layout row>
                     <v-img class="img" height="143" width="150" src="@/assets/imgsset/band.jpg">
                     </v-img>
@@ -97,26 +138,7 @@
                     </v-layout>
                     </v-flex>
                 </v-layout>
-            </v-flex>
-
-            <v-flex xs12 md6 class="tile" >
-                <v-layout row>
-                    <v-img class="img" height="143" width="150" src="@/assets/imgsset/band.jpg">
-                    </v-img>
-                    <v-spacer></v-spacer>
-                    <v-flex class="text-center text">
-                    <v-layout row>
-                    <h3 class="font-weight-light">Hotel name</h3>
-                    </v-layout>
-                    <v-layout row>
-                    <h5 class="font-weight-light">new york</h5>
-                    </v-layout>
-                    <v-layout row>
-                    <h3 class="pink--text font-weight-black">Offer 25% off</h3>
-                    </v-layout>
-                    </v-flex>
-                </v-layout>
-            </v-flex>
+            </v-flex> -->
 
 
 
@@ -143,6 +165,18 @@
 
 </template>
 
+<script>
+export default {
+    
+
+    computed: {
+        items () {
+            return this.$store.getters.offers
+            // console.log(this.$store.getters.hotels)
+        }
+    },
+}
+</script>
 
 
 <style scoped>

@@ -55,7 +55,8 @@ export default new Vuex.Store({
 
     fvendors: [],
 
-    offer: null
+    offer: null,
+    offers: []
   },
 
   mutations: {
@@ -202,6 +203,10 @@ export default new Vuex.Store({
 
     adoffer (state, pay) {
       state.offer = pay
+    },
+
+    offersset (state, pay) {
+      state.offers = pay
     },
 
 
@@ -1566,6 +1571,40 @@ export default new Vuex.Store({
     })
   },
 
+  fetchoffers ({commit}) {
+    firebase.database().ref('Offers').once('value')
+    .then((data) => {
+     
+      const band = []
+      const obj = data.val()
+      for(let key in obj) {
+        band.push({
+            id: key,
+            name: obj[key].offername,
+            location: obj[key].offerlocation,
+            number: obj[key].offercontact,
+            description: obj[key].offerdescription,
+            img: obj[key].offerimg,
+            img1: obj[key].offerimg1,
+            
+            verified: obj[key].verified,
+            offertitle: obj[key].offertitle
+           
+        })
+
+    }
+    console.log(band)
+    commit('offersset',band)
+    })
+    .catch(
+        (error) => {
+            console.log(error)
+        }
+    )
+    
+
+  },
+
 
 
 
@@ -1727,6 +1766,18 @@ export default new Vuex.Store({
       return (fvendorsid) => {
         return state.fvendors.find((fvendor) => {
           return fvendor.id == fvendorsid
+        })
+      }
+    },
+
+    offers (state) {
+      return state.offers
+    },
+
+    offersfind (state) {
+      return (offersid) => {
+        return state.offers.find((offer) => {
+          return offer.id == offersid
         })
       }
     },

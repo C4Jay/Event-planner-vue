@@ -65,6 +65,7 @@ new Vue({
     // /* this.$store.dispatch('fetchbridalwear')
     this.$store.dispatch('fetchlocation')
     this.$store.dispatch('fetchcard')
+    this.$store.dispatch('fetchoffers')
     
  
 // this.$store.dispatch('fetchcars')
