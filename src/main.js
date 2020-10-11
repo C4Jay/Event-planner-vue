@@ -11,11 +11,17 @@ import { faBirthdayCake } from '@fortawesome/free-solid-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faSpa } from '@fortawesome/free-solid-svg-icons'
 import firebase from 'firebase'
-import StarRating from 'vue-star-rating'
+// import StarRating from 'vue-star-rating'
 import LightGallery from 'vue-light-gallery';
 
 import VuePageTransition from 'vue-page-transition'
- 
+/* import {StarRating} from 'vue-rate-it';
+import Raters from 'vue-star-rating';
+
+Vue.component('star-rating', Raters.StarRating);
+
+Vue.use(StarRating);
+ */
 Vue.use(VuePageTransition)
 Vue.use(LightGallery);
 
@@ -24,7 +30,7 @@ library.add(fas)
 library.add(faSpa)
 library.add(faBirthdayCake)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-Vue.component('star-rating', StarRating);
+// Vue.component('star-rating', StarRating);
 Vue.use(EasySlider)
 
 Vue.config.productionTip = false

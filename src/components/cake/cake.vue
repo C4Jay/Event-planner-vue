@@ -63,7 +63,7 @@
     <v-container grid-list-lg>
         <v-layout row wrap class="desc">
             <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
-                <v-card :to="'/cake/' + item.id" v-if="(item.verified == 'yes' && location == '' || location == item.location ) && (category == '' || item.category == 'All kinds' || category == item.category )" elevation="19">
+                <v-card :to="'/cake/' + item.id" target="_blank" v-if="(item.verified == 'yes' && location == '' || location == item.location ) && (category == '' || item.category == 'All kinds' || category == item.category )" elevation="19">
                     <v-responsive>
                         <v-img :src="item.img" height="200px">
                             <v-container fill-height fluid>

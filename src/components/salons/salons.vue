@@ -63,13 +63,13 @@
     <v-container grid-list-lg>
         <v-layout row wrap class="desc">
             <v-flex xs12 sm12 md3 v-for="item in items" :key="item.id">
-                <v-card :to="'/salons/' + item.id" v-if="(item.verified == 'yes' && location == '' || location == item.location )" elevation="19">
+                <v-card :to="'/salons/' + item.id" target="_blank" v-if="(item.verified == 'yes' && location == '' || location == item.location )" elevation="19">
                     <v-responsive>
                         <v-img :src="item.img" height="200px">
                             <v-container fill-height fluid>
                                 <v-layout fill-height>
                                     <v-flex xs12 align-end flexbox>
-                                        <span class="headline white--text">{{item.name}}</span>
+                                        <span class="headline">{{item.name}}</span>
                                     </v-flex>
                                 </v-layout>
                             </v-container>
@@ -77,6 +77,7 @@
                     </v-responsive>
                     <v-card-text>
                         <div>
+                          <img height="40" src="@/assets/icons8-star-96.png"/>  <p>4/5</p>
                             <!-- <v-icon>mdi-map-marker</v-icon><h3 class="headline mb-0">{{item.location}}</h3> -->
                             <h3 class="font-weight-light"><v-icon>mdi-map-marker</v-icon>{{item.location}}</h3>
                             <!-- <v-layout row v-for="category in item.categories" :key="category"> -->
@@ -105,7 +106,12 @@
 
 
 <script>
+// import {StarRating} from 'vue-rate-it';
+
 export default {
+    components:{
+    // StarRating
+  },
     data () {
         return {
            // items: []

@@ -12,7 +12,7 @@
                     <v-layout row wrap>
                     <v-flex xs12 sm5 class="ml-5 mb-8">
                     <v-layout row class="font-weight-black">
-                        {{item.location}}
+                        <v-icon>mdi-map-marker</v-icon>{{item.location}}
                     </v-layout>
                     <v-layout row class="font-weight-black">
                         Type of cake
@@ -33,7 +33,7 @@
                     <v-flex xs12 sm5 class="ml-5 desc">
                         <v-layout row>
                         <!-- <span class="headline font-weight-bold ">contact info</span> -->
-                        <v-layout row class="font-weight-black"><h2>contact info</h2></v-layout>
+                        <!-- <v-layout row class="font-weight-black"><h2>contact info</h2></v-layout> -->
                         </v-layout>
                          <v-layout row class="font-weight-light">
                        <v-icon>mdi-phone</v-icon><pre>   {{item.number}}</pre>
@@ -44,8 +44,8 @@
                     <v-layout row class="font-weight-light">
                    <v-icon>mdi-mail</v-icon>     <pre>   {{item.email}}</pre>
                     </v-layout>
-                    <v-layout row>
-                    <v-btn height="26" color="grey" @click="showmessagebox">request a quotation</v-btn>
+                    <v-layout row class="mt-10">
+                    <v-btn height="26" color="#f57056" @click="showmessagebox">request quotation</v-btn>
                     </v-layout>
                     </v-flex>
                     </v-layout>
@@ -70,8 +70,8 @@
             </v-flex>
         </v-layout>
 
-        <v-flex xs12 class="ml-1 desc">
-            <v-container xs12 class="orange main " v-if="messagebox">
+        <v-flex xs12 class="ml-1 mr-3 desc">
+            <v-container xs12 class=" main " v-if="messagebox">
                         
                         <v-layout row>
                             <v-flex xs12 md3 >
@@ -113,7 +113,7 @@
                         </v-col>
                                 </v-layout>
                         <v-layout row class="ml-3">
-                            <v-btn @click="send" color="blue">send</v-btn>
+                            <v-btn @click="send" color="#4de3a0">send</v-btn>
                         </v-layout>
                         
 
@@ -121,13 +121,13 @@
 
                             <v-flex xs10 sm5 offset-sm-6 class="ml-7 mt-3">
                                 <v-layout row>
-                                    <h3>You will recieve a reply within 24 hours.</h3>
+                                    <h5>You will recieve a reply within 24 hours.</h5>
                                 </v-layout>
                             </v-flex>
                         </v-layout>
                     </v-container>
         </v-flex>
-        <v-flex xs12 class="ml-1 ">
+        <v-flex xs12 class="ml-1 mr-3">
         <v-carousel
         height="618"
         autoplay
@@ -209,6 +209,7 @@ export default {
     font-family: 'Montserrat', sans-serif;
 }
 .main {
+    background-color: #f57056;
     width: '100%'
 }
 </style>
